@@ -1,0 +1,27 @@
+:root {
+    --base-orange: #ff7315;
+    --base-white: #f4f4f4;
+    --base-background-color: #222831;
+    --base-font-family: "Akaya Kanadaka", cursive;
+}
+
+.searchBtn {
+    background-color: var(--base-orange);
+    color: var(--base-white);
+}
+
+.joinBtn {
+    color: var(--base-orange);
+    text-decoration: none;
+}
+
+.image {
+    width: 75%;
+    background-image: linear-gradient(
+        to left,
+        transparent,
+        var(--base-background-color)
+    );
+
+}
+
