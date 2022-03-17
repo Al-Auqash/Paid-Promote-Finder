@@ -52,7 +52,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-transparent shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-transparent shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Paid Promote Finder
