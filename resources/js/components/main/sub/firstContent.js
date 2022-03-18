@@ -14,7 +14,7 @@ const firstContent = () => {
                     <div class="input-group mb-3">
                         <input
                             type="text"
-                            class="form-control"
+                            class="form-control searchInput"
                             placeholder="Try type 'Anniversary' "
                             aria-label="Try type 'Anniversary' "
                             aria-describedby="button-addon2"

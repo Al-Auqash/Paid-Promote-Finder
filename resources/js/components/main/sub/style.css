@@ -1,17 +1,23 @@
 :root {
     --base-orange: #ff7315;
+    --base-dark-orange: #FF5722;
     --base-white: #f4f4f4;
     --base-background-color: #222831;
     --base-font-family: "Akaya Kanadaka", cursive;
 }
 
+.searchInput {
+    border: none;
+}
+
 .searchBtn {
-    background-color: var(--base-orange);
+    background-color: var(--base-dark-orange);
     color: var(--base-white);
+    border: none;
 }
 
 .joinBtn {
-    color: var(--base-orange);
+    color: var(--base-dark-orange);
     text-decoration: none;
 }
 
@@ -22,6 +28,4 @@
         transparent,
         var(--base-background-color)
     );
-
 }
-
