@@ -5,8 +5,11 @@ import "./style.css";
 
 const firstContent = () => {
     return (
-        <div class="row h-100 p-0 m-0">
-            <div class="w-50 d-flex flex-column align-item-center justify-content-center">
+        <div class="d-flex flex-row align-item-center justify-content-center height-full p-0 my-4">
+            <div class="d-flex flex-column align-item-center justify-content-center m-2">
+                <p>
+                    PAID PROMOTE FINDER
+                </p>
                 <p>
                     find upcoming event below and have them promote your product
                 </p>
@@ -30,7 +33,7 @@ const firstContent = () => {
                 </form>
                 <a class="joinBtn">or join for free</a>
             </div>
-            <div class="w-50 d-flex align-item-center justify-content-center">
+            <div class="d-flex flex-column align-item-center justify-content-center m-2">
                 <img src={Main} class="image" />
             </div>
         </div>

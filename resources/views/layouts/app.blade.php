@@ -31,6 +31,7 @@
             background-color: #222831;
             color: #F4F4F4;
             font-family: 'Akaya Kanadaka', cursive;
+            font-size: 14pt;
         }
 
         ::-webkit-scrollbar {

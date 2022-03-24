@@ -8,15 +8,13 @@ import {
 } from "react-router-dom";
 
 import Main from "./main/index";
-import HowTo from "./main/howTo";
 
 function App() {
     return (
-        <div className="container vh-100">
+        <div className="container-fluid vh-100 m-0">
             <Router>
                 <Routes>
                     <Route path="/main" element={<Main />} />
-                    <Route path="/main/me" element={<HowTo />} />
                     {/* <Main />
                                 <HowTo /> */}
                     {/* </Route> */}

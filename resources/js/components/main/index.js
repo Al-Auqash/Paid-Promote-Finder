@@ -1,11 +1,13 @@
 import React from "react";
 
 import FirstContent from "./sub/firstContent";
+import SecondContent from "./sub/secondContent";
 
 const Index = () => {
     return (
-        <div class="col justify-content-center p-4">
+        <div class="d-flex flex-column justify-content-center p-4">
             <FirstContent />
+            <SecondContent />
         </div>
     );
 };

@@ -6,6 +6,10 @@
     --base-font-family: "Akaya Kanadaka", cursive;
 }
 
+.height-full{
+    height: 80vh;
+}
+
 .searchInput {
     border: none;
 }
@@ -22,10 +26,15 @@
 }
 
 .image {
-    width: 75%;
-    background-image: linear-gradient(
+    width: 100%;
+    height: 50%;
+    /* background-image: linear-gradient(
         to left,
         transparent,
         var(--base-background-color)
-    );
+    ); */
+}
+
+.cardHowTo {
+    width: 18rem;
 }
