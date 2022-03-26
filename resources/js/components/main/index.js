@@ -5,7 +5,7 @@ import SecondContent from "./sub/secondContent";
 
 const Index = () => {
     return (
-        <div class="d-flex flex-column justify-content-center p-4">
+        <div class="d-flex flex-column">
             <FirstContent />
             <SecondContent />
         </div>

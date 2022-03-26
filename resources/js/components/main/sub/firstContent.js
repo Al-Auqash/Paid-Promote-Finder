@@ -5,8 +5,8 @@ import "./style.css";
 
 const firstContent = () => {
     return (
-        <div class="d-flex flex-row align-item-center justify-content-center height-full p-0 my-4">
-            <div class="d-flex flex-column align-item-center justify-content-center m-2">
+        <div class="display-flex-row height-full w-100">
+            <div class="display-flex-col mx-4 w-100">
                 <p>
                     PAID PROMOTE FINDER
                 </p>
@@ -33,7 +33,7 @@ const firstContent = () => {
                 </form>
                 <a class="joinBtn">or join for free</a>
             </div>
-            <div class="d-flex flex-column align-item-center justify-content-center m-2">
+            <div class="display-flex-col mx-4 w-100">
                 <img src={Main} class="image" />
             </div>
         </div>
