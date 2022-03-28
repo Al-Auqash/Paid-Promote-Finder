@@ -5486,7 +5486,7 @@ var secondContent = function secondContent() {
           children: "Find the best event/sponsor"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
           "class": "card-text",
-          children: "Some quick example text to build on the card title and make up the bulk of the card's content."
+          children: "Find and explore the best event or sponsor from our website that fit your target"
         })]
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
