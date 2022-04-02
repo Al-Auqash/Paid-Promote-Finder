@@ -17,10 +17,18 @@ const secondContent = () => {
             <div class="card cardHowTo">
                 <div class="card-body">
                     <h5 class="card-title">Second</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Make A Contract</h6>
                     <p class="card-text">
-                        Some quick example text to build on the card title and
-                        make up the bulk of the card's content.
+                        Make a contact with event organizer or bussinesses to make a contract
+                    </p>
+                </div>
+            </div>
+            <div class="card cardHowTo">
+                <div class="card-body">
+                    <h5 class="card-title">Third</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Finish and rate your experience</h6>
+                    <p class="card-text">
+                        Finish your contract with submitting application and rate your experience for better upcoming contract
                     </p>
                 </div>
             </div>

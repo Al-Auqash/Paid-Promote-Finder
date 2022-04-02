@@ -133,6 +133,10 @@
         <main class="py-4">
             <div id="root"></div>
         </main>
+
+        <footer class="py-4">
+            <div id="foot"></div>
+        </footer>
     </div>
 </body>
 
