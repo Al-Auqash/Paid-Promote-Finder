@@ -8,7 +8,6 @@ import {
 } from "react-router-dom";
 
 import Main from "./main/index";
-import Footer from "./footer/footer";
 
 function App() {
     return (
@@ -16,7 +15,6 @@ function App() {
             <Router>
                 <Routes>
                     <Route path="/main" element={<Main />} />
-                    <Route path="/main" element={<Footer />} />
                     
                 </Routes>
             </Router>

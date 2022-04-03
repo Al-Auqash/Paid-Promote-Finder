@@ -54,3 +54,11 @@
     justify-content: center;
     align-item: center;
 }
+
+.text-dark-orange {
+    color: var(--base-dark-orange);
+}
+
+.text-orange {
+    color: var(--base-orange);
+}

@@ -134,9 +134,9 @@
             <div id="root"></div>
         </main>
 
-        <footer class="py-4">
+        <!-- <footer class="py-4">
             <div id="foot"></div>
-        </footer>
+        </footer> -->
     </div>
 </body>
 
