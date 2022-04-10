@@ -4,7 +4,7 @@ import "./style.css";
 
 const secondContent = () => {
     return (
-        <div class="display-flex-row h-100 p-0 my-4">
+        <div class="display-flex-row h-100 p-0 my-4 secondContent">
             <div class="card cardHowTo text-center mx-5">
                 <div class="card-body">
                     <h5 class="card-title text-dark-orange">Find the best event/sponsor</h5>

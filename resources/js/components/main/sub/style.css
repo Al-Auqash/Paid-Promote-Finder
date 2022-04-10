@@ -62,3 +62,12 @@
 .text-orange {
     color: var(--base-orange);
 }
+
+@media (max-width: 391px) {
+    .secondContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-item: center;
+    }
+}
