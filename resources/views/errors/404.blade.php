@@ -130,13 +130,10 @@
             </div>
         </nav>
 
-        <main class="py-4">
-            <div id="root"></div>
+        <main class="d-flex flex-row justify-content-center py-4">
+            <div>404 Not Found</div>
         </main>
 
-        <!-- <footer class="py-4">
-            <div id="foot"></div>
-        </footer> -->
     </div>
 </body>
 

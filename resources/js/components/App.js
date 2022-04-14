@@ -14,7 +14,7 @@ function App() {
         <div className="container-fluid vh-100 m-0">
             <Router>
                 <Routes>
-                    <Route path="/main" element={<Main />} />
+                    <Route path="/" element={<Main />} />
                     
                 </Routes>
             </Router>

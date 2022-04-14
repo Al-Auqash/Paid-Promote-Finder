@@ -63,7 +63,7 @@
     color: var(--base-orange);
 }
 
-@media (max-width: 391px) {
+@media (max-width: 768px) {
     .secondContent {
         display: flex;
         flex-direction: column;

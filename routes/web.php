@@ -13,9 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('{path}', function () {
+Route::get('/', function () {
     return view('/layouts/app');
 });
+
+// Route::get('{path}', function () {
+//     return view('/layouts/app');
+// });
+
 // Route::get('/main/how-to', function () {
 //     return view('/layouts/app');
 // });
