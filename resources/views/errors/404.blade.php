@@ -94,7 +94,7 @@
                             <a class="nav-link px-4 mx-2" href="/browse">Browse</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-4 mx-2" href="/about">About</a>
+                            <a class="nav-link px-4 mx-2" href="/about">About Us</a>
                         </li>
                         @if (Route::has('login'))
                         <li class="nav-item">
