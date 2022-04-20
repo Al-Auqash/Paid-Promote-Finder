@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('/layouts/app');
 });
+Route::get('/browse', function () {
+    return view('/layouts/app');
+});
 
 // Route::get('{path}', function () {
 //     return view('/layouts/app');

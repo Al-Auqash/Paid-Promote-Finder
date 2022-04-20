@@ -18,8 +18,8 @@ const firstContent = () => {
                         <input
                             type="text"
                             class="form-control searchInput"
-                            placeholder="Try type 'Anniversary' "
-                            aria-label="Try type 'Anniversary' "
+                            placeholder="Try to type 'Anniversary' "
+                            aria-label="Try to type 'Anniversary' "
                             aria-describedby="button-addon2"
                         />
                         <button

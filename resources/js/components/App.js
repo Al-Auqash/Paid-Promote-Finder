@@ -7,7 +7,10 @@ import {
     NavLink,
 } from "react-router-dom";
 
+import "./App.css";
+
 import Main from "./main/index";
+import Browse from "./browse/index";
 
 function App() {
     return (
@@ -15,7 +18,7 @@ function App() {
             <Router>
                 <Routes>
                     <Route path="/" element={<Main />} />
-                    
+                    <Route path="/browse" element={<Browse />} />
                 </Routes>
             </Router>
         </div>
