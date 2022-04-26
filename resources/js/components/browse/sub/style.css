@@ -1,5 +1,14 @@
+
 .searchBtn {
     background-color: var(--base-dark-orange);
     color: var(--base-white);
     border: none;
+}
+
+.text-dark-orange {
+    color: var(--base-dark-orange);
+}
+
+.text-orange {
+    color: var(--base-orange);
 }

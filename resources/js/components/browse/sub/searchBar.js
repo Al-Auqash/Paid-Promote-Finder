@@ -1,4 +1,11 @@
 import React from "react";
+import Select from "react-select";
+import "./style.css";
+
+const categoryOptions = [
+    { value: "sponsor", label: "Sponsor" },
+    { value: "event", label: "Event" },
+];
 
 const SearchBar = () => {
     return (
@@ -17,16 +24,12 @@ const SearchBar = () => {
                     </div>
                     <div class="col-4">
                         <div class="form-group">
-                            <select
-                                name="bulan"
+                            <Select
                                 type="text"
-                                class="form-control"
+                                class="form-control text-orange"
                                 placeholder="Category"
-                            >
-                                <option value=""></option>
-                                <option value="01">EVENT</option>
-                                <option value="02">SPONSOR</option>
-                            </select>
+                                options={categoryOptions}
+                            />
                         </div>
                     </div>
                     {/* <div class="col-sm-2">
