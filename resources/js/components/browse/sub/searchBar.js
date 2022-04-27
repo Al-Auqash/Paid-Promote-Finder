@@ -7,6 +7,10 @@ const categoryOptions = [
     { value: "event", label: "Event" },
 ];
 
+const categoryOptionsStyles = {
+    
+}
+
 const SearchBar = () => {
     return (
         <section class="px-4">
