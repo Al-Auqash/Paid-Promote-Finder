@@ -11,75 +11,83 @@ const categoryOptionsStyles = {};
 
 const SearchBar = () => {
     return (
-        <section class="px-4">
+        <section className="px-4">
             <p>Find All you need</p>
             <form method="post">
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group">
+                <div className="row">
+                    <div className="col-2">
+                        <p>Filter</p>
+                        <p>Category</p>
+                        <div class="form-check">
                             <input
-                                name="browse"
-                                class="form-control"
-                                placeholder="Try to Type 'Anniversary'"
+                                class="form-check-input"
+                                type="radio"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
                             />
+                            <label
+                                class="form-check-label"
+                                for="flexRadioDefault1"
+                            >
+                                Sponsor
+                            </label>
                         </div>
-                    </div>
-                    <div class="col-4">
-                        {/* <div class="form-group"> */}
-                            <div class="dropdown">
+                        <div class="form-check">
+                            <input
+                                class="form-check-input"
+                                type="radio"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault2"
+                                checked
+                            />
+                            <label
+                                class="form-check-label"
+                                for="flexRadioDefault2"
+                            >
+                                Event
+                            </label>
+                        </div>
+                        <div className="row">
+                            <div className="dropdown">
                                 <button
-                                    class="btn btn-secondary dropdown-toggle"
+                                    className="btn btn-outline-warning dropdown-toggle"
                                     type="button"
-                                    id="dropdownMenuButton1"
+                                    id="categoryButton"
                                     data-bs-toggle="dropdown"
                                     aria-expanded="false"
                                 >
-                                    Dropdown button
+                                    Category
                                 </button>
                                 <ul
-                                    class="dropdown-menu"
-                                    aria-labelledby="dropdownMenuButton1"
+                                    className="dropdown-menu"
+                                    aria-labelledby="categoryButton"
                                 >
                                     <li>
-                                        <a class="dropdown-item" href="#">
-                                            Action
+                                        <a className="dropdown-item" href="#">
+                                            Sponsor
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#">
-                                            Another action
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            Something else here
+                                        <a className="dropdown-item" href="#">
+                                            Event
                                         </a>
                                     </li>
                                 </ul>
                             </div>
-                        {/* </div> */}
-                    </div>
-                    {/* <div class="col-sm-2">
-                        <div class="form-group">
-                            <div class="input-group">
-                                <input
-                                    autocomplete="off"
-                                    type="text"
-                                    class="form-control"
-                                    data-plugin="datepicker"
-                                    data-option="{literal}{format: 'yyyy', viewMode: 'years', minViewMode: 'years', orientation: 'bottom', clearBtn: true, autoclose: true}{/literal}"
-                                    name="tahun"
-                                    placeholder="Pilih Tahun"
-                                />
-                                <span class="input-group-addon">
-                                    <span class="fa fa-calendar"></span>
-                                </span>
-                            </div>
                         </div>
-                    </div> */}
-                    <div class="col-2">
+                    </div>
+                    <div className="col-8 mx-0 my-0">
+                        <div className="form-group">
+                            <input
+                                name="browse"
+                                className="form-control"
+                                placeholder="Try to Type 'Anniversary'"
+                            />
+                        </div>
+                    </div>
+                    <div className="col-2">
                         <button
-                            class="btn searchBtn"
+                            className="btn searchBtn px-4"
                             type="submit"
                             name="save"
                             value="Cari"

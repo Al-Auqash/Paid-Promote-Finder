@@ -1,4 +1,3 @@
-
 .searchBtn {
     background-color: var(--base-dark-orange);
     color: var(--base-white);
@@ -11,4 +10,8 @@
 
 .text-orange {
     color: var(--base-orange);
+}
+
+.categoryRadio{
+    color
 }
