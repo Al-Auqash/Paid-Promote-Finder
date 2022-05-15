@@ -15,7 +15,7 @@ const SearchBar = () => {
             <p>Find All you need</p>
             <form method="post">
                 <div className="row">
-                    <div className="col-2">
+                    <div className="col-2 filter">
                         <p>Filter</p>
                         <p>Category</p>
                         <div class="form-check">

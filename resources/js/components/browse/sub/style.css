@@ -12,6 +12,11 @@
     color: var(--base-orange);
 }
 
-.categoryRadio{
-    color
+.categoryRadio {
+    color: var(--base-white);
+}
+
+.filter {
+    border: 1.5px solid var(--base-white);
+    border-radius: 2%;
 }
