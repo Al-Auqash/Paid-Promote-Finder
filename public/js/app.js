@@ -5523,92 +5523,128 @@ var SearchBar = function SearchBar() {
     className: "px-4",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
       children: "Find All you need"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("form", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
       method: "post",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "row",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "col-2 filter",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-            children: "Filter"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-            children: "Category"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-            "class": "form-check",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-              "class": "form-check-input",
-              type: "radio",
-              name: "flexRadioDefault",
-              id: "flexRadioDefault1"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-              "class": "form-check-label",
-              "for": "flexRadioDefault1",
-              children: "Sponsor"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-            "class": "form-check",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-              "class": "form-check-input",
-              type: "radio",
-              name: "flexRadioDefault",
-              id: "flexRadioDefault2",
-              checked: true
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-              "class": "form-check-label",
-              "for": "flexRadioDefault2",
-              children: "Event"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "row",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-              className: "dropdown",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-                className: "btn btn-outline-warning dropdown-toggle",
-                type: "button",
-                id: "categoryButton",
-                "data-bs-toggle": "dropdown",
-                "aria-expanded": "false",
+      className: "row",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "col-2",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "row",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "col filter",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+              children: "Filter"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "form-group subFilterTitle",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
                 children: "Category"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("ul", {
-                className: "dropdown-menu",
-                "aria-labelledby": "categoryButton",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-                    className: "dropdown-item",
-                    href: "#",
-                    children: "Sponsor"
-                  })
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-                    className: "dropdown-item",
-                    href: "#",
-                    children: "Event"
-                  })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                "class": "form-check",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                  "class": "form-check-input",
+                  type: "radio",
+                  name: "flexRadioDefault",
+                  id: "flexRadioDefault1"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                  "class": "form-check-label",
+                  "for": "flexRadioDefault1",
+                  children: "Sponsor"
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                "class": "form-check",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                  "class": "form-check-input",
+                  type: "radio",
+                  name: "flexRadioDefault",
+                  id: "flexRadioDefault2",
+                  checked: true
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                  "class": "form-check-label",
+                  "for": "flexRadioDefault2",
+                  children: "Event"
                 })]
               })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "form-group subFilterTitle",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                children: "Region"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                className: "dropdown",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                  className: "btn btn-outline-warning dropdown-toggle",
+                  type: "button",
+                  id: "categoryButton",
+                  "data-bs-toggle": "dropdown",
+                  "aria-expanded": "false",
+                  children: "Region"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("ul", {
+                  className: "dropdown-menu",
+                  "aria-labelledby": "categoryButton",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+                      className: "dropdown-item",
+                      href: "#",
+                      children: "East Java"
+                    })
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+                      className: "dropdown-item",
+                      href: "#",
+                      children: "Middle Java"
+                    })
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+                      className: "dropdown-item",
+                      href: "#",
+                      children: "West Java"
+                    })
+                  })]
+                })]
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "form-group subFilterTitle",
+              children: "Time"
+            })]
+          })
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "col-10",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "row",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            className: "col-10 mx-0 my-0",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "form-group",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                name: "browse",
+                className: "form-control searchInput p-2",
+                placeholder: "Try to Type 'Anniversary'"
+              })
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            className: "col-2 mx-0 my-0",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "form-group",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                className: "form-control btn searchBtnBrowse p-2",
+                type: "submit",
+                name: "save",
+                value: "Cari",
+                children: "Find"
+              })
             })
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "col-8 mx-0 my-0",
+          className: "row",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "form-group",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-              name: "browse",
-              className: "form-control",
-              placeholder: "Try to Type 'Anniversary'"
+            className: "col my-3",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "searchResult rounded p-2",
+              children: "content"
             })
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "col-2",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-            className: "btn searchBtn px-4",
-            type: "submit",
-            name: "save",
-            value: "Cari",
-            children: "Find"
-          })
         })]
-      })
+      })]
     })]
   });
 };
@@ -10848,7 +10884,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".searchBtn {\r\n    background-color: var(--base-dark-orange);\r\n    color: var(--base-white);\r\n    border: none;\r\n}\r\n\r\n.text-dark-orange {\r\n    color: var(--base-dark-orange);\r\n}\r\n\r\n.text-orange {\r\n    color: var(--base-orange);\r\n}\r\n\r\n.categoryRadio {\r\n    color: var(--base-white);\r\n}\r\n\r\n.filter {\r\n    border: 1.5px solid var(--base-white);\r\n    border-radius: 2%;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".searchInput {\r\n    border: none;\r\n}\r\n\r\n.searchBtnBrowse {\r\n    background-color: var(--base-dark-orange);\r\n    color: var(--base-white);\r\n    border: none;\r\n    width: 100%;\r\n    font-weight: bold;\r\n    font-family: Consolas;\r\n}\r\n\r\n.text-dark-orange {\r\n    color: var(--base-dark-orange);\r\n}\r\n\r\n.text-orange {\r\n    color: var(--base-orange);\r\n}\r\n\r\n.categoryRadio {\r\n    color: var(--base-white);\r\n}\r\n\r\n.filter {\r\n    border: 1.5px solid var(--base-orange);\r\n    border-radius: 2%;\r\n}\r\n\r\n.subFilterTitle {\r\n    margin-top: 2rem;\r\n}\r\n\r\n.form-check-input:checked {\r\n    background-color: var(--base-orange);\r\n    border-color: var(--base-orange);\r\n}\r\n\r\n.searchResult {\r\n    background-color: var(--base-dark-orange);\r\n    color: var(--base-white);\r\n    width: 100%;\r\n    /* border: 0.5rem solid var(--base-dark-orange) */\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

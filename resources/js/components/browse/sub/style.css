@@ -1,7 +1,14 @@
-.searchBtn {
+.searchInput {
+    border: none;
+}
+
+.searchBtnBrowse {
     background-color: var(--base-dark-orange);
     color: var(--base-white);
     border: none;
+    width: 100%;
+    font-weight: bold;
+    font-family: Consolas;
 }
 
 .text-dark-orange {
@@ -17,6 +24,22 @@
 }
 
 .filter {
-    border: 1.5px solid var(--base-white);
+    border: 1.5px solid var(--base-orange);
     border-radius: 2%;
+}
+
+.subFilterTitle {
+    margin-top: 2rem;
+}
+
+.form-check-input:checked {
+    background-color: var(--base-orange);
+    border-color: var(--base-orange);
+}
+
+.searchResult {
+    background-color: var(--base-dark-orange);
+    color: var(--base-white);
+    width: 100%;
+    /* border: 0.5rem solid var(--base-dark-orange) */
 }
