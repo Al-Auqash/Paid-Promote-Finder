@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Select from "react-select";
 import "./style.css";
+
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 const categoryOptions = [
     { value: "sponsor", label: "Sponsor" },
@@ -10,6 +14,7 @@ const categoryOptions = [
 const categoryOptionsStyles = {};
 
 const SearchBar = () => {
+    const [startDate, setStartDate] = useState(new Date());
     return (
         <section className="px-4">
             <p>Find All you need</p>
@@ -96,6 +101,10 @@ const SearchBar = () => {
                             <div className="form-group subFilterTitle">
                                 Time
                             </div>
+                            <DatePicker
+                                selected={startDate}
+                                onChange={(date) => setStartDate(date)}
+                            />
                             {/* <div className="row">
                             <div className="dropdown">
                                 <button
@@ -129,7 +138,7 @@ const SearchBar = () => {
                 </div>
                 <div className="col-10">
                     <div className="row">
-                        <div className="col-10 mx-0 my-0">
+                        <div className="col-10 mb-3">
                             <div className="form-group">
                                 <input
                                     name="browse"
@@ -138,7 +147,7 @@ const SearchBar = () => {
                                 />
                             </div>
                         </div>
-                        <div className="col-2 mx-0 my-0">
+                        <div className="col-2 mb-3">
                             <div className="form-group">
                                 <button
                                     className="form-control btn searchBtnBrowse p-2"
@@ -148,6 +157,20 @@ const SearchBar = () => {
                                 >
                                     Find
                                 </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col my-3">
+                            <div className="searchResult rounded p-2">
+                                content
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col my-3">
+                            <div className="searchResult rounded p-2">
+                                content
                             </div>
                         </div>
                     </div>

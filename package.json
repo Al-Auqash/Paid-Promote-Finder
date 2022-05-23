@@ -24,6 +24,8 @@
         "sass-loader": "^11.0.1"
     },
     "dependencies": {
+        "react-datepicker": "^4.8.0",
+        "react-month-picker": "^2.2.1",
         "react-router-dom": "^6.2.2",
         "react-select": "^5.3.0"
     }
