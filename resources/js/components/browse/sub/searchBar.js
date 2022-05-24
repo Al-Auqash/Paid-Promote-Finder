@@ -1,30 +1,22 @@
 import React, { useState } from "react";
-import Select from "react-select";
-import "./style.css";
-
 import DatePicker from "react-datepicker";
+import "./style.css";
 
 import "react-datepicker/dist/react-datepicker.css";
 
-const categoryOptions = [
-    { value: "sponsor", label: "Sponsor" },
-    { value: "event", label: "Event" },
-];
-
-const categoryOptionsStyles = {};
-
 const SearchBar = () => {
     const [startDate, setStartDate] = useState(new Date());
+
     return (
         <section className="px-4">
             <p>Find All you need</p>
             <form method="post" className="row">
                 <div className="col-2">
                     <div className="row">
-                        <div className="col filter">
+                        <div className="col filter pb-4">
                             <p>Filter</p>
                             <div className="form-group subFilterTitle">
-                                <p>Category</p>
+                                <p className="m-0">Category</p>
                                 <div class="form-check">
                                     <input
                                         class="form-check-input"
@@ -56,7 +48,7 @@ const SearchBar = () => {
                                 </div>
                             </div>
                             <div className="form-group subFilterTitle">
-                                <p>Region</p>
+                                <p className="m-0">Region</p>
                                 <div className="dropdown">
                                     <button
                                         className="btn btn-outline-warning dropdown-toggle"
@@ -99,12 +91,18 @@ const SearchBar = () => {
                                 </div>
                             </div>
                             <div className="form-group subFilterTitle">
-                                Time
+                                <p className="m-0">Time</p>
+                                <DatePicker
+                                    selected={startDate}
+                                    onChange={(date) => setStartDate(date)}
+                                    dateFormat="MM/yyyy"
+                                    showMonthYearPicker
+                                    showFullMonthYearPicker
+                                    className="btn btn-outline-warning dropdown-toggle"
+                                    calendarClassName="calendar"
+                                />
                             </div>
-                            <DatePicker
-                                selected={startDate}
-                                onChange={(date) => setStartDate(date)}
-                            />
+
                             {/* <div className="row">
                             <div className="dropdown">
                                 <button

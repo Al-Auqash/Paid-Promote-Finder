@@ -43,3 +43,7 @@
     width: 100%;
     /* border: 0.5rem solid var(--base-dark-orange) */
 }
+
+.calendar {
+    /* background-color: #f0f0f0 !important; */
+}
