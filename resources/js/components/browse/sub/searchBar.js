@@ -17,30 +17,30 @@ const SearchBar = () => {
                             <p>Filter</p>
                             <div className="form-group subFilterTitle">
                                 <p className="m-0">Category</p>
-                                <div class="form-check">
+                                <div className="form-check">
                                     <input
-                                        class="form-check-input"
+                                        className="form-check-input"
                                         type="radio"
                                         name="flexRadioDefault"
                                         id="flexRadioDefault1"
                                     />
                                     <label
-                                        class="form-check-label"
+                                        className="form-check-label"
                                         for="flexRadioDefault1"
                                     >
                                         Sponsor
                                     </label>
                                 </div>
-                                <div class="form-check">
+                                <div className="form-check">
                                     <input
-                                        class="form-check-input"
+                                        className="form-check-input"
                                         type="radio"
                                         name="flexRadioDefault"
                                         id="flexRadioDefault2"
                                         checked
                                     />
                                     <label
-                                        class="form-check-label"
+                                        className="form-check-label"
                                         for="flexRadioDefault2"
                                     >
                                         Event
@@ -158,7 +158,125 @@ const SearchBar = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="row">
+                    <div className="container p-0">
+                        <div className="row">
+                            <div className="col-sm-2 my-3">
+                                <div
+                                    className="card background-dark-orange"
+                                    // style={{ width: "18rem" }}
+                                >
+                                    <img
+                                        src="images/daph_cat.jpg"
+                                        className="card-img-top"
+                                        alt="..."
+                                    />
+                                    <div className="card-body">
+                                        <p className="card-text">
+                                            Some quick example text to build on
+                                            the card title and make up the bulk
+                                            of the card's content.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-sm-2 my-3">
+                                <div
+                                    className="card background-dark-orange"
+                                    // style={{ width: "18rem" }}
+                                >
+                                    <img
+                                        src="images/daph_cat.jpg"
+                                        className="card-img-top"
+                                        alt="..."
+                                    />
+                                    <div className="card-body">
+                                        <p className="card-text">
+                                            Some quick example text to build on
+                                            the card title and make up the bulk
+                                            of the card's content.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-2 my-3">
+                                <div
+                                    className="card background-dark-orange"
+                                    // style={{ width: "18rem" }}
+                                >
+                                    <img
+                                        src="images/daph_cat.jpg"
+                                        className="card-img-top"
+                                        alt="..."
+                                    />
+                                    <div className="card-body">
+                                        <p className="card-text">
+                                            Some quick example text to build on
+                                            the card title and make up the bulk
+                                            of the card's content.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-2 my-3">
+                                <div
+                                    className="card background-dark-orange"
+                                    // style={{ width: "18rem" }}
+                                >
+                                    <img
+                                        src="images/daph_cat.jpg"
+                                        className="card-img-top"
+                                        alt="..."
+                                    />
+                                    <div className="card-body">
+                                        <p className="card-text">
+                                            Some quick example text to build on
+                                            the card title and make up the bulk
+                                            of the card's content.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-xl-2 my-3">
+                                <div
+                                    className="card background-dark-orange"
+                                    // style={{ width: "18rem" }}
+                                >
+                                    <img
+                                        src="images/daph_cat.jpg"
+                                        className="card-img-top"
+                                        alt="..."
+                                    />
+                                    <div className="card-body">
+                                        <p className="card-text">
+                                            Some quick example text to build on
+                                            the card title and make up the bulk
+                                            of the card's content.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-xl-2 my-3">
+                                <div
+                                    className="card background-dark-orange"
+                                    // style={{ width: "18rem" }}
+                                >
+                                    <img
+                                        src="images/daph_cat.jpg"
+                                        className="card-img-top"
+                                        alt="..."
+                                    />
+                                    <div className="card-body">
+                                        <p className="card-text">
+                                            Some quick example text to build on
+                                            the card title and make up the bulk
+                                            of the card's content.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {/* <div className="row">
                         <div className="col my-3">
                             <div className="searchResult rounded p-2">
                                 content
@@ -171,14 +289,7 @@ const SearchBar = () => {
                                 content
                             </div>
                         </div>
-                    </div>
-                    <div className="row">
-                        <div className="col my-3">
-                            <div className="searchResult rounded p-2">
-                                content
-                            </div>
-                        </div>
-                    </div>
+                    </div> */}
                 </div>
             </form>
         </section>

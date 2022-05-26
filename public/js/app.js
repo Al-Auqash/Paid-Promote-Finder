@@ -5553,27 +5553,27 @@ var SearchBar = function SearchBar() {
                 className: "m-0",
                 children: "Category"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                "class": "form-check",
+                className: "form-check",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
-                  "class": "form-check-input",
+                  className: "form-check-input",
                   type: "radio",
                   name: "flexRadioDefault",
                   id: "flexRadioDefault1"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                  "class": "form-check-label",
+                  className: "form-check-label",
                   "for": "flexRadioDefault1",
                   children: "Sponsor"
                 })]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                "class": "form-check",
+                className: "form-check",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
-                  "class": "form-check-input",
+                  className: "form-check-input",
                   type: "radio",
                   name: "flexRadioDefault",
                   id: "flexRadioDefault2",
                   checked: true
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                  "class": "form-check-label",
+                  className: "form-check-label",
                   "for": "flexRadioDefault2",
                   children: "Event"
                 })]
@@ -5663,31 +5663,112 @@ var SearchBar = function SearchBar() {
             })
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          className: "row",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            className: "col my-3",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-              className: "searchResult rounded p-2",
-              children: "content"
-            })
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          className: "row",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            className: "col my-3",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-              className: "searchResult rounded p-2",
-              children: "content"
-            })
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          className: "row",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            className: "col my-3",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-              className: "searchResult rounded p-2",
-              children: "content"
-            })
+          className: "container p-0",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "row",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              className: "col-sm-2 my-3",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "card background-dark-orange" // style={{ width: "18rem" }}
+                ,
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+                  src: "images/daph_cat.jpg",
+                  className: "card-img-top",
+                  alt: "..."
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                  className: "card-body",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+                    className: "card-text",
+                    children: "Some quick example text to build on the card title and make up the bulk of the card's content."
+                  })
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              className: "col-sm-2 my-3",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "card background-dark-orange" // style={{ width: "18rem" }}
+                ,
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+                  src: "images/daph_cat.jpg",
+                  className: "card-img-top",
+                  alt: "..."
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                  className: "card-body",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+                    className: "card-text",
+                    children: "Some quick example text to build on the card title and make up the bulk of the card's content."
+                  })
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              className: "col-md-2 my-3",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "card background-dark-orange" // style={{ width: "18rem" }}
+                ,
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+                  src: "images/daph_cat.jpg",
+                  className: "card-img-top",
+                  alt: "..."
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                  className: "card-body",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+                    className: "card-text",
+                    children: "Some quick example text to build on the card title and make up the bulk of the card's content."
+                  })
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              className: "col-md-2 my-3",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "card background-dark-orange" // style={{ width: "18rem" }}
+                ,
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+                  src: "images/daph_cat.jpg",
+                  className: "card-img-top",
+                  alt: "..."
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                  className: "card-body",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+                    className: "card-text",
+                    children: "Some quick example text to build on the card title and make up the bulk of the card's content."
+                  })
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              className: "col-xl-2 my-3",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "card background-dark-orange" // style={{ width: "18rem" }}
+                ,
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+                  src: "images/daph_cat.jpg",
+                  className: "card-img-top",
+                  alt: "..."
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                  className: "card-body",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+                    className: "card-text",
+                    children: "Some quick example text to build on the card title and make up the bulk of the card's content."
+                  })
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              className: "col-xl-2 my-3",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "card background-dark-orange" // style={{ width: "18rem" }}
+                ,
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+                  src: "images/daph_cat.jpg",
+                  className: "card-img-top",
+                  alt: "..."
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                  className: "card-body",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+                    className: "card-text",
+                    children: "Some quick example text to build on the card title and make up the bulk of the card's content."
+                  })
+                })]
+              })
+            })]
           })
         })]
       })]
@@ -11021,7 +11102,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".searchInput {\r\n    border: none;\r\n}\r\n\r\n.searchBtnBrowse {\r\n    background-color: var(--base-dark-orange);\r\n    color: var(--base-white);\r\n    border: none;\r\n    width: 100%;\r\n    font-weight: bold;\r\n    font-family: Consolas;\r\n}\r\n\r\n.text-dark-orange {\r\n    color: var(--base-dark-orange);\r\n}\r\n\r\n.text-orange {\r\n    color: var(--base-orange);\r\n}\r\n\r\n.categoryRadio {\r\n    color: var(--base-white);\r\n}\r\n\r\n.filter {\r\n    border: 1.5px solid var(--base-orange);\r\n    border-radius: 2%;\r\n}\r\n\r\n.subFilterTitle {\r\n    margin-top: 2rem;\r\n}\r\n\r\n.form-check-input:checked {\r\n    background-color: var(--base-orange);\r\n    border-color: var(--base-orange);\r\n}\r\n\r\n.searchResult {\r\n    background-color: var(--base-dark-orange);\r\n    color: var(--base-white);\r\n    width: 100%;\r\n    /* border: 0.5rem solid var(--base-dark-orange) */\r\n}\r\n\r\n.calendar {\r\n    /* background-color: #f0f0f0 !important; */\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".searchInput {\r\n    border: none;\r\n}\r\n\r\n.searchBtnBrowse {\r\n    background-color: var(--base-dark-orange);\r\n    color: var(--base-white);\r\n    border: none;\r\n    width: 100%;\r\n    font-weight: bold;\r\n    font-family: Consolas;\r\n}\r\n\r\n.text-dark-orange {\r\n    color: var(--base-dark-orange);\r\n}\r\n\r\n.text-orange {\r\n    color: var(--base-orange);\r\n}\r\n\r\n.background-dark-orange {\r\n    background-color: var(--base-dark-orange);\r\n}\r\n\r\n.background-orange {\r\n    background-color: var(--base-orange);\r\n}\r\n\r\n.categoryRadio {\r\n    color: var(--base-white);\r\n}\r\n\r\n.filter {\r\n    border: 1.5px solid var(--base-orange);\r\n    border-radius: 2%;\r\n}\r\n\r\n.subFilterTitle {\r\n    margin-top: 2rem;\r\n}\r\n\r\n.form-check-input:checked {\r\n    background-color: var(--base-orange);\r\n    border-color: var(--base-orange);\r\n}\r\n\r\n.searchResult {\r\n    background-color: var(--base-dark-orange);\r\n    color: var(--base-white);\r\n    width: 100%;\r\n    /* border: 0.5rem solid var(--base-dark-orange) */\r\n}\r\n\r\n.calendar {\r\n    /* background-color: #f0f0f0 !important; */\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
