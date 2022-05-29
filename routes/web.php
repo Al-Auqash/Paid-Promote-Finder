@@ -16,7 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('/layouts/app');
 });
+
 Route::get('/browse', function () {
+    return view('/layouts/app');
+});
+
+Route::get('/authentication/signIn', function () {
+    return view('/layouts/app');
+});
+
+Route::get('/authentication/signUp', function () {
     return view('/layouts/app');
 });
 

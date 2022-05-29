@@ -1,0 +1,9 @@
+.link-form {
+    text-decoration: none;
+}
+
+.link-form:hover {
+    text-decoration: none;
+    color: var(--base-white);
+    cursor: pointer;
+}

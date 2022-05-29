@@ -11,14 +11,16 @@ import "./App.css";
 
 import Main from "./main/index";
 import Browse from "./browse/index";
+import Authentication from "./authentication/index";
 
 function App() {
     return (
-        <div className="container-fluid vh-100 m-0">
+        <div className="container-fluid h-100 m-0">
             <Router>
                 <Routes>
                     <Route path="/" element={<Main />} />
                     <Route path="/browse" element={<Browse />} />
+                    <Route path="/authentication/*" element={<Authentication />} />
                 </Routes>
             </Router>
         </div>

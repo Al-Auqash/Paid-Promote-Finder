@@ -27,3 +27,11 @@
 .text-orange {
     color: var(--base-orange);
 }
+
+.background-dark-orange {
+    background-color: var(--base-dark-orange);
+}
+
+.background-orange {
+    background-color: var(--base-orange);
+}

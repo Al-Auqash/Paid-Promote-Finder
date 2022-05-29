@@ -98,13 +98,13 @@
                         </li>
                         @if (Route::has('login'))
                         <li class="nav-item">
-                            <a class="btn btn-outline-warning px-4 mx-2 btnNav" href="{{ route('login') }}">{{ __('Sign In') }}</a>
+                            <a class="btn btn-outline-warning px-4 mx-2 btnNav" href="{{ url('/authentication/signIn') }}">{{ __('Sign In') }}</a>
                         </li>
                         @endif
 
                         @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="btn btn-warning px-4 mx-2 btnNav" href="{{ route('register') }}">{{ __('Sign Up') }}</a>
+                            <a class="btn btn-warning px-4 mx-2 btnNav" href="{{ url('/authentication/signUp') }}">{{ __('Sign Up') }}</a>
                         </li>
                         @endif
                         @else
