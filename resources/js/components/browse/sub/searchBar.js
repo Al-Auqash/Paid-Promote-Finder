@@ -4,7 +4,7 @@ import "./style.css";
 
 import "react-datepicker/dist/react-datepicker.css";
 
-const SearchBar = () => {
+const searchBar = () => {
     const [startDate, setStartDate] = useState(new Date());
 
     return (
@@ -22,11 +22,11 @@ const SearchBar = () => {
                                         className="form-check-input"
                                         type="radio"
                                         name="sponsor"
-                                        id="sponsor"
+                                        id="flexRadioDefault1"
                                     />
                                     <label
                                         className="form-check-label"
-                                        for="sponsor"
+                                        for="flexRadioDefault1"
                                     >
                                         Sponsor
                                     </label>
@@ -36,11 +36,11 @@ const SearchBar = () => {
                                         className="form-check-input"
                                         type="radio"
                                         name="event"
-                                        id="event"
+                                        id="flexRadioDefault2"
                                     />
                                     <label
                                         className="form-check-label"
-                                        for="event"
+                                        for="flexRadioDefault2"
                                     >
                                         Event
                                     </label>
@@ -295,4 +295,4 @@ const SearchBar = () => {
     );
 };
 
-export default SearchBar;
+export default searchBar;

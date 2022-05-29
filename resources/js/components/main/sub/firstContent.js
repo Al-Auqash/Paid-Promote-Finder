@@ -1,7 +1,7 @@
 import React from "react";
 
 import Main from "../../../../img/main.png";
-import "./style.css";
+import "./Style.css";
 
 const firstContent = () => {
     return (

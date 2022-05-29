@@ -9,9 +9,9 @@ import {
 
 import "./App.css";
 
-import Main from "./main/index";
-import Browse from "./browse/index";
-import Authentication from "./authentication/index";
+import Main from "./main/Index";
+import Browse from "./browse/Index";
+import Authentication from "./authentication/Index";
 
 function App() {
     return (

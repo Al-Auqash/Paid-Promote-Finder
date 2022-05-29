@@ -35,10 +35,12 @@
     ); */
 }
 
-.cardHowTo {
-    border-color: var(--base-orange);
-    width: 18rem;
-    background-color: var(--base-background-color);
+.card-how-to {
+    border: 1px var(--base-grey);
+    border-radius: 20px;
+    width: 12rem;
+    height: 12rem;
+    padding: 0.5rem;
 }
 
 .display-flex-col {

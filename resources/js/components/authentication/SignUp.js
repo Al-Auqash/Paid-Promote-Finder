@@ -2,7 +2,7 @@ import React from "react";
 
 import "./../App.css";
 
-const SignUp = () => {
+const signUp = () => {
     return (
         <div className="container">
             <form method="post" className="form-group p-4 w-75">
@@ -65,4 +65,4 @@ const SignUp = () => {
         </div>
     );
 };
-export default SignUp;
+export default signUp;

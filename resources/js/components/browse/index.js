@@ -2,7 +2,7 @@ import React from "react";
 
 import SearchBar from "./sub/searchBar";
 
-const Index = () => {
+const index = () => {
     return (
         <div class="d-flex flex-column">
             <SearchBar />
@@ -10,4 +10,4 @@ const Index = () => {
     );
 };
 
-export default Index;
+export default index;

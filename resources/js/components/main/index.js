@@ -1,7 +1,7 @@
 import React from "react";
 
-import FirstContent from "./sub/firstContent";
-import SecondContent from "./sub/secondContent";
+import FirstContent from "./sub/FirstContent";
+import SecondContent from "./sub/SecondContent";
 
 const Index = () => {
     return (

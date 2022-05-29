@@ -1,6 +1,6 @@
 import React from "react";
 
-const Result = () => {
+const result = () => {
     return (
         <div>
             <img src="images/daph_cat.jpg" className="" alt="..." />
@@ -9,4 +9,4 @@ const Result = () => {
     );
 };
 
-export default Result;
+export default result;
