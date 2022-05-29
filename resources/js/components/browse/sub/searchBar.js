@@ -21,12 +21,12 @@ const SearchBar = () => {
                                     <input
                                         className="form-check-input"
                                         type="radio"
-                                        name="flexRadioDefault"
-                                        id="flexRadioDefault1"
+                                        name="sponsor"
+                                        id="sponsor"
                                     />
                                     <label
                                         className="form-check-label"
-                                        for="flexRadioDefault1"
+                                        for="sponsor"
                                     >
                                         Sponsor
                                     </label>
@@ -35,13 +35,12 @@ const SearchBar = () => {
                                     <input
                                         className="form-check-input"
                                         type="radio"
-                                        name="flexRadioDefault"
-                                        id="flexRadioDefault2"
-                                        checked
+                                        name="event"
+                                        id="event"
                                     />
                                     <label
                                         className="form-check-label"
-                                        for="flexRadioDefault2"
+                                        for="event"
                                     >
                                         Event
                                     </label>
@@ -159,8 +158,8 @@ const SearchBar = () => {
                         </div>
                     </div>
                     <div className="container p-0">
-                        <div className="row">
-                            <div className="col-sm-2 my-3">
+                        <div className="grid-wrapper">
+                            <div className="my-3">
                                 <div
                                     className="card background-dark-orange"
                                     // style={{ width: "18rem" }}
@@ -179,7 +178,7 @@ const SearchBar = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-sm-2 my-3">
+                            <div className="my-3">
                                 <div
                                     className="card background-dark-orange"
                                     // style={{ width: "18rem" }}
@@ -198,7 +197,7 @@ const SearchBar = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-2 my-3">
+                            <div className="my-3">
                                 <div
                                     className="card background-dark-orange"
                                     // style={{ width: "18rem" }}
@@ -217,7 +216,7 @@ const SearchBar = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-2 my-3">
+                            <div className="my-3">
                                 <div
                                     className="card background-dark-orange"
                                     // style={{ width: "18rem" }}
@@ -236,7 +235,7 @@ const SearchBar = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-xl-2 my-3">
+                            <div className="my-3">
                                 <div
                                     className="card background-dark-orange"
                                     // style={{ width: "18rem" }}
@@ -255,7 +254,7 @@ const SearchBar = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-xl-2 my-3">
+                            <div className="my-3">
                                 <div
                                     className="card background-dark-orange"
                                     // style={{ width: "18rem" }}

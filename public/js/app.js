@@ -5516,17 +5516,17 @@ var SignIn = function SignIn() {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "form-group py-2",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-          className: "text-dark-orange link-form",
+          className: "text-dark-orange link-form fs-6",
           children: "forgot password?"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "form-group py-2",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-          className: "form-control btn btn-warning",
+          className: "form-control btn btn-warning fs-5 py-3",
           children: "SIGN IN"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "form-group py-2",
+        className: "form-group py-2 text-center",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
           className: "text-dark-orange p-0 m-0",
           children: "or"
@@ -5534,13 +5534,13 @@ var SignIn = function SignIn() {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "form-group py-2",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-          className: "form-control btn btn-outline-warning",
+          className: "form-control btn btn-outline-warning fs-5 py-3",
           children: "SIGN UP FOR FREE"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "form-group py-2",
+        className: "form-group py-2 text-center",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-          className: "text-dark-orange link-form",
+          className: "text-dark-orange link-form fs-6",
           children: "terms and conditions"
         })
       })]
@@ -5572,12 +5572,83 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var SignUp = function SignUp() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-      children: "adas"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-      children: "adas"
-    })]
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "container",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
+      method: "post",
+      className: "form-group p-4 w-75",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "form-group py-2",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+          className: "form-check-label",
+          children: "Username"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+          className: "form-control",
+          type: "text",
+          name: "username",
+          id: "username"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "form-group py-2",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+          className: "form-check-label",
+          children: "Email"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+          className: "form-control",
+          type: "text",
+          name: "email",
+          id: "email"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "form-group py-2",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+          className: "form-check-label",
+          children: "Password"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+          className: "form-control",
+          type: "text",
+          name: "password",
+          id: "password"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "form-group py-2",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+          className: "form-check-label",
+          children: "Confirm Password"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+          className: "form-control",
+          type: "text",
+          name: "confirmPassword",
+          id: "confirmPassword"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "form-group py-2",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+          className: "form-control btn btn-warning fs-5 py-3",
+          children: "SIGN UP"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "form-group py-2 text-center",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+          className: "text-dark-orange link-form fs-6",
+          children: "Already Have an account?"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "form-group py-2",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+          className: "link-form signUpText",
+          children: ["By signing in or creating an account, you agree to our", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+            className: "text-dark-orange link-form",
+            href: "/termsAndCondition",
+            children: "Terms and Conditions"
+          }), " &", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+            className: "text-dark-orange link-form",
+            href: "/privacyPolicy",
+            children: "Privacy Policy"
+          }), ". We need this information to be able to contact you and to prevent cheating or fraud."]
+        })
+      })]
+    })
   });
 };
 
@@ -5737,11 +5808,11 @@ var SearchBar = function SearchBar() {
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
                   className: "form-check-input",
                   type: "radio",
-                  name: "flexRadioDefault",
-                  id: "flexRadioDefault1"
+                  name: "sponsor",
+                  id: "sponsor"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
                   className: "form-check-label",
-                  "for": "flexRadioDefault1",
+                  "for": "sponsor",
                   children: "Sponsor"
                 })]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
@@ -5749,12 +5820,11 @@ var SearchBar = function SearchBar() {
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
                   className: "form-check-input",
                   type: "radio",
-                  name: "flexRadioDefault",
-                  id: "flexRadioDefault2",
-                  checked: true
+                  name: "event",
+                  id: "event"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
                   className: "form-check-label",
-                  "for": "flexRadioDefault2",
+                  "for": "event",
                   children: "Event"
                 })]
               })]
@@ -5845,9 +5915,9 @@ var SearchBar = function SearchBar() {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
           className: "container p-0",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-            className: "row",
+            className: "grid-wrapper",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-              className: "col-sm-2 my-3",
+              className: "my-3",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
                 className: "card background-dark-orange" // style={{ width: "18rem" }}
                 ,
@@ -5864,7 +5934,7 @@ var SearchBar = function SearchBar() {
                 })]
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-              className: "col-sm-2 my-3",
+              className: "my-3",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
                 className: "card background-dark-orange" // style={{ width: "18rem" }}
                 ,
@@ -5881,7 +5951,7 @@ var SearchBar = function SearchBar() {
                 })]
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-              className: "col-md-2 my-3",
+              className: "my-3",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
                 className: "card background-dark-orange" // style={{ width: "18rem" }}
                 ,
@@ -5898,7 +5968,7 @@ var SearchBar = function SearchBar() {
                 })]
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-              className: "col-md-2 my-3",
+              className: "my-3",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
                 className: "card background-dark-orange" // style={{ width: "18rem" }}
                 ,
@@ -5915,7 +5985,7 @@ var SearchBar = function SearchBar() {
                 })]
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-              className: "col-xl-2 my-3",
+              className: "my-3",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
                 className: "card background-dark-orange" // style={{ width: "18rem" }}
                 ,
@@ -5932,7 +6002,7 @@ var SearchBar = function SearchBar() {
                 })]
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-              className: "col-xl-2 my-3",
+              className: "my-3",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
                 className: "card background-dark-orange" // style={{ width: "18rem" }}
                 ,
@@ -11282,7 +11352,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".link-form {\r\n    text-decoration: none;\r\n}\r\n\r\n.link-form:hover {\r\n    text-decoration: none;\r\n    color: var(--base-white);\r\n    cursor: pointer;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* body{\r\n    background-image: linear-gradient(135deg, #222831, #393E46)\r\n} */\r\n\r\n.link-form {\r\n    text-decoration: none;\r\n}\r\n\r\n.link-form:hover {\r\n    text-decoration: none;\r\n    color: var(--base-white);\r\n    cursor: pointer;\r\n}\r\n\r\n.signUpText {\r\n    font-family: arial;\r\n    font-size: 9pt;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -11306,7 +11376,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".searchInput {\r\n    border: none;\r\n}\r\n\r\n.searchBtnBrowse {\r\n    background-color: var(--base-dark-orange);\r\n    color: var(--base-white);\r\n    border: none;\r\n    width: 100%;\r\n    font-weight: bold;\r\n    font-family: Consolas;\r\n}\r\n\r\n.text-dark-orange {\r\n    color: var(--base-dark-orange);\r\n}\r\n\r\n.text-orange {\r\n    color: var(--base-orange);\r\n}\r\n\r\n.background-dark-orange {\r\n    background-color: var(--base-dark-orange);\r\n}\r\n\r\n.background-orange {\r\n    background-color: var(--base-orange);\r\n}\r\n\r\n.categoryRadio {\r\n    color: var(--base-white);\r\n}\r\n\r\n.filter {\r\n    border: 1.5px solid var(--base-orange);\r\n    border-radius: 2%;\r\n}\r\n\r\n.subFilterTitle {\r\n    margin-top: 2rem;\r\n}\r\n\r\n.form-check-input:checked {\r\n    background-color: var(--base-orange);\r\n    border-color: var(--base-orange);\r\n}\r\n\r\n.searchResult {\r\n    background-color: var(--base-dark-orange);\r\n    color: var(--base-white);\r\n    width: 100%;\r\n    /* border: 0.5rem solid var(--base-dark-orange) */\r\n}\r\n\r\n.calendar {\r\n    /* background-color: #f0f0f0 !important; */\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".searchInput {\r\n    border: none;\r\n}\r\n\r\n.searchBtnBrowse {\r\n    background-color: var(--base-dark-orange);\r\n    color: var(--base-white);\r\n    border: none;\r\n    width: 100%;\r\n    font-weight: bold;\r\n    font-family: Consolas;\r\n}\r\n\r\n.text-dark-orange {\r\n    color: var(--base-dark-orange);\r\n}\r\n\r\n.text-orange {\r\n    color: var(--base-orange);\r\n}\r\n\r\n.background-dark-orange {\r\n    background-color: var(--base-dark-orange);\r\n}\r\n\r\n.background-orange {\r\n    background-color: var(--base-orange);\r\n}\r\n\r\n.categoryRadio {\r\n    color: var(--base-white);\r\n}\r\n\r\n.filter {\r\n    border: 1.5px solid var(--base-orange);\r\n    border-radius: 2%;\r\n}\r\n\r\n.subFilterTitle {\r\n    margin-top: 2rem;\r\n}\r\n\r\n.form-check-input:checked {\r\n    background-color: var(--base-orange);\r\n    border-color: var(--base-orange);\r\n}\r\n\r\n.searchResult {\r\n    background-color: var(--base-dark-orange);\r\n    color: var(--base-white);\r\n    width: 100%;\r\n    /* border: 0.5rem solid var(--base-dark-orange) */\r\n}\r\n\r\n.calendar {\r\n    /* background-color: #f0f0f0 !important; */\r\n}\r\n\r\n.grid-wrapper{\r\n    display: grid;\r\n    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));\r\n    -moz-column-gap: 2rem;\r\n         column-gap: 2rem;\r\n    row-gap: 2rem;\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
