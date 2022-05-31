@@ -4,7 +4,7 @@ import SearchBar from "./sub/SearchBar";
 
 const index = () => {
     return (
-        <div className="d-flex flex-column">
+        <div className="d-flex flex-column second-font-family">
             <SearchBar />
         </div>
     );

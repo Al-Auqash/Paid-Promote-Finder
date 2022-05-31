@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, Routes, Route } from "react-router-dom";
 import DatePicker from "react-datepicker";
 
-import "./style.css";
+import "./Style.css";
 import "react-datepicker/dist/react-datepicker.css";
 
 import Result from "./Result";
@@ -13,7 +13,7 @@ const searchBar = () => {
 
     return (
         <section className="px-4">
-            <p>Find All you need</p>
+            {/* <p>Find All you need</p> */}
             <form method="post" className="row">
                 <div className="col-2">
                     <div className="row">
@@ -105,35 +105,6 @@ const searchBar = () => {
                                     calendarClassName="calendar"
                                 />
                             </div>
-
-                            {/* <div className="row">
-                            <div className="dropdown">
-                                <button
-                                    className="btn btn-outline-warning dropdown-toggle"
-                                    type="button"
-                                    id="categoryButton"
-                                    data-bs-toggle="dropdown"
-                                    aria-expanded="false"
-                                >
-                                    Category
-                                </button>
-                                <ul
-                                    className="dropdown-menu"
-                                    aria-labelledby="categoryButton"
-                                >
-                                    <li>
-                                        <a className="dropdown-item" href="#">
-                                            Sponsor
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a className="dropdown-item" href="#">
-                                            Event
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div> */}
                         </div>
                     </div>
                 </div>
@@ -169,20 +140,6 @@ const searchBar = () => {
                             </Routes>
                         </div>
                     </div>
-                    {/* <div className="row">
-                        <div className="col my-3">
-                            <div className="searchResult rounded p-2">
-                                content
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col my-3">
-                            <div className="searchResult rounded p-2">
-                                content
-                            </div>
-                        </div>
-                    </div> */}
                 </div>
             </form>
         </section>

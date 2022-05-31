@@ -56,9 +56,19 @@
     /* background-color: #f0f0f0 !important; */
 }
 
-.grid-wrapper{
+.grid-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
     column-gap: 2rem;
     row-gap: 2rem;
+}
+
+.card-search-text {
+    color: var(--base-white);
+    text-decoration: none;
+}
+
+.card-search-text:hover {
+    opacity: 0.8;
+    color: var(--base-white);
 }

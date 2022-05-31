@@ -5,6 +5,7 @@
     --base-background-color: #222831;
     --base-grey: #393e46;
     --base-font-family: "Akaya Kanadaka", cursive;
+    --base-second-font-family: "Nunito", sans-serif;
 }
 
 .display-flex-col {
@@ -39,4 +40,12 @@
 
 .background-grey {
     background-color: var(--base-grey);
+}
+
+.first-font-family{
+    font-family: var(--base-font-family) !important;
+}
+
+.second-font-family {
+    font-family: var(--base-second-font-family) !important;
 }
