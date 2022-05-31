@@ -5,7 +5,7 @@ import DatePicker from "react-datepicker";
 import "./style.css";
 import "react-datepicker/dist/react-datepicker.css";
 
-import Result from "../result/Result";
+import Result from "./Result";
 import Card from "./Card";
 
 const searchBar = () => {
@@ -25,7 +25,7 @@ const searchBar = () => {
                                     <input
                                         className="form-check-input"
                                         type="radio"
-                                        name="sponsor"
+                                        name="category"
                                         id="flexRadioDefault1"
                                     />
                                     <label
@@ -39,7 +39,7 @@ const searchBar = () => {
                                     <input
                                         className="form-check-input"
                                         type="radio"
-                                        name="event"
+                                        name="category"
                                         id="flexRadioDefault2"
                                     />
                                     <label
@@ -54,7 +54,7 @@ const searchBar = () => {
                                 <p className="m-0">Region</p>
                                 <div className="dropdown">
                                     <button
-                                        className="btn btn-outline-warning dropdown-toggle"
+                                        className="btn btn-outline-warning dropdown-toggle w-100"
                                         type="button"
                                         id="categoryButton"
                                         data-bs-toggle="dropdown"
@@ -63,7 +63,7 @@ const searchBar = () => {
                                         Region
                                     </button>
                                     <ul
-                                        className="dropdown-menu"
+                                        className="dropdown-menu w-100"
                                         aria-labelledby="categoryButton"
                                     >
                                         <li>
@@ -101,7 +101,7 @@ const searchBar = () => {
                                     dateFormat="MM/yyyy"
                                     showMonthYearPicker
                                     showFullMonthYearPicker
-                                    className="btn btn-outline-warning dropdown-toggle"
+                                    className="btn btn-outline-warning dropdown-toggle w-100"
                                     calendarClassName="calendar"
                                 />
                             </div>

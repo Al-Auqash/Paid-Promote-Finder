@@ -88,6 +88,14 @@
   font-weight: bold !important;
 }
 
+.btn-outline-warning:active{
+    background-color: var(--base-dark-orange) !important;
+}
+
+.dropdown-toggle:active{
+    background-color: var(--base-dark-orange) !important;
+}
+
 body {
     margin: 0;
     font-family: var(--bs-body-font-family);

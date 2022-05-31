@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Card = () => {
+const card = () => {
     return (
         <div>
             <Link to="/browse/result" className="my-3">
@@ -26,4 +26,4 @@ const Card = () => {
     );
 };
 
-export default Card;
+export default card;
