@@ -19,7 +19,7 @@ function App() {
             <Router>
                 <Routes>
                     <Route path="/" element={<Main />} />
-                    <Route path="/browse" element={<Browse />} />
+                    <Route path="/browse/*" element={<Browse />} />
                     <Route path="/authentication/*" element={<Authentication />} />
                 </Routes>
             </Router>

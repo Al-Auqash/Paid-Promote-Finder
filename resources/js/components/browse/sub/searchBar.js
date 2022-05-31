@@ -1,8 +1,12 @@
 import React, { useState } from "react";
+import { Link, Routes, Route } from "react-router-dom";
 import DatePicker from "react-datepicker";
-import "./style.css";
 
+import "./style.css";
 import "react-datepicker/dist/react-datepicker.css";
+
+import Result from "../result/Result";
+import Card from "./Card";
 
 const searchBar = () => {
     const [startDate, setStartDate] = useState(new Date());
@@ -159,120 +163,10 @@ const searchBar = () => {
                     </div>
                     <div className="container p-0">
                         <div className="grid-wrapper">
-                            <div className="my-3">
-                                <div
-                                    className="card background-dark-orange"
-                                    // style={{ width: "18rem" }}
-                                >
-                                    <img
-                                        src="images/daph_cat.jpg"
-                                        className="card-img-top"
-                                        alt="..."
-                                    />
-                                    <div className="card-body">
-                                        <p className="card-text">
-                                            Some quick example text to build on
-                                            the card title and make up the bulk
-                                            of the card's content.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="my-3">
-                                <div
-                                    className="card background-dark-orange"
-                                    // style={{ width: "18rem" }}
-                                >
-                                    <img
-                                        src="images/daph_cat.jpg"
-                                        className="card-img-top"
-                                        alt="..."
-                                    />
-                                    <div className="card-body">
-                                        <p className="card-text">
-                                            Some quick example text to build on
-                                            the card title and make up the bulk
-                                            of the card's content.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="my-3">
-                                <div
-                                    className="card background-dark-orange"
-                                    // style={{ width: "18rem" }}
-                                >
-                                    <img
-                                        src="images/daph_cat.jpg"
-                                        className="card-img-top"
-                                        alt="..."
-                                    />
-                                    <div className="card-body">
-                                        <p className="card-text">
-                                            Some quick example text to build on
-                                            the card title and make up the bulk
-                                            of the card's content.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="my-3">
-                                <div
-                                    className="card background-dark-orange"
-                                    // style={{ width: "18rem" }}
-                                >
-                                    <img
-                                        src="images/daph_cat.jpg"
-                                        className="card-img-top"
-                                        alt="..."
-                                    />
-                                    <div className="card-body">
-                                        <p className="card-text">
-                                            Some quick example text to build on
-                                            the card title and make up the bulk
-                                            of the card's content.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="my-3">
-                                <div
-                                    className="card background-dark-orange"
-                                    // style={{ width: "18rem" }}
-                                >
-                                    <img
-                                        src="images/daph_cat.jpg"
-                                        className="card-img-top"
-                                        alt="..."
-                                    />
-                                    <div className="card-body">
-                                        <p className="card-text">
-                                            Some quick example text to build on
-                                            the card title and make up the bulk
-                                            of the card's content.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="my-3">
-                                <div
-                                    className="card background-dark-orange"
-                                    // style={{ width: "18rem" }}
-                                >
-                                    <img
-                                        src="images/daph_cat.jpg"
-                                        className="card-img-top"
-                                        alt="..."
-                                    />
-                                    <div className="card-body">
-                                        <p className="card-text">
-                                            Some quick example text to build on
-                                            the card title and make up the bulk
-                                            of the card's content.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                            <Routes>
+                                <Route path="/" element={<Card />} />
+                                <Route path="/result" element={<Result />} />
+                            </Routes>
                         </div>
                     </div>
                     {/* <div className="row">
