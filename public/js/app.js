@@ -6154,39 +6154,35 @@ var secondContent = function secondContent() {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "display-flex-row h-100 p-0 my-4 secondContent",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "text-center mx-5 card-how-to background-grey",
+        className: "mx-5 card-how-to background-grey",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
-          className: "card-title text-dark-orange",
+          className: "text-dark-orange",
           children: "Register"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-          className: "card-text",
           children: "Sign Up to get free access to Paid Promote Finder"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "text-center mx-5 card-how-to background-grey",
+        className: "mx-5 card-how-to background-grey",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
-          className: "card-title text-dark-orange",
+          className: "text-dark-orange",
           children: "Share"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-          className: "card-text",
           children: "Post your event or sponsor in the Paid Promote Finder"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "text-center mx-5 card-how-to background-grey",
+        className: "mx-5 card-how-to background-grey",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
-          className: "card-title text-dark-orange",
+          className: "text-dark-orange",
           children: "Contact"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-          className: "card-text",
           children: "Make comunication with your target and start making contract"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "text-center mx-5 card-how-to background-grey",
+        className: "mx-5 card-how-to background-grey",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
-          className: "card-title text-dark-orange",
+          className: "text-dark-orange",
           children: "Finish & rate"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-          className: "card-text",
           children: "finish contract and rate based on your experience for further improvement"
         })]
       })]
@@ -11429,7 +11425,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ":root {\r\n    --base-orange: #ff7315;\r\n    --base-dark-orange: #ff5722;\r\n    --base-white: #f4f4f4;\r\n    --base-background-color: #222831;\r\n    --base-font-family: \"Akaya Kanadaka\", cursive;\r\n}\r\n\r\n.height-full {\r\n    height: 80vh;\r\n}\r\n\r\n.searchInput {\r\n    border: none;\r\n}\r\n\r\n.searchBtn {\r\n    background-color: var(--base-dark-orange);\r\n    color: var(--base-white);\r\n    border: none;\r\n}\r\n\r\n.joinBtn {\r\n    color: var(--base-dark-orange);\r\n    text-decoration: none;\r\n}\r\n\r\n.image {\r\n    width: 100%;\r\n    height: 50%;\r\n    /* background-image: linear-gradient(\r\n        to left,\r\n        transparent,\r\n        var(--base-background-color)\r\n    ); */\r\n}\r\n\r\n.card-how-to {\r\n    border: 1px var(--base-grey);\r\n    border-radius: 20px;\r\n    width: 12rem;\r\n    height: 12rem;\r\n    padding: 0.5rem;\r\n}\r\n\r\n.display-flex-col {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-item: center;\r\n}\r\n\r\n.display-flex-row {\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-item: center;\r\n}\r\n\r\n.text-dark-orange {\r\n    color: var(--base-dark-orange);\r\n}\r\n\r\n.text-orange {\r\n    color: var(--base-orange);\r\n}\r\n\r\n@media (max-width: 768px) {\r\n    .secondContent {\r\n        display: flex;\r\n        flex-direction: column;\r\n        justify-content: center;\r\n        align-item: center;\r\n    }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ":root {\r\n    --base-orange: #ff7315;\r\n    --base-dark-orange: #ff5722;\r\n    --base-white: #f4f4f4;\r\n    --base-background-color: #222831;\r\n    --base-font-family: \"Akaya Kanadaka\", cursive;\r\n}\r\n\r\n.height-full {\r\n    height: 80vh;\r\n}\r\n\r\n.searchInput {\r\n    border: none;\r\n}\r\n\r\n.searchBtn {\r\n    background-color: var(--base-dark-orange);\r\n    color: var(--base-white);\r\n    border: none;\r\n}\r\n\r\n.joinBtn {\r\n    color: var(--base-dark-orange);\r\n    text-decoration: none;\r\n}\r\n\r\n.image {\r\n    width: 100%;\r\n    height: 50%;\r\n    /* background-image: linear-gradient(\r\n        to left,\r\n        transparent,\r\n        var(--base-background-color)\r\n    ); */\r\n}\r\n\r\n.card-how-to {\r\n    border: 1px var(--base-grey);\r\n    border-radius: 20px;\r\n    width: 12rem;\r\n    height: 12rem;\r\n    padding: 0.5rem;\r\n    text-align: center;\r\n    vertical-align: middle;\r\n}\r\n\r\n.display-flex-col {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-item: center;\r\n}\r\n\r\n.display-flex-row {\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-item: center;\r\n}\r\n\r\n.text-dark-orange {\r\n    color: var(--base-dark-orange);\r\n}\r\n\r\n.text-orange {\r\n    color: var(--base-orange);\r\n}\r\n\r\n@media (max-width: 768px) {\r\n    .secondContent {\r\n        display: flex;\r\n        flex-direction: column;\r\n        justify-content: center;\r\n        align-item: center;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
