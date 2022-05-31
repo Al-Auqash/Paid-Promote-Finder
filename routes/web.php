@@ -17,17 +17,39 @@ Route::get('/', function () {
     return view('/layouts/app');
 });
 
-Route::get('/browse', function () {
-    return view('/layouts/app');
+Route::prefix('browse')->group(function () {
+    Route::get('/', function () {
+        return view('/layouts/app');
+    });
+    Route::get('/result', function () {
+        return view('/layouts/app');
+    });
 });
 
-Route::get('/authentication/signIn', function () {
-    return view('/layouts/app');
+Route::prefix('authentication')->group(function () {
+    Route::get('/signIn', function () {
+        return view('/layouts/app');
+    });
+    Route::get('/signUp', function () {
+        return view('/layouts/app');
+    });
 });
 
-Route::get('/authentication/signUp', function () {
-    return view('/layouts/app');
-});
+// Route::get('/browse', function () {
+//     return view('/layouts/app');
+// });
+
+// Route::get('/browse/result', function () {
+//     return view('/layouts/app');
+// });
+
+// Route::get('/authentication/signIn', function () {
+//     return view('/layouts/app');
+// });
+
+// Route::get('/authentication/signUp', function () {
+//     return view('/layouts/app');
+// });
 
 // Route::get('{path}', function () {
 //     return view('/layouts/app');
