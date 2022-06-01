@@ -133,7 +133,7 @@ const searchBar = () => {
                         </div>
                     </div>
                     <div className="container p-0">
-                        <div className="grid-wrapper">
+                        <div>
                             <Routes>
                                 <Route path="/" element={<Card />} />
                                 <Route path="/result" element={<Result />} />

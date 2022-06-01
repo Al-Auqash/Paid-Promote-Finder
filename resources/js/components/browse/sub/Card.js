@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const card = () => {
     return (
-        <div>
+        <div className="grid-wrapper">
             <Link to="/browse/result" className="my-3 card-search-text">
                 <div className="card background-orange">
                     <img
