@@ -35,6 +35,18 @@ Route::prefix('authentication')->group(function () {
     });
 });
 
+Route::prefix('dashboard')->group(function () {
+    Route::get('/login', function () {
+        return view('/layouts/dashboard');
+    });
+    Route::get('/login', function () {
+        return view('/layouts/dashboard');
+    });
+    Route::get('/register', function () {
+        return view('/layouts/dashboard');
+    });
+});
+
 // Route::get('/browse', function () {
 //     return view('/layouts/app');
 // });

@@ -67,8 +67,39 @@
     --base-orange: #ff7315;
     --base-dark-orange: #FF5722;
     --base-white: #f4f4f4;
+    --base-grey: #393e46;
     --base-background-color: #222831;
     --base-font-family: "Akaya Kanadaka", cursive;
+    --base-second-font-family: "Nunito", sans-serif;
+}
+
+
+.text-dark-orange {
+    color: var(--base-dark-orange);
+}
+
+.text-orange {
+    color: var(--base-orange);
+}
+
+.background-dark-orange {
+    background-color: var(--base-dark-orange);
+}
+
+.background-orange {
+    background-color: var(--base-orange);
+}
+
+.background-grey {
+    background-color: var(--base-grey);
+}
+
+.first-font-family{
+    font-family: var(--base-font-family) !important;
+}
+
+.second-font-family {
+    font-family: var(--base-second-font-family) !important;
 }
 
 *,
