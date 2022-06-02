@@ -13,8 +13,8 @@ class CreateFlowsProcessTable extends Migration
      */
     public function up()
     {
-        Schema::create('flows_process', function (Blueprint $table) {
-            $table->string("flow_process_id");
+        Schema::create('flow_process', function (Blueprint $table) {
+            $table->bigIncrements("flow_process_id");
             $table->unsignedBigInteger("flow_id");
             $table->foreign("flow_id")->references('flow_id')->on('flows')->onDelete('cascade');
             $table->unsignedBigInteger("ad_id");
@@ -33,6 +33,6 @@ class CreateFlowsProcessTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('flows_process');
+        Schema::dropIfExists('process');
     }
 }
