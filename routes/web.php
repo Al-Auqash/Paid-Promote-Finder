@@ -37,7 +37,7 @@ Route::prefix('authentication')->group(function () {
 });
 
 Route::prefix('dashboard')
-    ->middleware(['auth:sanctum', "verified"])
+    ->middleware(['auth:admin', "verified"])
     ->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
         // Route::resource('users', UsersController::class);
@@ -89,7 +89,6 @@ Route::prefix('dashboard')
         })->name('sign-up');
     });
 
-
 Route::prefix('dashboard')->group(function () {
         Route::get('/register', [RegisterController::class, 'create']);
         Route::post('/register', [RegisterController::class, 'store']);
@@ -104,31 +103,6 @@ Route::prefix('dashboard')->group(function () {
 Route::get('/dashboard/login', function () {
     return view('session/login-session');
 })->name('login');
-
-
-// Route::get('/browse', function () {
-//     return view('/layouts/app');
-// });
-
-// Route::get('/browse/result', function () {
-//     return view('/layouts/app');
-// });
-
-// Route::get('/authentication/signIn', function () {
-//     return view('/layouts/app');
-// });
-
-// Route::get('/authentication/signUp', function () {
-//     return view('/layouts/app');
-// });
-
-// Route::get('{path}', function () {
-//     return view('/layouts/app');
-// });
-
-// Route::get('/main/how-to', function () {
-//     return view('/layouts/app');
-// });
 
 // Auth::routes();
 

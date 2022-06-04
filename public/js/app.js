@@ -5546,6 +5546,7 @@ var signIn = function signIn() {
     className: "container",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
       method: "post",
+      action: "/",
       className: "form-group p-4 w-75",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "form-group py-2",
@@ -5565,7 +5566,7 @@ var signIn = function signIn() {
           children: "Password"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
           className: "form-control",
-          type: "text",
+          type: "password",
           name: "password",
           id: "password"
         })]

@@ -20,7 +20,7 @@ class SessionsController extends Controller
             'password'=>'required' 
         ]);
 
-        if(Auth::attempt($attributes))
+        if(Auth::guard('admin')->attempt($attributes))
         {
             session()->regenerate();
             return redirect('dashboard');
@@ -34,7 +34,7 @@ class SessionsController extends Controller
     public function destroy()
     {
 
-        Auth::guard('web')->logout();
+        Auth::guard('admin')->logout();
 
         return redirect('/dashboard/login');
     }

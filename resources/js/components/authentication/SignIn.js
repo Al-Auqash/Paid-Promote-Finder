@@ -5,7 +5,7 @@ import "./../App.css";
 const signIn = () => {
     return (
         <div className="container">
-            <form method="post" className="form-group p-4 w-75">
+            <form method="post" action="/" className="form-group p-4 w-75">
                 <div className="form-group py-2">
                     <label className="form-check-label">Email</label>
                     <input
@@ -19,7 +19,7 @@ const signIn = () => {
                     <label className="form-check-label">Password</label>
                     <input
                         className="form-control"
-                        type="text"
+                        type="password"
                         name="password"
                         id="password"
                     />
