@@ -2,6 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Dashboard\UsersController;
+use App\Http\Controllers\ClientsController;
+use App\Http\Controllers\AdsController;
+use App\Http\Controllers\Dashboard\RegionsController;
+use App\Http\Controllers\CategoriesController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,17 +43,16 @@ Route::prefix('authentication')->group(function () {
     });
 });
 
-Route::prefix('dashboard')->group(function () {
-    Route::get('/login', function () {
-        return view('/layouts/dashboard');
+Route::prefix('dashboard')
+    ->middleware(['auth:sanctum', "verified"])
+    ->group(function () {
+        Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+        Route::resource('users', UsersController::class);
+        Route::resource('clients', ClientsController::class);
+        Route::resource('ads', AdsController::class);
+        Route::resource('regions', RegionsController::class);
+        Route::resource('categories', CategoriesController::class);
     });
-    Route::get('/login', function () {
-        return view('/layouts/dashboard');
-    });
-    Route::get('/register', function () {
-        return view('/layouts/dashboard');
-    });
-});
 
 // Route::get('/browse', function () {
 //     return view('/layouts/app');
