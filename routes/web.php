@@ -105,6 +105,7 @@ Route::get('/dashboard/login', function () {
     return view('session/login-session');
 })->name('login');
 
+
 // Route::get('/browse', function () {
 //     return view('/layouts/app');
 // });
@@ -129,6 +130,6 @@ Route::get('/dashboard/login', function () {
 //     return view('/layouts/app');
 // });
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

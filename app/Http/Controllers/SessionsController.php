@@ -23,7 +23,7 @@ class SessionsController extends Controller
         if(Auth::attempt($attributes))
         {
             session()->regenerate();
-            return redirect('dashboard')->with(['success'=>'You are logged in.']);
+            return redirect('dashboard');
         }
         else{
 
@@ -34,8 +34,8 @@ class SessionsController extends Controller
     public function destroy()
     {
 
-        Auth::logout();
+        Auth::guard('web')->logout();
 
-        return redirect('/dashboard/login')->with(['success'=>'You\'ve been logged out.']);
+        return redirect('/dashboard/login');
     }
 }
