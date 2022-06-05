@@ -88,7 +88,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
-                        @guest
+                        {{-- @guest --}}
                         <li class="nav-item">
                             <a class="nav-link px-4 mx-2" href="/">Home</a>
                         </li>
@@ -98,19 +98,19 @@
                         <li class="nav-item">
                             <a class="nav-link px-4 mx-2" href="/about">About</a>
                         </li>
-                        @if (Route::has('login'))
+                        {{-- @if (Route::has('login')) --}}
                         <li class="nav-item">
                             <a class="btn btn-outline-warning px-4 mx-2 btnNav" href="{{ url('/authentication/signIn') }}">{{ __('Sign In') }}</a>
                         </li>
-                        @endif
+                        {{-- @endif --}}
 
-                        @if (Route::has('register'))
+                        {{-- @if (Route::has('register')) --}}
                         <li class="nav-item">
                             <a class="btn btn-warning px-4 mx-2 btnNav" href="{{ url('/authentication/signUp') }}">{{ __('Sign Up') }}</a>
                         </li>
-                        @endif
-                        @else
-                        <li class="nav-item dropdown">
+                        {{-- @endif
+                        @else --}}
+                        {{-- <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
@@ -125,8 +125,8 @@
                                     @csrf
                                 </form>
                             </div>
-                        </li>
-                        @endguest
+                        </li> --}}
+                        {{-- @endguest --}}
                     </ul>
                 </div>
             </div>

@@ -1,11 +1,71 @@
 import React from "react";
 
+import { useState } from "react";
+import axios from "axios";
+
 import "./../App.css";
 
 const signUp = () => {
+    const [input, setInput] = useState({
+        username: "",
+        email: "",
+        password: "",
+        password_confirmation: "",
+    });
+
+    const handleFieldChange = (e) => {
+        setInput((inputField) => ({
+          ...inputField,
+          [e.target.name]: e.target.value,
+        }));
+      };
+
+    // const handleFieldChange = (event) => {
+    //     setUsername({
+    //         [event.target.name]: event.target.value,
+    //     });
+    //     setEmail({
+    //         [event.target.name]: event.target.value,
+    //     });
+    //     setPassword({
+    //         [event.target.name]: event.target.value,
+    //     });
+    //     setPasswordConfirmation({
+    //         [event.target.name]: event.target.value,
+    //     });
+    // };
+
+    const createPlayer = (event) => {
+        event.preventDefault();
+
+        axios
+            .post("/authentication/signUp", {
+                username: input.username,
+                email: input.email,
+                password: input.password,
+                password_confirmation: input.password_confirmation,
+            })
+            .then((response) => {
+                console.log(response);
+                window.location.href = "/";
+            })
+            .catch((error) => {
+                console.log(error);
+                console.log(input.username);
+                console.log(input.email);
+                console.log(input.password);
+                console.log(input.password_confirmation);
+            });
+
+    };
+
     return (
         <div className="container">
-            <form method="post" className="form-group p-4 w-75">
+            <form
+                method="post"
+                className="form-group p-4 w-75"
+                onSubmit={createPlayer}
+            >
                 <div className="form-group py-2">
                     <label className="form-check-label">Username</label>
                     <input
@@ -13,6 +73,7 @@ const signUp = () => {
                         type="text"
                         name="username"
                         id="username"
+                        onChange={handleFieldChange}
                     />
                 </div>
                 <div className="form-group py-2">
@@ -22,28 +83,34 @@ const signUp = () => {
                         type="text"
                         name="email"
                         id="email"
+                        onChange={handleFieldChange}
                     />
                 </div>
                 <div className="form-group py-2">
                     <label className="form-check-label">Password</label>
                     <input
                         className="form-control"
-                        type="text"
+                        type="password"
                         name="password"
                         id="password"
+                        onChange={handleFieldChange}
                     />
                 </div>
                 <div className="form-group py-2">
                     <label className="form-check-label">Confirm Password</label>
                     <input
                         className="form-control"
-                        type="text"
+                        type="password"
                         name="confirmPassword"
                         id="confirmPassword"
+                        onChange={handleFieldChange}
                     />
                 </div>
                 <div className="form-group py-2">
-                    <button className="form-control btn btn-warning fs-5 py-3">
+                    <button
+                        type="submit"
+                        className="form-control btn btn-warning fs-5 py-3"
+                    >
                         SIGN UP
                     </button>
                 </div>
@@ -55,10 +122,21 @@ const signUp = () => {
                 <div className="form-group py-2">
                     <span className="link-form signUpText">
                         By signing in or creating an account, you agree to our{" "}
-                        <a className="text-dark-orange link-form" href="/termsAndCondition">Terms and Conditions</a> &{" "}
-                        <a className="text-dark-orange link-form" href="/privacyPolicy">Privacy Policy</a>. We need
-                        this information to be able to contact you and to
-                        prevent cheating or fraud.
+                        <a
+                            className="text-dark-orange link-form"
+                            href="/termsAndCondition"
+                        >
+                            Terms and Conditions
+                        </a>{" "}
+                        &{" "}
+                        <a
+                            className="text-dark-orange link-form"
+                            href="/privacyPolicy"
+                        >
+                            Privacy Policy
+                        </a>
+                        . We need this information to be able to contact you and
+                        to prevent cheating or fraud.
                     </span>
                 </div>
             </form>

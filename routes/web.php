@@ -9,6 +9,9 @@ use App\Http\Controllers\AdsController;
 use App\Http\Controllers\Dashboard\RegionsController;
 use App\Http\Controllers\CategoriesController;
 
+
+use App\Http\Controllers\auth\RegisterClientController;
+
 use App\Http\Controllers\InfoUserController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
@@ -34,6 +37,7 @@ Route::prefix('authentication')->group(function () {
     Route::get('/signUp', function () {
         return view('/layouts/app2');
     });
+    Route::post('/signUp', [RegisterClientController::class, 'createClient']);
 });
 
 Route::prefix('dashboard')
@@ -56,10 +60,6 @@ Route::prefix('dashboard')
         Route::get('profile', function () {
             return view('profile');
         })->name('profile');
-
-        Route::get('rtl', function () {
-            return view('rtl');
-        })->name('rtl');
 
         Route::get('user-management', function () {
             return view('laravel-examples/user-management');

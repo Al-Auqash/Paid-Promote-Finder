@@ -11,6 +11,8 @@ import SignUp from "./SignUp";
 import "./../App.css";
 import "./Authentication.css";
 
+import axios from "axios";
+
 const index = () => {
     return (
         <div className="row align-items-center mt-4">
