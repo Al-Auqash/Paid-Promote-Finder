@@ -11,7 +11,7 @@ const signIn = () => {
     const [password, setPassword] = useState("");
 
     //define state validation
-    const [validation, setValidation] = useState([]);
+    // const [validation, setValidation] = useState([]);
 
     //define history
     const navigate = useNavigate();
@@ -65,9 +65,9 @@ const signIn = () => {
 
     return (
         <div className="container">
-            {validation.message && (
+            {/* {validation.message && (
                 <div className="alert alert-danger">{validation.message}</div>
-            )}
+            )} */}
             <form
                 method="post"
                 className="form-group p-4 w-75"
@@ -84,11 +84,11 @@ const signIn = () => {
                         id="email"
                     />
                 </div>
-                {validation.email && (
+                {/* {validation.email && (
                     <div className="alert alert-danger">
                         {validation.email[0]}
                     </div>
-                )}
+                )} */}
                 <div className="form-group py-2">
                     <label className="form-check-label">Password</label>
                     <input
@@ -98,13 +98,14 @@ const signIn = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         id="password"
+                        autoComplete="false"
                     />
                 </div>
-                {validation.password && (
+                {/* {validation.password && (
                     <div className="alert alert-danger">
                         {validation.password[0]}
                     </div>
-                )}
+                )} */}
                 <div className="form-group py-2">
                     <a className="text-dark-orange link-form fs-6">
                         forgot password?

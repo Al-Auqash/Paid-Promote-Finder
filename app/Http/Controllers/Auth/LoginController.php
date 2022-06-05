@@ -12,6 +12,12 @@ use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
 {
+    /**
+     * Handle the incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function __invoke(Request $request)
     {
         //set validation
@@ -19,7 +25,7 @@ class LoginController extends Controller
             'email'     => 'required',
             'password'  => 'required'
         ]);
- 
+
         //if validation fails
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);

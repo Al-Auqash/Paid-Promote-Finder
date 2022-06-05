@@ -37,10 +37,11 @@ Route::prefix('authentication')->group(function () {
     Route::get('/signUp', function () {
         return view('/layouts/app2');
     });
-    Route::post('/signIn', [LoginController::class]);
-    Route::post('/signUp', [RegisterClientController::class, 'createClient']);
+    Route::post('/signIn', [LoginController::class, '__invoke']);
+    Route::post('/signUp', [RegisterClientController::class, '__invoke']);
     Route::post('/signOut', [LogoutController::class]);
 });
+
 
 Route::prefix('dashboard')
     ->middleware(['auth:admin', "verified"])

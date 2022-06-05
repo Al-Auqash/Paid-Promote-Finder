@@ -5591,12 +5591,8 @@ var signIn = function signIn() {
       _useState4 = _slicedToArray(_useState3, 2),
       password = _useState4[0],
       setPassword = _useState4[1]; //define state validation
-
-
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
-      _useState6 = _slicedToArray(_useState5, 2),
-      validation = _useState6[0],
-      setValidation = _useState6[1]; //define history
+  // const [validation, setValidation] = useState([]);
+  //define history
 
 
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useNavigate)(); // const handleFieldChange = (e) => {
@@ -5644,12 +5640,9 @@ var signIn = function signIn() {
     };
   }();
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
     className: "container",
-    children: [validation.message && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "alert alert-danger",
-      children: validation.message
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
       method: "post",
       className: "form-group p-4 w-75",
       onSubmit: signIn,
@@ -5668,9 +5661,6 @@ var signIn = function signIn() {
           },
           id: "email"
         })]
-      }), validation.email && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "alert alert-danger",
-        children: validation.email[0]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "form-group py-2",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
@@ -5684,11 +5674,9 @@ var signIn = function signIn() {
           onChange: function onChange(e) {
             return setPassword(e.target.value);
           },
-          id: "password"
+          id: "password",
+          autoComplete: "false"
         })]
-      }), validation.password && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "alert alert-danger",
-        children: validation.password[0]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "form-group py-2",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
@@ -5720,7 +5708,7 @@ var signIn = function signIn() {
           children: "terms and conditions"
         })
       })]
-    })]
+    })
   });
 };
 
