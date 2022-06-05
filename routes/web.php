@@ -9,7 +9,7 @@ use App\Http\Controllers\AdsController;
 use App\Http\Controllers\Dashboard\RegionsController;
 use App\Http\Controllers\CategoriesController;
 
-
+use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterClientController;
 
 use App\Http\Controllers\InfoUserController;
@@ -37,7 +37,9 @@ Route::prefix('authentication')->group(function () {
     Route::get('/signUp', function () {
         return view('/layouts/app2');
     });
+    Route::post('/signIn', [LoginController::class]);
     Route::post('/signUp', [RegisterClientController::class, 'createClient']);
+    Route::post('/signOut', [LogoutController::class]);
 });
 
 Route::prefix('dashboard')
@@ -90,15 +92,15 @@ Route::prefix('dashboard')
     });
 
 Route::prefix('dashboard')->group(function () {
-        Route::get('/register', [RegisterController::class, 'create']);
-        Route::post('/register', [RegisterController::class, 'store']);
-        Route::get('/login', [SessionsController::class, 'create']);
-        Route::post('/session', [SessionsController::class, 'store']);
-        Route::get('/login/forgot-password', [ResetController::class, 'create']);
-        Route::post('/forgot-password', [ResetController::class, 'sendEmail']);
-        Route::get('/reset-password/{token}', [ResetController::class, 'resetPass'])->name('password.reset');
-        Route::post('/reset-password', [ChangePasswordController::class, 'changePassword'])->name('password.update');
-    });
+    Route::get('/register', [RegisterController::class, 'create']);
+    Route::post('/register', [RegisterController::class, 'store']);
+    Route::get('/login', [SessionsController::class, 'create']);
+    Route::post('/session', [SessionsController::class, 'store']);
+    Route::get('/login/forgot-password', [ResetController::class, 'create']);
+    Route::post('/forgot-password', [ResetController::class, 'sendEmail']);
+    Route::get('/reset-password/{token}', [ResetController::class, 'resetPass'])->name('password.reset');
+    Route::post('/reset-password', [ChangePasswordController::class, 'changePassword'])->name('password.update');
+});
 
 Route::get('/dashboard/login', function () {
     return view('session/login-session');

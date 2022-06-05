@@ -35,7 +35,7 @@ const signUp = () => {
     //     });
     // };
 
-    const createPlayer = (event) => {
+    const signUp = (event) => {
         event.preventDefault();
 
         axios
@@ -64,7 +64,7 @@ const signUp = () => {
             <form
                 method="post"
                 className="form-group p-4 w-75"
-                onSubmit={createPlayer}
+                onSubmit={signUp}
             >
                 <div className="form-group py-2">
                     <label className="form-check-label">Username</label>

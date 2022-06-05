@@ -79,8 +79,5 @@ class RegisterClientController extends Controller
         $client->email = $request->email;
         $client->password = $request->password;
         $client->save();
-        return response()->json([
-            'message' => 'New post created'
-        ]);
     }
 }
