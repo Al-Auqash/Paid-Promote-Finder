@@ -5,9 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Dashboard\UsersController;
 use App\Http\Controllers\ClientsController;
-use App\Http\Controllers\AdsController;
+use App\Http\Controllers\Dashboard\AdsController;
 use App\Http\Controllers\Dashboard\RegionsController;
-use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\Dashboard\CategoriesController;
 
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterClientController;
@@ -22,7 +22,7 @@ Route::get('/', function () {
 });
 
 Route::prefix('browse')->group(function () {
-    Route::get('/', function () {
+    Route::get('/', [AdsController::class, 'client'], function () {
         return view('/layouts/app2');
     });
     Route::get('/result', function () {
@@ -67,6 +67,19 @@ Route::prefix('dashboard')
         Route::get('user-management', function () {
             return view('laravel-examples/user-management');
         })->name('user-management');
+
+        // Route::get('category', [CategoriesController::class, 'index'])->name('category');
+        // Route::get('category/create', [CategoriesController::class, 'create'])->name('category-create');
+
+        Route::resource('category', CategoriesController::class);
+        Route::post('category/store', [CategoriesController::class, 'store'])->name('category-store');
+
+        Route::get('region', [RegionsController::class, 'index'])->name('region');
+        Route::get('region/create', [RegionsController::class, 'create'])->name('region-create');
+
+        // Route::get('region', function () {
+        //     return view('region');
+        // })->name('region');
 
         Route::get('tables', function () {
             return view('tables');

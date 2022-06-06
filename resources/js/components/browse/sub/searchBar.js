@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, Routes, Route } from "react-router-dom";
 import DatePicker from "react-datepicker";
 
@@ -7,6 +7,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 import Result from "./Result";
 import Card from "./Card";
+import axios from "axios";
 
 const searchBar = () => {
     const [startDate, setStartDate] = useState(new Date());

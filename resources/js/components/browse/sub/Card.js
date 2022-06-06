@@ -1,7 +1,20 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const card = () => {
+    const [ads, setAds] = useState({
+        ads: [],
+    });
+
+    useEffect(async () => {
+        await axios.get("/browse").then((response) => {
+            setAds({
+                ads: response.data,
+            });
+        });
+    });
+
     return (
         <div className="grid-wrapper">
             <Link to="/browse/result" className="my-3 card-search-text">
@@ -20,6 +33,23 @@ const card = () => {
                     </div>
                 </div>
             </Link>
+            {ads.map((ads) => (
+                <Link
+                    to="/browse/result"
+                    className="my-3 card-search-text"
+                    key={ads.id}
+                >
+                    <img
+                        src="images/daph_cat.jpg"
+                        className="card-img-top"
+                        alt="..."
+                    />
+                    <div className="card-body">
+                        <p className="card-title fw-bold">{ads.title}</p>
+                        <p className="card-text">{ads.description}</p>
+                    </div>
+                </Link>
+            ))}
         </div>
     );
 };

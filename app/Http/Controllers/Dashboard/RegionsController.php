@@ -13,49 +13,49 @@ class RegionsController extends Controller
     function index()
     {
         $region = Region::paginate(10);
-        return view('dashboard.regions.index', [
+        return view('region.index', [
             'region' => $region
         ]);
     }
 
     public function create()
     {
-        return view('dashboard.regions.create');
+        return view('region.create');
     }
 
-    public function store(RegionRequest $request)
-    {
-        Region::create([
-            'region' => $request->region,
-        ]);
+    // public function store(RegionRequest $request)
+    // {
+    //     Region::create([
+    //         'region' => $request->region,
+    //     ]);
 
-        return redirect()->route('dashboard.regions.index');
-    }
+    //     return redirect()->route('dashboard.regions.index');
+    // }
 
-    public function edit(Region $region)
-    {
-        return view('regions.edit', [
-            'item' => $region
-        ]);
-    }
+    // public function edit(Region $region)
+    // {
+    //     return view('regions.edit', [
+    //         'item' => $region
+    //     ]);
+    // }
 
-    public function update(Request $request, Region $region)
-    {
-        $data = $request->all();
+    // public function update(Request $request, Region $region)
+    // {
+    //     $data = $request->all();
 
-        // if ($request->file('profile_photo_paths')) {
-        //     $data['profile_photo_path'] = $request->file('profile_photo_path')->store('assets/region', 'public');
-        // }
+    //     // if ($request->file('profile_photo_paths')) {
+    //     //     $data['profile_photo_path'] = $request->file('profile_photo_path')->store('assets/region', 'public');
+    //     // }
 
-        $region->update($data);
+    //     $region->update($data);
 
-        return redirect()->route('dashboard.regions.index');
-    }
+    //     return redirect()->route('dashboard.regions.index');
+    // }
 
-    public function destroy(Region $region)
-    {
-        $region->delete();
+    // public function destroy(Region $region)
+    // {
+    //     $region->delete();
 
-        return redirect()->route('dashboard.regions.index');
-    }
+    //     return redirect()->route('dashboard.regions.index');
+    // }
 }

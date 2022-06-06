@@ -47,20 +47,6 @@ const signIn = () => {
                 console.log(password);
             });
 
-        // axios
-        //     .post("/authentication/signIn", {
-        //         email: input.email,
-        //         password: input.password,
-        //     })
-        //     .then((response) => {
-        //         console.log(response);
-        //         window.location.href = "/";
-        //     })
-        //     .catch((error) => {
-        //         console.log(error);
-        //         console.log(input.email);
-        //         console.log(input.password);
-        //     });
     };
 
     return (
