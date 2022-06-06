@@ -64,7 +64,7 @@ class CategoriesController extends Controller
     public function edit(Category $category)
     {
         return view('category.edit', [
-            'item' => $category
+            'category' => $category
         ]);
     }
 
@@ -72,9 +72,9 @@ class CategoriesController extends Controller
     {
         $data = $request->all();
 
-        $category->update($data);
-
-        return redirect()->route('category.index');
+        if ($category->update($data)) {
+            return redirect()->route('category.index');
+        }
     }
 
     public function destroy(Category $category)

@@ -12,7 +12,7 @@ class Category extends Model
     protected $table = 'categories';
 
     protected $fillable = [
-        'category_id',
+        'id',
         'category_name',
         'created_at',
         'updated_at',
