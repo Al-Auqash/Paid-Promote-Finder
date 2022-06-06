@@ -10,7 +10,7 @@
                             <div>
                                 <h5 class="mb-0">All Regions</h5>
                             </div>
-                            <a href="{{ route('category-create') }}" class="btn bg-gradient-primary btn-sm mb-0"
+                            <a href="{{ route('region.create') }}" class="btn bg-gradient-primary btn-sm mb-0"
                                 type="button">+&nbsp; New Region</a>
                         </div>
                     </div>
@@ -21,6 +21,10 @@
                                     <tr>
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             Region ID
+                                        </th>
+                                        <th
+                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Code Name
                                         </th>
                                         <th
                                             class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
@@ -40,7 +44,10 @@
                                     @forelse ($region as $item)
                                         <tr>
                                             <td class="ps-4">
-                                                <p class="text-xs font-weight-bold mb-0">{{ $item->region_id }}</p>
+                                                <p class="text-xs font-weight-bold mb-0">{{ $item->id }}</p>
+                                            </td>
+                                            <td class="text-center">
+                                                <p class="text-xs font-weight-bold mb-0">{{ $item->code_name }}</p>
                                             </td>
                                             <td class="text-center">
                                                 <p class="text-xs font-weight-bold mb-0">{{ $item->region_name }}</p>
@@ -51,19 +58,25 @@
                                             <td class="text-center">
                                                 <p class="text-xs font-weight-bold mb-0">{{ $item->updated_at }}</p>
                                             </td>
-                                            <td class="text-center">
-                                                <a href="#" class="mx-3" data-bs-toggle="tooltip"
+                                            <td class="text-center d-flex flex-row">
+                                                <a href="{{ route('region.edit', $item->id) }}"
+                                                    class="mx-3" data-bs-toggle="tooltip"
                                                     data-bs-original-title="Edit user">
                                                     <i class="fas fa-user-edit text-secondary"></i>
                                                 </a>
-                                                <span>
-                                                    <i class="cursor-pointer fas fa-trash text-secondary"></i>
-                                                </span>
+                                                <form
+                                                    action="{{ route('region.destroy', ['region' => $item->id]) }}"
+                                                    method="post">
+                                                    {!! method_field('delete') . csrf_field() !!}
+                                                    <button type="submit" class="border-0 bg-transparent">
+                                                        <i class="cursor-pointer fas fa-trash text-secondary"></i>
+                                                    </button>
+                                                </form>
                                             </td>
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="4" class="border text-center p-5">
+                                            <td colspan="5" class="border text-center p-5">
                                                 Data Not Found
                                             </td>
                                         </tr>

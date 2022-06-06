@@ -15,6 +15,7 @@ class CreateFlowsTable extends Migration
     {
         Schema::create('flows', function (Blueprint $table) {
             $table->bigIncrements("id");
+            $table->string("code");
             $table->string("name");
             $table->timestamps();
         });

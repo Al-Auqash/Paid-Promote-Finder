@@ -30,6 +30,20 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
+                                <label for="user-name" class="form-control-label">{{ __('Code Name') }}</label>
+                                <div class="@error('user.name') border border-danger rounded-3 @enderror">
+                                    <input class="form-control" value="{{ old('code_name') }}" type="text"
+                                        placeholder="Category" name="code_name" autocomplete="off">
+                                    @error('name')
+                                        <p class="text-danger text-xs mt-2">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
                                 <label for="user-name" class="form-control-label">{{ __('Category') }}</label>
                                 <div class="@error('user.name') border border-danger rounded-3 @enderror">
                                     <input class="form-control" value="{{ old('category') }}" type="text"

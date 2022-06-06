@@ -8,7 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Region extends Model
 {
     use HasFactory;
+    
+    protected $table = 'regions';
+
     protected $fillable = [
-        'region',
+        'id',
+        'code_name',
+        'region_name',
+        'created_at',
+        'updated_at',
     ];
 }

@@ -5,14 +5,13 @@ namespace App\Http\Controllers\Dashboard;
 use App\Models\Region;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\RegionRequest;
 
 class RegionsController extends Controller
 {
-
-    function index()
+    public function index()
     {
-        $region = Region::paginate(10);
+        $region = Region::select('*')->paginate(10);
+
         return view('region.index', [
             'region' => $region
         ]);
@@ -23,39 +22,66 @@ class RegionsController extends Controller
         return view('region.create');
     }
 
-    // public function store(RegionRequest $request)
-    // {
-    //     Region::create([
-    //         'region' => $request->region,
-    //     ]);
+    public function store(Request $request)
+    {
+        // $previous_id = Region::select('category_id')
+        //     ->orderByRaw('category_id DESC')
+        //     ->limit(1)
+        //     ->first();
 
-    //     return redirect()->route('dashboard.regions.index');
-    // }
+        // dd($previous_id);
 
-    // public function edit(Region $region)
-    // {
-    //     return view('regions.edit', [
-    //         'item' => $region
-    //     ]);
-    // }
+        // foreach ($previous_id as $item) {
+        //     if ($item > 0) {
+        //         $category_id = $item + 1;
+        //     } else {
+        //         $category_id = 1;
+        //     }
+        // }
 
-    // public function update(Request $request, Region $region)
-    // {
-    //     $data = $request->all();
+        $region = Region::create([
+            // 'category_id' => $category_id,
+            'code_name' => $request->code_name,
+            'region_name' => $request->region,
+        ]);
 
-    //     // if ($request->file('profile_photo_paths')) {
-    //     //     $data['profile_photo_path'] = $request->file('profile_photo_path')->store('assets/region', 'public');
-    //     // }
+        if ($region) {
+            return redirect()->route('region.index');
+        }
 
-    //     $region->update($data);
+        // if ($region) {
+        //     return response()->json([
+        //         'success' => true,
+        //         'region_name'    => $region,
+        //     ], 201);
+        // }
 
-    //     return redirect()->route('dashboard.regions.index');
-    // }
+        //return JSON process insert failed 
+        // return response()->json([
+        //     'success' => false,
+        // ], 409);
+    }
 
-    // public function destroy(Region $region)
-    // {
-    //     $region->delete();
+    public function edit(Region $region)
+    {
+        return view('region.edit', [
+            'region' => $region
+        ]);
+    }
 
-    //     return redirect()->route('dashboard.regions.index');
-    // }
+    public function update(Request $request, Region $region)
+    {
+        $data = $request->all();
+
+        if ($region->update($data)) {
+            return redirect()->route('region.index');
+        }
+    }
+
+    public function destroy(Region $region)
+    {
+        $region->delete();
+
+        return redirect()->route('region.index');
+    }
 }

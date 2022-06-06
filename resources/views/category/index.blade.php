@@ -24,6 +24,10 @@
                                         </th>
                                         <th
                                             class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Code Name
+                                        </th>
+                                        <th
+                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             Category Name
                                         </th>
                                         <th
@@ -41,6 +45,9 @@
                                         <tr>
                                             <td class="ps-4">
                                                 <p class="text-xs font-weight-bold mb-0">{{ $item->id }}</p>
+                                            </td>
+                                            <td class="text-center">
+                                                <p class="text-xs font-weight-bold mb-0">{{ $item->code_name }}</p>
                                             </td>
                                             <td class="text-center">
                                                 <p class="text-xs font-weight-bold mb-0">{{ $item->category_name }}</p>
@@ -69,7 +76,7 @@
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="4" class="border text-center p-5">
+                                            <td colspan="5" class="border text-center p-5">
                                                 Data Not Found
                                             </td>
                                         </tr>

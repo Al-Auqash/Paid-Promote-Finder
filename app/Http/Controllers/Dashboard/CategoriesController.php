@@ -41,6 +41,7 @@ class CategoriesController extends Controller
 
         $category = Category::create([
             // 'category_id' => $category_id,
+            'code_name' => $request->code_name,
             'category_name' => $request->category,
         ]);
 

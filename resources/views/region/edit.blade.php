@@ -4,10 +4,10 @@
     <div class="container-fluid py-4">
         <div class="card">
             <div class="card-header pb-0 px-3">
-                <h6 class="mb-0">{{ __('Create Category') }}</h6>
+                <h6 class="mb-0">{{ __('Create Region') }}</h6>
             </div>
             <div class="card-body pt-4 p-3">
-                <form action="{{ route('category.update', $category->id) }}" method="POST" role="form text-left" enctype="multipart/form-data">
+                <form action="{{ route('region.update', $region->id) }}" method="POST" role="form text-left" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                      @if ($errors->any())
@@ -33,8 +33,8 @@
                             <div class="form-group">
                                 <label for="user-name" class="form-control-label">{{ __('Code Name') }}</label>
                                 <div class="@error('user.name') border border-danger rounded-3 @enderror">
-                                    <input class="form-control" value="{{ old('code_name') ?? $category->code_name }}" type="text"
-                                        placeholder="Category" name="code_name" autocomplete="off">
+                                    <input class="form-control" value="{{ old('code_name') ?? $region->code_name }}" type="text"
+                                        placeholder="Region" name="code_name" autocomplete="off">
                                     @error('name')
                                         <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                     @enderror
@@ -45,10 +45,10 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="user-name" class="form-control-label">{{ __('Category') }}</label>
+                                <label for="user-name" class="form-control-label">{{ __('Region') }}</label>
                                 <div class="@error('user.name') border border-danger rounded-3 @enderror">
-                                    <input class="form-control" value="{{ old('category_name') ?? $category->category_name }}" type="text"
-                                        placeholder="Category" name="category_name" autocomplete="off">
+                                    <input class="form-control" value="{{ old('region_name') ?? $region->region_name }}" type="text"
+                                        placeholder="Region" name="region_name" autocomplete="off">
                                     @error('name')
                                         <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                     @enderror
