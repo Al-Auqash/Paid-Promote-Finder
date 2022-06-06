@@ -14,12 +14,12 @@ class CreateAdsTable extends Migration
     public function up()
     {
         Schema::create('ads', function (Blueprint $table) {
-            $table->bigIncrements("ad_id");
+            $table->bigIncrements("id");
             $table->string("title");
             $table->unsignedBigInteger("category_id");
-            $table->foreign("category_id")->references("category_id")->on("categories");
+            $table->foreign("category_id")->references("id")->on("categories");
             $table->unsignedBigInteger("region_id");
-            $table->foreign("region_id")->references("region_id")->on("regions");
+            $table->foreign("region_id")->references("id")->on("regions");
             $table->string("time");
             $table->text("description");
             $table->string("created_by");

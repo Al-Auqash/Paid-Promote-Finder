@@ -40,7 +40,7 @@
                                     @forelse ($category as $item)
                                         <tr>
                                             <td class="ps-4">
-                                                <p class="text-xs font-weight-bold mb-0">{{ $item->category_id }}</p>
+                                                <p class="text-xs font-weight-bold mb-0">{{ $item->id }}</p>
                                             </td>
                                             <td class="text-center">
                                                 <p class="text-xs font-weight-bold mb-0">{{ $item->category_name }}</p>
@@ -51,14 +51,20 @@
                                             <td class="text-center">
                                                 <p class="text-xs font-weight-bold mb-0">{{ $item->updated_at }}</p>
                                             </td>
-                                            <td class="text-center">
-                                                <a href="#" class="mx-3" data-bs-toggle="tooltip"
+                                            <td class="text-center d-flex flex-row">
+                                                <a href="{{ route('category.edit', $item->id) }}"
+                                                    class="mx-3" data-bs-toggle="tooltip"
                                                     data-bs-original-title="Edit user">
                                                     <i class="fas fa-user-edit text-secondary"></i>
                                                 </a>
-                                                <span>
-                                                    <i class="cursor-pointer fas fa-trash text-secondary"></i>
-                                                </span>
+                                                <form
+                                                    action="{{ route('category.destroy', ['category' => $item->id]) }}"
+                                                    method="post">
+                                                    {!! method_field('delete') . csrf_field() !!}
+                                                    <button type="submit" class="border-0 bg-transparent">
+                                                        <i class="cursor-pointer fas fa-trash text-secondary"></i>
+                                                    </button>
+                                                </form>
                                             </td>
                                         </tr>
                                     @empty

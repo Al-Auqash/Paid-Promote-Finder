@@ -14,11 +14,11 @@ class CreateFlowsProcessTable extends Migration
     public function up()
     {
         Schema::create('flow_process', function (Blueprint $table) {
-            $table->bigIncrements("flow_process_id");
+            $table->bigIncrements("id");
             $table->unsignedBigInteger("flow_id");
-            $table->foreign("flow_id")->references('flow_id')->on('flows')->onDelete('cascade');
+            $table->foreign("flow_id")->references('id')->on('flows')->onDelete('cascade');
             $table->unsignedBigInteger("ad_id");
-            $table->foreign("ad_id")->references('ad_id')->on('ads')->onDelete('cascade');
+            $table->foreign("ad_id")->references('id')->on('ads')->onDelete('cascade');
             $table->string("created_by");
             $table->string("mdb");
             $table->string("mdd");

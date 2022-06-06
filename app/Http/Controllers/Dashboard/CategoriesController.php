@@ -24,20 +24,23 @@ class CategoriesController extends Controller
 
     public function store(Request $request)
     {
-        $previous_id = Category::select('category_id')
-        ->orderByRaw('category_id DESC')
-        ->first();
-        // dd($previous_id);
-        
+        // $previous_id = Category::select('category_id')
+        //     ->orderByRaw('category_id DESC')
+        //     ->limit(1)
+        //     ->first();
 
-        if ($previous_id[1]) {
-            $category_id = $previous_id[1] + 1;
-        } else {
-            $category_id = 2;
-        }
+        // dd($previous_id);
+
+        // foreach ($previous_id as $item) {
+        //     if ($item > 0) {
+        //         $category_id = $item + 1;
+        //     } else {
+        //         $category_id = 1;
+        //     }
+        // }
 
         $category = Category::create([
-            'category_id' => $category_id,
+            // 'category_id' => $category_id,
             'category_name' => $request->category,
         ]);
 
@@ -56,5 +59,28 @@ class CategoriesController extends Controller
         // return response()->json([
         //     'success' => false,
         // ], 409);
+    }
+
+    public function edit(Category $category)
+    {
+        return view('category.edit', [
+            'item' => $category
+        ]);
+    }
+
+    public function update(Request $request, Category $category)
+    {
+        $data = $request->all();
+
+        $category->update($data);
+
+        return redirect()->route('category.index');
+    }
+
+    public function destroy(Category $category)
+    {
+        $category->delete();
+
+        return redirect()->route('category.index');
     }
 }

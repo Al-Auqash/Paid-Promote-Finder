@@ -73,6 +73,7 @@ Route::prefix('dashboard')
 
         Route::resource('category', CategoriesController::class);
         Route::post('category/store', [CategoriesController::class, 'store'])->name('category-store');
+        Route::post('category/destroy', [CategoriesController::class, 'destroy'])->name('category-destroy');
 
         Route::get('region', [RegionsController::class, 'index'])->name('region');
         Route::get('region/create', [RegionsController::class, 'create'])->name('region-create');
