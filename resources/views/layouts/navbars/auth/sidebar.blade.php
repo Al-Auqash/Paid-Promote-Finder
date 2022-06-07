@@ -40,7 +40,7 @@
             <li class="nav-item mt-2">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account</h6>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link {{ Request::is('user-profile') ? 'active' : '' }} "
                     href="{{ url('/dashboard/user-profile') }}">
                     <div
@@ -70,26 +70,38 @@
                     </div>
                     <span class="nav-link-text ms-1">User Profile</span>
                 </a>
+            </li> --}}
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('user-profile') ? 'active' : '' }} "
+                    href="{{ url('/dashboard/user-profile') }}">
+                    <div
+                        class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i style="font-size: 0.8rem;"
+                            class="fas fa-user ps-2 pe-2 text-center text-dark {{ Request::is('user-management') ? 'text-white' : 'text-dark' }} "
+                            aria-hidden="true"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">User </span>
+                </a>
             </li>
-            <li class="nav-item pb-2">
+            <li class="nav-item">
                 <a class="nav-link {{ Request::is('user-management') ? 'active' : '' }}"
                     href="{{ route('user.index') }}">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i style="font-size: 1rem;"
-                            class="fas fa-lg fa-list-ul ps-2 pe-2 text-center text-dark {{ Request::is('user-management') ? 'text-white' : 'text-dark' }} "
+                        <i style="font-size: 0.8rem;"
+                            class="fas fa-user-check ps-2 pe-2 text-center text-dark {{ Request::is('user-management') ? 'text-white' : 'text-dark' }} "
                             aria-hidden="true"></i>
                     </div>
                     <span class="nav-link-text ms-1">User Management</span>
                 </a>
             </li>
-            <li class="nav-item pb-2">
+            <li class="nav-item">
                 <a class="nav-link {{ Request::is('client-management') ? 'active' : '' }}"
                     href="{{ route('client.index') }}">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i style="font-size: 1rem;"
-                            class="fas fa-lg fa-list-ul ps-2 pe-2 text-center text-dark {{ Request::is('user-management') ? 'text-white' : 'text-dark' }} "
+                        <i style="font-size: 0.8rem;"
+                            class="fas fa-users ps-2 pe-2 text-center text-dark {{ Request::is('client-management') ? 'text-white' : 'text-dark' }} "
                             aria-hidden="true"></i>
                     </div>
                     <span class="nav-link-text ms-1">Client Management</span>
@@ -99,6 +111,42 @@
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Example pages</h6>
             </li>
             <li class="nav-item">
+                <a class="nav-link {{ Request::is('category') ? 'active' : '' }}"
+                    href="{{ route('category.index') }}">
+                    <div
+                        class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i style="font-size: 0.8rem;"
+                            class="fas fa-list ps-2 pe-2 text-center text-dark {{ Request::is('category-management') ? 'text-white' : 'text-dark' }} "
+                            aria-hidden="true"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Category</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('region') ? 'active' : '' }}"
+                    href="{{ route('region.index') }}">
+                    <div
+                        class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i style="font-size: 0.8rem;"
+                            class="fas fa-city ps-2 pe-2 text-center text-dark {{ Request::is('region-management') ? 'text-white' : 'text-dark' }} "
+                            aria-hidden="true"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Region</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('ads') ? 'active' : '' }}"
+                    href="{{ route('ads.index') }}">
+                    <div
+                        class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i style="font-size: 0.8rem;"
+                            class="fas fa-file-invoice-dollar ps-2 pe-2 text-center text-dark {{ Request::is('ads-management') ? 'text-white' : 'text-dark' }} "
+                            aria-hidden="true"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Ads</span>
+                </a>
+            </li>
+            {{-- <li class="nav-item">
                 <a class="nav-link {{ Request::is('category') ? 'active' : '' }}"
                     href="{{ url('/dashboard/category') }}">
                     <div
@@ -124,8 +172,8 @@
                     </div>
                     <span class="nav-link-text ms-1">Category</span>
                 </a>
-            </li>
-            <li class="nav-item">
+            </li> --}}
+            {{-- <li class="nav-item">
                 <a class="nav-link {{ Request::is('region') ? 'active' : '' }}"
                     href="{{ url('/dashboard/region') }}">
                     <div
@@ -151,7 +199,7 @@
                     </div>
                     <span class="nav-link-text ms-1">Region</span>
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('tables') ? 'active' : '' }}"
                     href="{{ url('/dashboard/tables') }}">

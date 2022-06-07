@@ -8,6 +8,7 @@ use App\Http\Controllers\Dashboard\ClientsController;
 use App\Http\Controllers\Dashboard\AdsController;
 use App\Http\Controllers\Dashboard\RegionsController;
 use App\Http\Controllers\Dashboard\CategoriesController;
+use App\Http\Controllers\Dashboard\FlowsController;
 
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterClientController;
@@ -82,6 +83,12 @@ Route::prefix('dashboard')
 
         Route::resource('region', RegionsController::class);
         Route::post('region/store', [RegionsController::class, 'store'])->name('region-store');
+
+        Route::resource('flow', FlowsController::class);
+        Route::post('flow/store', [FlowsController::class, 'store'])->name('flow-store');
+
+        Route::resource('ads', AdsController::class);
+        Route::post('ads/store', [AdsController::class, 'store'])->name('ads-store');
 
 
         // Route::get('region', function () {
