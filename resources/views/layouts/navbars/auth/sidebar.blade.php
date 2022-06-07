@@ -73,7 +73,7 @@
             </li>
             <li class="nav-item pb-2">
                 <a class="nav-link {{ Request::is('user-management') ? 'active' : '' }}"
-                    href="{{ url('/dashboard/user-management') }}">
+                    href="{{ route('user.index') }}">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i style="font-size: 1rem;"
@@ -81,6 +81,18 @@
                             aria-hidden="true"></i>
                     </div>
                     <span class="nav-link-text ms-1">User Management</span>
+                </a>
+            </li>
+            <li class="nav-item pb-2">
+                <a class="nav-link {{ Request::is('client-management') ? 'active' : '' }}"
+                    href="{{ route('client.index') }}">
+                    <div
+                        class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i style="font-size: 1rem;"
+                            class="fas fa-lg fa-list-ul ps-2 pe-2 text-center text-dark {{ Request::is('user-management') ? 'text-white' : 'text-dark' }} "
+                            aria-hidden="true"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Client Management</span>
                 </a>
             </li>
             <li class="nav-item mt-2">

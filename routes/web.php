@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Dashboard\UsersController;
-use App\Http\Controllers\ClientsController;
+use App\Http\Controllers\Dashboard\ClientsController;
 use App\Http\Controllers\Dashboard\AdsController;
 use App\Http\Controllers\Dashboard\RegionsController;
 use App\Http\Controllers\Dashboard\CategoriesController;
@@ -70,6 +70,12 @@ Route::prefix('dashboard')
 
         // Route::get('category', [CategoriesController::class, 'index'])->name('category');
         // Route::get('category/create', [CategoriesController::class, 'create'])->name('category-create');
+
+        Route::resource('user', UsersController::class);
+        Route::post('user/store', [UsersController::class, 'store'])->name('user-store');
+
+        Route::resource('client', ClientsController::class);
+        Route::post('client/store', [ClientsController::class, 'store'])->name('client-store');
 
         Route::resource('category', CategoriesController::class);
         Route::post('category/store', [CategoriesController::class, 'store'])->name('category-store');
