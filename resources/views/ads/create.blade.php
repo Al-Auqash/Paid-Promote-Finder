@@ -27,6 +27,7 @@
                             </button>
                         </div>
                     @endif
+                    <input hidden value="{{ Auth::id() }}" name="created_by" >
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
@@ -46,7 +47,7 @@
                             <div class="form-group">
                                 <label for="user-name" class="form-control-label">{{ __('Category') }}</label>
                                 <div class="@error('user.name') border border-danger rounded-3 @enderror">
-                                    <select class="form-select" aria-label="category" aria-placeholder="Category">
+                                    <select name="category_id" class="form-select" aria-label="category" aria-placeholder="Category">
                                         <option selected disabled hidden>Category</option>
                                         @forelse($categories as $item)
                                             <option value="{{ $item->id }}">{{ $item->category_name }}</option>
@@ -66,7 +67,7 @@
                             <div class="form-group">
                                 <label for="user-name" class="form-control-label">{{ __('Region') }}</label>
                                 <div class="@error('user.name') border border-danger rounded-3 @enderror">
-                                    <select class="form-select" aria-label="region" aria-placeholder="Region">
+                                    <select name="region_id" class="form-select" aria-label="region" aria-placeholder="Region">
                                         <option selected disabled hidden>Region</option>
                                         @forelse($regions as $item)
                                             <option value="{{ $item->id }}">{{ $item->region_name }}</option>

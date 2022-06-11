@@ -3,18 +3,24 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const card = () => {
-    const [ads, setAds] = useState({
-        ads: [],
-    });
+    const [ads, setAds] = useState([]);
 
     useEffect(async () => {
-        await axios.get("/browse").then((response) => {
-            setAds({
-                ads: response.data,
+        await axios
+            .get("/api/browse")
+            .then((response) => {
+                // console.log(response)
+                setAds(
+                    response.data,
+                );
+                // console.log(ads);
+            })
+            .catch((error) => {
+                console.log(error);
             });
-        });
-    });
+    }, []);
 
+    console.log("aaaaaaaa", ads);
     return (
         <div className="grid-wrapper">
             <Link to="/browse/result" className="my-3 card-search-text">
@@ -33,7 +39,7 @@ const card = () => {
                     </div>
                 </div>
             </Link>
-            {ads.map((ads) => (
+            {ads.map((ads) => {
                 <Link
                     to="/browse/result"
                     className="my-3 card-search-text"
@@ -49,7 +55,7 @@ const card = () => {
                         <p className="card-text">{ads.description}</p>
                     </div>
                 </Link>
-            ))}
+            })}
         </div>
     );
 };

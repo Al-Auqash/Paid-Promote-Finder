@@ -5969,9 +5969,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var card = function card() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)({
-    ads: []
-  }),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
       ads = _useState2[0],
       setAds = _useState2[1];
@@ -5982,10 +5980,11 @@ var card = function card() {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return axios__WEBPACK_IMPORTED_MODULE_1___default().get("/browse").then(function (response) {
-              setAds({
-                ads: response.data
-              });
+            return axios__WEBPACK_IMPORTED_MODULE_1___default().get("/api/browse").then(function (response) {
+              // console.log(response)
+              setAds(response.data); // console.log(ads);
+            })["catch"](function (error) {
+              console.log(error);
             });
 
           case 2:
@@ -5994,7 +5993,8 @@ var card = function card() {
         }
       }
     }, _callee);
-  })));
+  })), []);
+  console.log("aaaaaaaa", ads);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     className: "grid-wrapper",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
@@ -6018,7 +6018,8 @@ var card = function card() {
         })]
       })
     }), ads.map(function (ads) {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+      /*#__PURE__*/
+      (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
         to: "/browse/result",
         className: "my-3 card-search-text",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {

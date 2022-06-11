@@ -14,11 +14,24 @@ class AdsController extends Controller
 {
     public function index()
     {
-        $ads = Ads::select('*')->paginate(10);
+        $ads = DB::table('ads')
+            ->join('regions', 'ads.region_id', '=', 'regions.id')
+            ->join('categories', 'ads.category_id', '=', 'categories.id')
+            ->select('ads.*', 'categories.category_name', 'regions.region_name')
+            ->get();
 
         return view('ads.index', [
             'ads' => $ads
         ]);
+    }
+
+    public function client()
+    {
+        // $ads = DB::table('ads')->get();
+        $ads = Ads::select('*')->get();
+        // dd($ads->toJson());
+        return $ads->toJson();
+        
     }
 
     public function create()

@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 
+use App\Http\Controllers\Dashboard\AdsController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterClientController;
 
@@ -19,17 +20,7 @@ use App\Http\Controllers\auth\RegisterClientController;
 */
 
 
-Route::prefix('authentication')->group(function () {
-    Route::get('/signIn', function () {
-        return view('/layouts/app2');
-    });
-    Route::get('/signUp', function () {
-        return view('/layouts/app2');
-    });
-    Route::post('/signIn', [LoginController::class, '__invoke']);
-    Route::post('/signUp', [RegisterClientController::class, 'createClient']);
-    Route::post('/signOut', [LogoutController::class]);
-});
+Route::get('/browse', [AdsController::class, 'client']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

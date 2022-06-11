@@ -66,10 +66,12 @@
                                                 <p class="text-xs font-weight-bold mb-0">{{ $item->title }}</p>
                                             </td>
                                             <td class="text-center">
-                                                <p class="text-xs font-weight-bold mb-0">{{ $item->category_name }}</p>
+                                                <p class="text-xs font-weight-bold mb-0">
+                                                    {{ $item->category_name }}</p>
                                             </td>
                                             <td class="text-center">
-                                                <p class="text-xs font-weight-bold mb-0">{{ $item->region_name }}</p>
+                                                <p class="text-xs font-weight-bold mb-0">{{ $item->region_name }}
+                                                </p>
                                             </td>
                                             <td class="text-center">
                                                 <p class="text-xs font-weight-bold mb-0">{{ $item->time }}</p>
@@ -91,13 +93,13 @@
                                                     data-bs-toggle="tooltip" data-bs-original-title="Edit user">
                                                     <i class="fas fa-user-edit text-secondary"></i>
                                                 </a>
-                                                <form action="{{ route('ads.destroy', ['ads' => $item->id]) }}"
+                                                {{-- <form action="{{ route('ads.destroy', ['ads' => $item->id]) }}"
                                                     method="post">
                                                     {!! method_field('delete') . csrf_field() !!}
                                                     <button type="submit" class="border-0 bg-transparent">
                                                         <i class="cursor-pointer fas fa-trash text-secondary"></i>
                                                     </button>
-                                                </form>
+                                                </form> --}}
                                             </td>
                                         </tr>
                                     @empty

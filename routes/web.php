@@ -23,7 +23,8 @@ Route::get('/', function () {
 });
 
 Route::prefix('browse')->group(function () {
-    Route::get('/', [AdsController::class, 'client'], function () {
+    Route::get('/', [AdsController::class, 'client']);
+    Route::get('/', function () {
         return view('/layouts/app2');
     });
     Route::get('/result', function () {
