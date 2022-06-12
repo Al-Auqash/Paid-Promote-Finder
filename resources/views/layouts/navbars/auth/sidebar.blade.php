@@ -135,8 +135,8 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('ads') ? 'active' : '' }}"
-                    href="{{ route('ads.index') }}">
+                <a class="nav-link {{ Request::is('ad') ? 'active' : '' }}"
+                    href="{{ route('ad.index') }}">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i style="font-size: 0.8rem;"

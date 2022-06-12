@@ -45,11 +45,11 @@ const card = () => {
                     className="my-3 card-search-text"
                     key={ads.id}
                 >
-                    <img
+                    {/* <img
                         src="images/daph_cat.jpg"
                         className="card-img-top"
                         alt="..."
-                    />
+                    /> */}
                     <div className="card-body">
                         <p className="card-title fw-bold">{ads.title}</p>
                         <p className="card-text">{ads.description}</p>

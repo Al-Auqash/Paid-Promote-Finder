@@ -10,7 +10,7 @@
                             <div>
                                 <h5 class="mb-0">All Ads</h5>
                             </div>
-                            <a href="{{ route('ads.create') }}" class="btn bg-gradient-primary btn-sm mb-0"
+                            <a href="{{ route('ad.create') }}" class="btn bg-gradient-primary btn-sm mb-0"
                                 type="button">+&nbsp; New Ad</a>
                         </div>
                     </div>
@@ -89,17 +89,18 @@
                                                 <p class="text-xs font-weight-bold mb-0">{{ $item->updated_at }}</p>
                                             </td>
                                             <td class="text-center d-flex flex-row">
-                                                <a href="{{ route('ads.edit', $item->id) }}" class="mx-3"
-                                                    data-bs-toggle="tooltip" data-bs-original-title="Edit user">
-                                                    <i class="fas fa-user-edit text-secondary"></i>
+                                                <a href="{{ route('ad.edit', $item->id) }}" class="mx-3"
+                                                    data-bs-toggle="tooltip"
+                                                    data-bs-original-title="{{ 'Edit Category ' . $item->id }}">
+                                                    <i class="fas fa-pen text-secondary"></i>
                                                 </a>
-                                                {{-- <form action="{{ route('ads.destroy', ['ads' => $item->id]) }}"
+                                                <form action="{{ route('ad.destroy', ['ad' => $item->id]) }}"
                                                     method="post">
                                                     {!! method_field('delete') . csrf_field() !!}
                                                     <button type="submit" class="border-0 bg-transparent">
                                                         <i class="cursor-pointer fas fa-trash text-secondary"></i>
                                                     </button>
-                                                </form> --}}
+                                                </form>
                                             </td>
                                         </tr>
                                     @empty

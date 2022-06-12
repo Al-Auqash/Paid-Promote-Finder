@@ -6019,14 +6019,10 @@ var card = function card() {
       })
     }), ads.map(function (ads) {
       /*#__PURE__*/
-      (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+      (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
         to: "/browse/result",
         className: "my-3 card-search-text",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-          src: "images/daph_cat.jpg",
-          className: "card-img-top",
-          alt: "..."
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: "card-body",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
             className: "card-title fw-bold",
@@ -6035,7 +6031,7 @@ var card = function card() {
             className: "card-text",
             children: ads.description
           })]
-        })]
+        })
       }, ads.id);
     })]
   });

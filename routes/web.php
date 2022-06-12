@@ -88,8 +88,8 @@ Route::prefix('dashboard')
         Route::resource('flow', FlowsController::class);
         Route::post('flow/store', [FlowsController::class, 'store'])->name('flow-store');
 
-        Route::resource('ads', AdsController::class);
-        Route::post('ads/store', [AdsController::class, 'store'])->name('ads-store');
+        Route::resource('ad', AdsController::class);
+        Route::post('ad/store', [AdsController::class, 'store'])->name('ads-store');
 
 
         // Route::get('region', function () {
