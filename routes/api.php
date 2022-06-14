@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 
 use App\Http\Controllers\Dashboard\AdsController;
+use App\Http\Controllers\Dashboard\RegionsController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterClientController;
 
@@ -21,6 +22,7 @@ use App\Http\Controllers\auth\RegisterClientController;
 
 
 Route::get('/browse', [AdsController::class, 'client']);
+Route::get('/browse/region', [RegionsController::class, 'client']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

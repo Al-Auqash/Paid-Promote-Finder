@@ -11,6 +11,40 @@ import axios from "axios";
 
 const searchBar = () => {
     const [startDate, setStartDate] = useState(new Date());
+    const [ads, setAds] = useState([]);
+    const [region, setRegion] = useState([]);
+
+    const [search, setSearch] = useState([]);
+
+    const getAds = async () => {
+        await axios
+            .get("/api/browse")
+            .then((response) => {
+                setAds(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
+
+    const getRegion = async () => {
+        await axios
+            .get("/api/browse/region")
+            .then((response) => {
+                setRegion(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
+
+    useEffect(() => {
+        getAds();
+        getRegion();
+    }, []);
+
+    console.log(ads);
+    console.log(region);
 
     return (
         <section className="px-4">
@@ -31,7 +65,7 @@ const searchBar = () => {
                                     />
                                     <label
                                         className="form-check-label"
-                                        for="flexRadioDefault1"
+                                        htmlFor="flexRadioDefault1"
                                     >
                                         Sponsor
                                     </label>
@@ -45,7 +79,7 @@ const searchBar = () => {
                                     />
                                     <label
                                         className="form-check-label"
-                                        for="flexRadioDefault2"
+                                        htmlFor="flexRadioDefault2"
                                     >
                                         Event
                                     </label>
@@ -67,30 +101,16 @@ const searchBar = () => {
                                         className="dropdown-menu w-100"
                                         aria-labelledby="categoryButton"
                                     >
-                                        <li>
-                                            <a
-                                                className="dropdown-item"
-                                                href="#"
-                                            >
-                                                East Java
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a
-                                                className="dropdown-item"
-                                                href="#"
-                                            >
-                                                Middle Java
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a
-                                                className="dropdown-item"
-                                                href="#"
-                                            >
-                                                West Java
-                                            </a>
-                                        </li>
+                                        {region.map((region) => (
+                                            <li key={region.id}>
+                                                <Link
+                                                    className="dropdown-item"
+                                                    to="#"
+                                                >
+                                                    {region.region_name}
+                                                </Link>
+                                            </li>
+                                        ))}
                                     </ul>
                                 </div>
                             </div>
@@ -136,7 +156,10 @@ const searchBar = () => {
                     <div className="container p-0">
                         <div>
                             <Routes>
-                                <Route path="/" element={<Card />} />
+                                <Route
+                                    path="/"
+                                    element={<Card state={ads} />}
+                                />
                                 <Route path="/result" element={<Result />} />
                             </Routes>
                         </div>

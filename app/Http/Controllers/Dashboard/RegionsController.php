@@ -17,6 +17,14 @@ class RegionsController extends Controller
         ]);
     }
 
+    public function client()
+    {
+        // $region = DB::table('region')->get();
+        $region = Region::select('*')->get();
+        // dd($region->toJson());
+        return $region->toJson();
+    }
+
     public function create()
     {
         return view('region.create');
