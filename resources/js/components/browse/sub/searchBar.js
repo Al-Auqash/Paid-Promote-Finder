@@ -38,13 +38,29 @@ const searchBar = () => {
             });
     };
 
+    const getSearch = async () => {
+        await axios
+            .post("/api/browse/search")
+            .then((response) => {
+                setSearch(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
+
+    const handleChange = (e) => {
+        e.preventDefault();
+    };
+
+    const handleSubmit = (e) => {
+        setSearch(e.target.value);
+    };
+
     useEffect(() => {
         getAds();
         getRegion();
     }, []);
-
-    console.log(ads);
-    console.log(region);
 
     return (
         <section className="px-4">

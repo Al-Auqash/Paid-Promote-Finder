@@ -6201,12 +6201,44 @@ var searchBar = function searchBar() {
     };
   }();
 
+  var getSearch = /*#__PURE__*/function () {
+    var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              _context3.next = 2;
+              return axios__WEBPACK_IMPORTED_MODULE_6___default().post("/api/browse/search").then(function (response) {
+                setSearch(response.data);
+              })["catch"](function (error) {
+                console.log(error);
+              });
+
+            case 2:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3);
+    }));
+
+    return function getSearch() {
+      return _ref3.apply(this, arguments);
+    };
+  }();
+
+  var handleChange = function handleChange(e) {
+    e.preventDefault();
+  };
+
+  var handleSubmit = function handleSubmit(e) {
+    setSearch(e.target.value);
+  };
+
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     getAds();
     getRegion();
   }, []);
-  console.log(ads);
-  console.log(region);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("section", {
     className: "px-4",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("form", {
