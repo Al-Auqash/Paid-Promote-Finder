@@ -28,11 +28,12 @@ class AdsController extends Controller
     public function client(Request $request)
     {
         $keyword = $request->keyword;
-        $region = $request->region;
+        $region_id = $request->region_id;
         // $keyword = 'anniversary';
 
         $ads = Ads::select('*')
             ->where('title', 'LIKE', '%' . $keyword . '%')
+            ->where('region_id', 'LIKE', '%' . $region_id . '%')
             ->get();
 
         return $ads->toJson();

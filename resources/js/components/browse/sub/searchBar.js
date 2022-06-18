@@ -17,7 +17,7 @@ const searchBar = () => {
     const [search, setSearch] = useState([
         {
             keyword: "",
-            region: "",
+            region_id: "",
         },
     ]);
 
@@ -57,7 +57,7 @@ const searchBar = () => {
 
         const params = {
             keyword: search.keyword,
-            region: search.region,
+            region_id: search.region_id,
         };
 
         await axios
@@ -70,10 +70,9 @@ const searchBar = () => {
             .catch((error) => {
                 console.log(error);
             });
+        // window.history.replaceState({}, document.title)
     };
 
-    console.log(search.keyword);
-    console.log(ads);
     useEffect(() => {
         getAds();
         getRegion();
@@ -120,32 +119,22 @@ const searchBar = () => {
                             </div> */}
                             <div className="form-group subFilterTitle">
                                 <p className="m-0">Region</p>
-                                <div className="dropdown">
-                                    <button
-                                        className="btn btn-outline-warning dropdown-toggle w-100"
-                                        type="button"
-                                        id="categoryButton"
-                                        data-bs-toggle="dropdown"
-                                        aria-expanded="false"
-                                    >
-                                        Region
-                                    </button>
-                                    <ul
-                                        className="dropdown-menu w-100"
-                                        aria-labelledby="categoryButton"
-                                    >
-                                        {region.map((region) => (
-                                            <li key={region.id}>
-                                                <Link
-                                                    className="dropdown-item"
-                                                    to="#"
-                                                >
-                                                    {region.region_name}
-                                                </Link>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
+                                <select
+                                    className="form-select btn btn-outline-warning"
+                                    id="region"
+                                    name="region_id"
+                                    onChange={handleChange}
+                                >
+                                    <option selected>Choose...</option>
+                                    {region.map((region) => (
+                                        <option
+                                            key={region.id}
+                                            value={region.id}
+                                        >
+                                            {region.region_name}
+                                        </option>
+                                    ))}
+                                </select>
                             </div>
                             <div className="form-group subFilterTitle">
                                 <p className="m-0">Time</p>
