@@ -25,13 +25,17 @@ class AdsController extends Controller
         ]);
     }
 
-    public function client()
+    public function client(Request $request)
     {
-        // $ads = DB::table('ads')->get();
-        $ads = Ads::select('*')->get();
-        // dd($ads->toJson());
+        $keyword = $request->keyword;
+        $region = $request->region;
+        // $keyword = 'anniversary';
+
+        $ads = Ads::select('*')
+            ->where('title', 'LIKE', '%' . $keyword . '%')
+            ->get();
+
         return $ads->toJson();
-        
     }
 
     public function create()

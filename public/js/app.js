@@ -6105,6 +6105,8 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -6144,10 +6146,18 @@ var searchBar = function searchBar() {
       region = _useState6[0],
       setRegion = _useState6[1];
 
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([{
+    keyword: "",
+    region: ""
+  }]),
       _useState8 = _slicedToArray(_useState7, 2),
       search = _useState8[0],
       setSearch = _useState8[1];
+
+  var handleChange = function handleChange(e) {
+    setSearch(_defineProperty({}, e.target.name, e.target.value)); // e.preventDefault();
+  }; // const handleSubmit = (e) => {};
+
 
   var getAds = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
@@ -6202,19 +6212,27 @@ var searchBar = function searchBar() {
   }();
 
   var getSearch = /*#__PURE__*/function () {
-    var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+    var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3(e) {
+      var params;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
         while (1) {
           switch (_context3.prev = _context3.next) {
             case 0:
-              _context3.next = 2;
-              return axios__WEBPACK_IMPORTED_MODULE_6___default().post("/api/browse/search").then(function (response) {
-                setSearch(response.data);
+              e.preventDefault();
+              params = {
+                keyword: search.keyword,
+                region: search.region
+              };
+              _context3.next = 4;
+              return axios__WEBPACK_IMPORTED_MODULE_6___default().get("/api/browse", {
+                params: params
+              }).then(function (response) {
+                setAds(response.data); // window.location.href = "/browse/search";
               })["catch"](function (error) {
                 console.log(error);
               });
 
-            case 2:
+            case 4:
             case "end":
               return _context3.stop();
           }
@@ -6222,19 +6240,13 @@ var searchBar = function searchBar() {
       }, _callee3);
     }));
 
-    return function getSearch() {
+    return function getSearch(_x) {
       return _ref3.apply(this, arguments);
     };
   }();
 
-  var handleChange = function handleChange(e) {
-    e.preventDefault();
-  };
-
-  var handleSubmit = function handleSubmit(e) {
-    setSearch(e.target.value);
-  };
-
+  console.log(search.keyword);
+  console.log(ads);
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     getAds();
     getRegion();
@@ -6242,7 +6254,7 @@ var searchBar = function searchBar() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("section", {
     className: "px-4",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("form", {
-      method: "post",
+      onSubmit: getSearch,
       className: "row",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "col-2",
@@ -6252,36 +6264,6 @@ var searchBar = function searchBar() {
             className: "col filter pb-4",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
               children: "Filter"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-              className: "form-group subFilterTitle",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
-                className: "m-0",
-                children: "Category"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                className: "form-check",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
-                  className: "form-check-input",
-                  type: "radio",
-                  name: "category",
-                  id: "flexRadioDefault1"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-                  className: "form-check-label",
-                  htmlFor: "flexRadioDefault1",
-                  children: "Sponsor"
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                className: "form-check",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
-                  className: "form-check-input",
-                  type: "radio",
-                  name: "category",
-                  id: "flexRadioDefault2"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-                  className: "form-check-label",
-                  htmlFor: "flexRadioDefault2",
-                  children: "Event"
-                })]
-              })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
               className: "form-group subFilterTitle",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
@@ -6338,9 +6320,11 @@ var searchBar = function searchBar() {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
               className: "form-group",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
-                name: "browse",
+                name: "keyword",
                 className: "form-control searchInput p-2",
-                placeholder: "Try to Type 'Anniversary'"
+                placeholder: "Try to Type 'Anniversary'" // value={search.keyword}
+                ,
+                onChange: handleChange
               })
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
@@ -6349,9 +6333,9 @@ var searchBar = function searchBar() {
               className: "form-group",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
                 className: "form-control btn searchBtnBrowse p-2",
-                type: "submit",
-                name: "save",
-                value: "Cari",
+                type: "submit" // name="save"
+                // value="Search"
+                ,
                 children: "Find"
               })
             })

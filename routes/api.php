@@ -21,6 +21,7 @@ use App\Http\Controllers\auth\RegisterClientController;
 */
 
 
+// Route::get('/browse', [AdsController::class, 'client']);
 Route::get('/browse', [AdsController::class, 'client']);
 Route::get('/browse/region', [RegionsController::class, 'client']);
 

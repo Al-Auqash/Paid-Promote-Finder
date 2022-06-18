@@ -14,7 +14,21 @@ const searchBar = () => {
     const [ads, setAds] = useState([]);
     const [region, setRegion] = useState([]);
 
-    const [search, setSearch] = useState([]);
+    const [search, setSearch] = useState([
+        {
+            keyword: "",
+            region: "",
+        },
+    ]);
+
+    const handleChange = (e) => {
+        setSearch({
+            [e.target.name]: e.target.value,
+        });
+        // e.preventDefault();
+    };
+
+    // const handleSubmit = (e) => {};
 
     const getAds = async () => {
         await axios
@@ -38,25 +52,28 @@ const searchBar = () => {
             });
     };
 
-    const getSearch = async () => {
+    const getSearch = async (e) => {
+        e.preventDefault();
+
+        const params = {
+            keyword: search.keyword,
+            region: search.region,
+        };
+
         await axios
-            .post("/api/browse/search")
+            // .get("/api/browse?keyword=" + search.keyword)
+            .get("/api/browse", { params })
             .then((response) => {
-                setSearch(response.data);
+                setAds(response.data);
+                // window.location.href = "/browse/search";
             })
             .catch((error) => {
                 console.log(error);
             });
     };
 
-    const handleChange = (e) => {
-        e.preventDefault();
-    };
-
-    const handleSubmit = (e) => {
-        setSearch(e.target.value);
-    };
-
+    console.log(search.keyword);
+    console.log(ads);
     useEffect(() => {
         getAds();
         getRegion();
@@ -65,12 +82,12 @@ const searchBar = () => {
     return (
         <section className="px-4">
             {/* <p>Find All you need</p> */}
-            <form method="post" className="row">
+            <form onSubmit={getSearch} className="row">
                 <div className="col-2">
                     <div className="row">
                         <div className="col filter pb-4">
                             <p>Filter</p>
-                            <div className="form-group subFilterTitle">
+                            {/* <div className="form-group subFilterTitle">
                                 <p className="m-0">Category</p>
                                 <div className="form-check">
                                     <input
@@ -100,7 +117,7 @@ const searchBar = () => {
                                         Event
                                     </label>
                                 </div>
-                            </div>
+                            </div> */}
                             <div className="form-group subFilterTitle">
                                 <p className="m-0">Region</p>
                                 <div className="dropdown">
@@ -150,9 +167,11 @@ const searchBar = () => {
                         <div className="col-10 mb-3">
                             <div className="form-group">
                                 <input
-                                    name="browse"
+                                    name="keyword"
                                     className="form-control searchInput p-2"
                                     placeholder="Try to Type 'Anniversary'"
+                                    // value={search.keyword}
+                                    onChange={handleChange}
                                 />
                             </div>
                         </div>
@@ -161,8 +180,8 @@ const searchBar = () => {
                                 <button
                                     className="form-control btn searchBtnBrowse p-2"
                                     type="submit"
-                                    name="save"
-                                    value="Cari"
+                                    // name="save"
+                                    // value="Search"
                                 >
                                     Find
                                 </button>
