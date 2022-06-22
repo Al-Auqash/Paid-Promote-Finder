@@ -6,7 +6,7 @@
     --base-font-family: "Akaya Kanadaka", cursive;
 }
 
-.bg-image{
+.bg-image {
     background-image: url("/images/concert1.jpg");
     background-size: cover;
     height: 100%;
@@ -17,7 +17,10 @@
 }
 
 .bg-content {
-    background-image: linear-gradient(rgba(34, 40, 49, 0.2), rgba(34, 40, 49, 0.8));
+    background-image: linear-gradient(
+        rgba(34, 40, 49, 0.2),
+        rgba(34, 40, 49, 0.8)
+    );
     background-size: cover;
     height: 100%;
     width: 100%;
@@ -56,11 +59,18 @@
     ); */
 }
 
-.card-how-to {
+/* .grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    column-gap: 2rem;
+    row-gap: 2rem;
+} */
+
+.card-client {
     border: 1px var(--base-grey);
-    border-radius: 20px;
-    width: 12rem;
-    height: 12rem;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
     padding: 0.5rem;
     text-align: center;
     vertical-align: middle;
@@ -86,6 +96,14 @@
 
 .text-orange {
     color: var(--base-orange);
+}
+
+.subTitle {
+    border-bottom: 3px solid #cc1f38;
+}
+
+.logoPartner {
+    object-fit: cover;
 }
 
 @media (max-width: 768px) {

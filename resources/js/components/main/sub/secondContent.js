@@ -9,41 +9,34 @@ import contract from "/images/contract.jpg";
 import rating from "/images/rating.jpg";
 
 const secondContent = () => {
-    const image = {};
+    const HowTo = {
+        title1: "Sign Up",
+        text1: "Sign Up to get free access to Paid Promote Finder",
+        title2: "Share & Post",
+        text2: "Post your event or sponsor in the Paid Promote Finder",
+        title3: "Contact & Contract",
+        text3: "Make comunication with your target and start making contract",
+        title4: "Finish & rate",
+        text4: "finish contract and rate based on your experience for further improvement",
+    };
 
     return (
-        <div className="m-5 vh-100">
-            <h2 className="w-100 text-center">HOW TO</h2>
+        <div className="my-5 mx-0 vh-100">
+            <h2 className="text-center">HOW PAID PROMOTE FINDER WORKS</h2>
             <CardCarousel
                 image1={register}
+                title1={HowTo.title1}
+                text1={HowTo.text1}
                 image2={post}
+                title2={HowTo.title2}
+                text2={HowTo.text2}
                 image3={contract}
+                title3={HowTo.title3}
+                text3={HowTo.text3}
                 image4={rating}
+                title4={HowTo.title4}
+                text4={HowTo.text4}
             />
-            {/* <div className="display-flex-row h-100 p-0 my-4 secondContent">
-                <div className="mx-5 card-how-to background-grey">
-                    <h5 className="text-dark-orange">Register</h5>
-                    <p>Sign Up to get free access to Paid Promote Finder</p>
-                </div>
-                <div className="mx-5 card-how-to background-grey">
-                    <h5 className="text-dark-orange">Share</h5>
-                    <p>Post your event or sponsor in the Paid Promote Finder</p>
-                </div>
-                <div className="mx-5 card-how-to background-grey">
-                    <h5 className="text-dark-orange">Contact</h5>
-                    <p>
-                        Make comunication with your target and start making
-                        contract
-                    </p>
-                </div>
-                <div className="mx-5 card-how-to background-grey">
-                    <h5 className="text-dark-orange">Finish & rate</h5>
-                    <p>
-                        finish contract and rate based on your experience for
-                        further improvement
-                    </p>
-                </div>
-            </div> */}
         </div>
     );
 };

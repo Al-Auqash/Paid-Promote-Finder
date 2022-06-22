@@ -6381,29 +6381,29 @@ var CardCarousel = function CardCarousel(props) {
       "data-bs-ride": "false",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "carousel-indicators",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+        children: [props.image1 && props.title1 && props.text1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
           type: "button",
           "data-bs-target": "#carouselExampleCaptions",
           "data-bs-slide-to": "0",
           className: "active",
           "aria-current": "true",
           "aria-label": "Slide 1"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+        }), props.image2 && props.title2 && props.text2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
           type: "button",
           "data-bs-target": "#carouselExampleCaptions",
           "data-bs-slide-to": "1",
           "aria-label": "Slide 2"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+        }), props.image3 && props.title3 && props.text3 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
           type: "button",
           "data-bs-target": "#carouselExampleCaptions",
           "data-bs-slide-to": "2",
           "aria-label": "Slide 3"
-        }), props.image4 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+        }), props.image4 && props.title4 && props.text4 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
           type: "button",
           "data-bs-target": "#carouselExampleCaptions",
           "data-bs-slide-to": "3",
           "aria-label": "Slide 4"
-        }), props.image5 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+        }), props.image5 && props.title5 && props.text5 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
           type: "button",
           "data-bs-target": "#carouselExampleCaptions",
           "data-bs-slide-to": "3",
@@ -6411,41 +6411,80 @@ var CardCarousel = function CardCarousel(props) {
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "carousel-inner",
-        children: [props.image1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        children: [props.image1 && props.title1 && props.text1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "carousel-item active",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+          "data-bs-interval": "10000",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
             src: props.image1,
             className: "d-block w-100 vh-50 imageCarousel",
             alt: "..."
-          })
-        }), props.image2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "carousel-caption d-none d-md-block bg-glass",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
+              children: props.title1
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+              children: props.text1
+            })]
+          })]
+        }), props.image2 && props.title2 && props.text2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "carousel-item",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+          "data-bs-interval": "2000",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
             src: props.image2,
             className: "d-block w-100 vh-50 imageCarousel",
             alt: "..."
-          })
-        }), props.image3 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "carousel-caption d-none d-md-block bg-glass",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
+              children: props.title2
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+              children: props.text2
+            })]
+          })]
+        }), props.image3 && props.title3 && props.text3 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "carousel-item",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+          "data-bs-interval": "2000",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
             src: props.image3,
             className: "d-block w-100 vh-50 imageCarousel",
             alt: "..."
-          })
-        }), props.image4 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "carousel-caption d-none d-md-block bg-glass",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
+              children: props.title3
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+              children: props.text3
+            })]
+          })]
+        }), props.image4 && props.title4 && props.text4 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "carousel-item",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+          "data-bs-interval": "2000",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
             src: props.image4,
             className: "d-block w-100 vh-50 imageCarousel",
             alt: "..."
-          })
-        }), props.image5 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "carousel-caption d-none d-md-block bg-glass",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
+              children: props.title4
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+              children: props.text4
+            })]
+          })]
+        }), props.image5 && props.title5 && props.text5 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "carousel-item",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
             src: props.image5,
             className: "d-block w-100 vh-50 imageCarousel",
             alt: "..."
-          })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "carousel-caption d-none d-md-block bg-glass",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
+              children: props.title5
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+              children: props.text5
+            })]
+          })]
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", {
         className: "carousel-control-prev",
@@ -6494,8 +6533,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _sub_FirstContent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sub/FirstContent */ "./resources/js/components/main/sub/FirstContent.js");
 /* harmony import */ var _sub_SecondContent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sub/SecondContent */ "./resources/js/components/main/sub/SecondContent.js");
-/* harmony import */ var _Index_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Index.css */ "./resources/js/components/main/Index.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _sub_ThirdContent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sub/ThirdContent */ "./resources/js/components/main/sub/ThirdContent.js");
+/* harmony import */ var _Index_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Index.css */ "./resources/js/components/main/Index.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -6504,9 +6545,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Index = function Index() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     className: "d-flex flex-column first-font-family p-0 m-0",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_sub_FirstContent__WEBPACK_IMPORTED_MODULE_1__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_sub_SecondContent__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_sub_FirstContent__WEBPACK_IMPORTED_MODULE_1__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_sub_SecondContent__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_sub_ThirdContent__WEBPACK_IMPORTED_MODULE_3__["default"], {})]
   });
 };
 
@@ -6540,7 +6581,7 @@ var firstContent = function firstContent() {
       className: "display-flex-row vh-100 w-100 bg-content",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "display-flex-col mx-4 w-100",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
           children: "PAID PROMOTE FINDER"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
           children: "find an upcoming event below and have them promote your product"
@@ -6562,6 +6603,7 @@ var firstContent = function firstContent() {
             })]
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+          href: "/authentication/signUp",
           className: "joinBtn",
           children: "or join for free"
         })]
@@ -6606,22 +6648,101 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var secondContent = function secondContent() {
-  var image = {};
+  var HowTo = {
+    title1: "Sign Up",
+    text1: "Sign Up to get free access to Paid Promote Finder",
+    title2: "Share & Post",
+    text2: "Post your event or sponsor in the Paid Promote Finder",
+    title3: "Contact & Contract",
+    text3: "Make comunication with your target and start making contract",
+    title4: "Finish & rate",
+    text4: "finish contract and rate based on your experience for further improvement"
+  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-    className: "m-5 vh-100",
+    className: "my-5 mx-0 vh-100",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
-      className: "w-100 text-center",
-      children: "HOW TO"
+      className: "text-center",
+      children: "HOW PAID PROMOTE FINDER WORKS"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_custom_CardCarousel__WEBPACK_IMPORTED_MODULE_1__["default"], {
       image1: _images_register_jpg__WEBPACK_IMPORTED_MODULE_3__["default"],
+      title1: HowTo.title1,
+      text1: HowTo.text1,
       image2: _images_post_jpg__WEBPACK_IMPORTED_MODULE_4__["default"],
+      title2: HowTo.title2,
+      text2: HowTo.text2,
       image3: _images_contract_jpg__WEBPACK_IMPORTED_MODULE_5__["default"],
-      image4: _images_rating_jpg__WEBPACK_IMPORTED_MODULE_6__["default"]
+      title3: HowTo.title3,
+      text3: HowTo.text3,
+      image4: _images_rating_jpg__WEBPACK_IMPORTED_MODULE_6__["default"],
+      title4: HowTo.title4,
+      text4: HowTo.text4
     })]
   });
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (secondContent);
+
+/***/ }),
+
+/***/ "./resources/js/components/main/sub/ThirdContent.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/main/sub/ThirdContent.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+var ThirdContent = function ThirdContent() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "m-5 vh-100",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+      className: "w-100 text-center",
+      children: "OUR CLIENTS"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "d-flex justify-content-evenly flex-wrap h-100 p-0 my-4 secondContent",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "mx-5 card-client background-grey py-2",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+          className: "card-img-top p-2 logoPartner",
+          src: "/images/coffee-logo.png",
+          width: "100"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "mx-5 card-client background-grey py-2",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+          className: "card-img-top p-2 logoPartner",
+          src: "/images/cat-logo.png",
+          width: "100"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "mx-5 card-client background-grey py-2 d-flex flex-row align-items-center",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+          className: "card-img-top p-2 logoPartner",
+          src: "/images/lotus-logo.png",
+          width: "100"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "mx-5 card-client background-grey py-2",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+          className: "card-img-top p-2 logoPartner",
+          src: "/images/starbucks-logo.png",
+          width: "100"
+        })
+      })]
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ThirdContent);
 
 /***/ }),
 
@@ -21354,7 +21475,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".imageCarousel{\r\n    max-width: 100%;\r\n    max-height: 80vh;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".imageCarousel {\r\n    max-width: 100%;\r\n    max-height: 80vh;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n}\r\n\r\n.bg-glass {\r\n    background: rgba(255, 255, 255, 0);\r\n    border-radius: 16px;\r\n    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);\r\n    backdrop-filter: blur(11px);\r\n    -webkit-backdrop-filter: blur(11px);\r\n    border: 1px solid rgba(255, 255, 255, 1);\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -21426,7 +21547,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ":root {\r\n    --base-orange: #ff7315;\r\n    --base-dark-orange: #ff5722;\r\n    --base-white: #f4f4f4;\r\n    --base-background-color: #222831;\r\n    --base-font-family: \"Akaya Kanadaka\", cursive;\r\n}\r\n\r\n.bg-image{\r\n    background-image: url(\"/images/concert1.jpg\");\r\n    background-size: cover;\r\n    height: 100%;\r\n    width: 100%;\r\n    padding: 0;\r\n    margin: 0;\r\n    z-index: 1;\r\n}\r\n\r\n.bg-content {\r\n    background-image: linear-gradient(rgba(34, 40, 49, 0.2), rgba(34, 40, 49, 0.8));\r\n    background-size: cover;\r\n    height: 100%;\r\n    width: 100%;\r\n    display: flex;\r\n    background-size: cover;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n}\r\n\r\n.height-full {\r\n    height: 80vh;\r\n}\r\n\r\n.searchInput {\r\n    border: none;\r\n}\r\n\r\n.searchBtn {\r\n    background-color: var(--base-dark-orange);\r\n    color: var(--base-white);\r\n    border: none;\r\n}\r\n\r\n.joinBtn {\r\n    color: var(--base-dark-orange);\r\n    text-decoration: none;\r\n}\r\n\r\n.image {\r\n    width: 100%;\r\n    height: 50%;\r\n    /* background-image: linear-gradient(\r\n        to left,\r\n        transparent,\r\n        var(--base-background-color)\r\n    ); */\r\n}\r\n\r\n.card-how-to {\r\n    border: 1px var(--base-grey);\r\n    border-radius: 20px;\r\n    width: 12rem;\r\n    height: 12rem;\r\n    padding: 0.5rem;\r\n    text-align: center;\r\n    vertical-align: middle;\r\n}\r\n\r\n.display-flex-col {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-item: center;\r\n}\r\n\r\n.display-flex-row {\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-item: center;\r\n}\r\n\r\n.text-dark-orange {\r\n    color: var(--base-dark-orange);\r\n}\r\n\r\n.text-orange {\r\n    color: var(--base-orange);\r\n}\r\n\r\n@media (max-width: 768px) {\r\n    .secondContent {\r\n        display: flex;\r\n        flex-direction: column;\r\n        justify-content: center;\r\n        align-item: center;\r\n    }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ":root {\r\n    --base-orange: #ff7315;\r\n    --base-dark-orange: #ff5722;\r\n    --base-white: #f4f4f4;\r\n    --base-background-color: #222831;\r\n    --base-font-family: \"Akaya Kanadaka\", cursive;\r\n}\r\n\r\n.bg-image {\r\n    background-image: url(\"/images/concert1.jpg\");\r\n    background-size: cover;\r\n    height: 100%;\r\n    width: 100%;\r\n    padding: 0;\r\n    margin: 0;\r\n    z-index: 1;\r\n}\r\n\r\n.bg-content {\r\n    background-image: linear-gradient(\r\n        rgba(34, 40, 49, 0.2),\r\n        rgba(34, 40, 49, 0.8)\r\n    );\r\n    background-size: cover;\r\n    height: 100%;\r\n    width: 100%;\r\n    display: flex;\r\n    background-size: cover;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n}\r\n\r\n.height-full {\r\n    height: 80vh;\r\n}\r\n\r\n.searchInput {\r\n    border: none;\r\n}\r\n\r\n.searchBtn {\r\n    background-color: var(--base-dark-orange);\r\n    color: var(--base-white);\r\n    border: none;\r\n}\r\n\r\n.joinBtn {\r\n    color: var(--base-dark-orange);\r\n    text-decoration: none;\r\n}\r\n\r\n.image {\r\n    width: 100%;\r\n    height: 50%;\r\n    /* background-image: linear-gradient(\r\n        to left,\r\n        transparent,\r\n        var(--base-background-color)\r\n    ); */\r\n}\r\n\r\n/* .grid-wrapper {\r\n    display: grid;\r\n    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));\r\n    column-gap: 2rem;\r\n    row-gap: 2rem;\r\n} */\r\n\r\n.card-client {\r\n    border: 1px var(--base-grey);\r\n    border-radius: 50%;\r\n    width: 200px;\r\n    height: 200px;\r\n    padding: 0.5rem;\r\n    text-align: center;\r\n    vertical-align: middle;\r\n}\r\n\r\n.display-flex-col {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-item: center;\r\n}\r\n\r\n.display-flex-row {\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-item: center;\r\n}\r\n\r\n.text-dark-orange {\r\n    color: var(--base-dark-orange);\r\n}\r\n\r\n.text-orange {\r\n    color: var(--base-orange);\r\n}\r\n\r\n.subTitle {\r\n    border-bottom: 3px solid #cc1f38;\r\n}\r\n\r\n.logoPartner {\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n    .secondContent {\r\n        display: flex;\r\n        flex-direction: column;\r\n        justify-content: center;\r\n        align-item: center;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
