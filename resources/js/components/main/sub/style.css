@@ -74,6 +74,11 @@
     padding: 0.5rem;
     text-align: center;
     vertical-align: middle;
+    box-shadow: rgba(255, 115, 21, 0.25) 0px 54px 55px,
+        rgba(255, 115, 21, 0.12) 0px -12px 30px, rgba(255, 115, 21, 0.12) 0px 4px 6px,
+        rgba(255, 115, 21, 0.17) 0px 12px 13px, rgba(255, 115, 21, 0.09) 0px -3px 5px;
+    /* box-shadow: rgba(255, 115, 21, 0.56) 0px 22px 70px 4px; */
+    /* box-shadow: rgba(255, 115, 21, 0.15) 0px 15px 25px, rgba(255, 115, 21, 0.05) 0px 15px 10px; */
 }
 
 .display-flex-col {
@@ -103,6 +108,7 @@
 }
 
 .logoPartner {
+    width: 90%;
     object-fit: cover;
 }
 

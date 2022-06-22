@@ -6710,32 +6710,28 @@ var ThirdContent = function ThirdContent() {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "d-flex justify-content-evenly flex-wrap h-100 p-0 my-4 secondContent",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "mx-5 card-client background-grey py-2",
+        className: "mx-5 card-client background-grey py-2 d-flex flex-row align-items-center justify-content-center",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
           className: "card-img-top p-2 logoPartner",
-          src: "/images/coffee-logo.png",
-          width: "100"
+          src: "/images/coffee-logo.png"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "mx-5 card-client background-grey py-2",
+        className: "mx-5 card-client background-grey py-2 d-flex flex-row align-items-center justify-content-center",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
           className: "card-img-top p-2 logoPartner",
-          src: "/images/cat-logo.png",
-          width: "100"
+          src: "/images/cat-logo.png"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "mx-5 card-client background-grey py-2 d-flex flex-row align-items-center",
+        className: "mx-5 card-client background-grey py-2 d-flex flex-row align-items-center justify-content-center",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
           className: "card-img-top p-2 logoPartner",
-          src: "/images/lotus-logo.png",
-          width: "100"
+          src: "/images/lotus-logo.png"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "mx-5 card-client background-grey py-2",
+        className: "mx-5 card-client background-grey py-2 d-flex flex-row align-items-center justify-content-center",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
           className: "card-img-top p-2 logoPartner",
-          src: "/images/starbucks-logo.png",
-          width: "100"
+          src: "/images/starbucks-logo.png"
         })
       })]
     })]
@@ -21547,7 +21543,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ":root {\r\n    --base-orange: #ff7315;\r\n    --base-dark-orange: #ff5722;\r\n    --base-white: #f4f4f4;\r\n    --base-background-color: #222831;\r\n    --base-font-family: \"Akaya Kanadaka\", cursive;\r\n}\r\n\r\n.bg-image {\r\n    background-image: url(\"/images/concert1.jpg\");\r\n    background-size: cover;\r\n    height: 100%;\r\n    width: 100%;\r\n    padding: 0;\r\n    margin: 0;\r\n    z-index: 1;\r\n}\r\n\r\n.bg-content {\r\n    background-image: linear-gradient(\r\n        rgba(34, 40, 49, 0.2),\r\n        rgba(34, 40, 49, 0.8)\r\n    );\r\n    background-size: cover;\r\n    height: 100%;\r\n    width: 100%;\r\n    display: flex;\r\n    background-size: cover;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n}\r\n\r\n.height-full {\r\n    height: 80vh;\r\n}\r\n\r\n.searchInput {\r\n    border: none;\r\n}\r\n\r\n.searchBtn {\r\n    background-color: var(--base-dark-orange);\r\n    color: var(--base-white);\r\n    border: none;\r\n}\r\n\r\n.joinBtn {\r\n    color: var(--base-dark-orange);\r\n    text-decoration: none;\r\n}\r\n\r\n.image {\r\n    width: 100%;\r\n    height: 50%;\r\n    /* background-image: linear-gradient(\r\n        to left,\r\n        transparent,\r\n        var(--base-background-color)\r\n    ); */\r\n}\r\n\r\n/* .grid-wrapper {\r\n    display: grid;\r\n    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));\r\n    column-gap: 2rem;\r\n    row-gap: 2rem;\r\n} */\r\n\r\n.card-client {\r\n    border: 1px var(--base-grey);\r\n    border-radius: 50%;\r\n    width: 200px;\r\n    height: 200px;\r\n    padding: 0.5rem;\r\n    text-align: center;\r\n    vertical-align: middle;\r\n}\r\n\r\n.display-flex-col {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-item: center;\r\n}\r\n\r\n.display-flex-row {\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-item: center;\r\n}\r\n\r\n.text-dark-orange {\r\n    color: var(--base-dark-orange);\r\n}\r\n\r\n.text-orange {\r\n    color: var(--base-orange);\r\n}\r\n\r\n.subTitle {\r\n    border-bottom: 3px solid #cc1f38;\r\n}\r\n\r\n.logoPartner {\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n    .secondContent {\r\n        display: flex;\r\n        flex-direction: column;\r\n        justify-content: center;\r\n        align-item: center;\r\n    }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ":root {\r\n    --base-orange: #ff7315;\r\n    --base-dark-orange: #ff5722;\r\n    --base-white: #f4f4f4;\r\n    --base-background-color: #222831;\r\n    --base-font-family: \"Akaya Kanadaka\", cursive;\r\n}\r\n\r\n.bg-image {\r\n    background-image: url(\"/images/concert1.jpg\");\r\n    background-size: cover;\r\n    height: 100%;\r\n    width: 100%;\r\n    padding: 0;\r\n    margin: 0;\r\n    z-index: 1;\r\n}\r\n\r\n.bg-content {\r\n    background-image: linear-gradient(\r\n        rgba(34, 40, 49, 0.2),\r\n        rgba(34, 40, 49, 0.8)\r\n    );\r\n    background-size: cover;\r\n    height: 100%;\r\n    width: 100%;\r\n    display: flex;\r\n    background-size: cover;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n}\r\n\r\n.height-full {\r\n    height: 80vh;\r\n}\r\n\r\n.searchInput {\r\n    border: none;\r\n}\r\n\r\n.searchBtn {\r\n    background-color: var(--base-dark-orange);\r\n    color: var(--base-white);\r\n    border: none;\r\n}\r\n\r\n.joinBtn {\r\n    color: var(--base-dark-orange);\r\n    text-decoration: none;\r\n}\r\n\r\n.image {\r\n    width: 100%;\r\n    height: 50%;\r\n    /* background-image: linear-gradient(\r\n        to left,\r\n        transparent,\r\n        var(--base-background-color)\r\n    ); */\r\n}\r\n\r\n/* .grid-wrapper {\r\n    display: grid;\r\n    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));\r\n    column-gap: 2rem;\r\n    row-gap: 2rem;\r\n} */\r\n\r\n.card-client {\r\n    border: 1px var(--base-grey);\r\n    border-radius: 50%;\r\n    width: 200px;\r\n    height: 200px;\r\n    padding: 0.5rem;\r\n    text-align: center;\r\n    vertical-align: middle;\r\n    box-shadow: rgba(255, 115, 21, 0.25) 0px 54px 55px,\r\n        rgba(255, 115, 21, 0.12) 0px -12px 30px, rgba(255, 115, 21, 0.12) 0px 4px 6px,\r\n        rgba(255, 115, 21, 0.17) 0px 12px 13px, rgba(255, 115, 21, 0.09) 0px -3px 5px;\r\n    /* box-shadow: rgba(255, 115, 21, 0.56) 0px 22px 70px 4px; */\r\n    /* box-shadow: rgba(255, 115, 21, 0.15) 0px 15px 25px, rgba(255, 115, 21, 0.05) 0px 15px 10px; */\r\n}\r\n\r\n.display-flex-col {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-item: center;\r\n}\r\n\r\n.display-flex-row {\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-item: center;\r\n}\r\n\r\n.text-dark-orange {\r\n    color: var(--base-dark-orange);\r\n}\r\n\r\n.text-orange {\r\n    color: var(--base-orange);\r\n}\r\n\r\n.subTitle {\r\n    border-bottom: 3px solid #cc1f38;\r\n}\r\n\r\n.logoPartner {\r\n    width: 90%;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n    .secondContent {\r\n        display: flex;\r\n        flex-direction: column;\r\n        justify-content: center;\r\n        align-item: center;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
