@@ -15,7 +15,7 @@ import Authentication from "./authentication/Index";
 
 function App() {
     return (
-        <div className="container-fluid h-100 m-0">
+        <div className="container-fluid vh-100 m-0 p-0">
             <Router>
                 <Routes>
                     <Route path="/" element={<Main />} />

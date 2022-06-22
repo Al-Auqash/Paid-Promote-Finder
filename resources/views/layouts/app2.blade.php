@@ -132,7 +132,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="p-0 m-0">
             <div id="root"></div>
         </main>
 

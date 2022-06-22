@@ -49,14 +49,6 @@ Route::prefix('dashboard')
     ->middleware(['auth:admin', "verified"])
     ->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-        // Route::resource('users', UsersController::class);
-        // Route::resource('clients', ClientsController::class);
-        // Route::resource('ads', AdsController::class);
-        // Route::resource('regions', RegionsController::class);
-        // Route::resource('categories', CategoriesController::class);
-        // Route::get('dashboard', function () {
-        //     return view('dashboard');
-        // })->name('dashboard');
 
         Route::get('billing', function () {
             return view('billing');
@@ -69,9 +61,6 @@ Route::prefix('dashboard')
         Route::get('user-management', function () {
             return view('laravel-examples/user-management');
         })->name('user-management');
-
-        // Route::get('category', [CategoriesController::class, 'index'])->name('category');
-        // Route::get('category/create', [CategoriesController::class, 'create'])->name('category-create');
 
         Route::resource('user', UsersController::class);
         Route::post('user/store', [UsersController::class, 'store'])->name('user-store');
@@ -90,11 +79,6 @@ Route::prefix('dashboard')
 
         Route::resource('ad', AdsController::class);
         Route::post('ad/store', [AdsController::class, 'store'])->name('ads-store');
-
-
-        // Route::get('region', function () {
-        //     return view('region');
-        // })->name('region');
 
         Route::get('tables', function () {
             return view('tables');

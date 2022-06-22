@@ -7,7 +7,7 @@ import "./Index.css";
 
 const Index = () => {
     return (
-        <div class="d-flex flex-column first-font-family">
+        <div className="d-flex flex-column first-font-family p-0 m-0">
             <FirstContent />
             <SecondContent />
         </div>
