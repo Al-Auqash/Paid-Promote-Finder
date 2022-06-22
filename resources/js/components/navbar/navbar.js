@@ -1,5 +1,7 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
+import { useNavigate } from "react-router-dom";
 
 const Guest = () => {
     return (
@@ -48,18 +50,17 @@ const User = (props) => {
                     <a
                         className="dropdown-item"
                         href="/authentication/signOut"
-                        // onclick="event.preventDefault();
-                        //                      document.getElementById('logout-form').submit();"
+                        onClick={props.onClick}
                     >
                         LogOut
                     </a>
 
-                    {/* <form
-                                id="logout-form"
-                                action="{{ route('logout') }}"
-                                method="POST"
-                                className="d-none"
-                            ></form> */}
+                    <form
+                        id="logout-form"
+                        action="/authentication/signOut"
+                        method="POST"
+                        className="d-none"
+                    ></form>
                 </div>
             </li>
         </ul>
@@ -67,6 +68,26 @@ const User = (props) => {
 };
 
 const Navbar = () => {
+    // const navigate = useNavigate();
+
+    const signOut = (event) => {
+        event.preventDefault();
+        document.getElementById("logout-form").submit();
+
+        axios
+            .post("/authentication/signOut")
+            .then((response) => {
+                console.log(response);
+                // navigate("/");
+            })
+            .catch((error) => {
+                //assign error to state "validation"
+                console.log(error.response.data);
+                console.log(email);
+                console.log(password);
+            });
+    };
+
     const loggedIn = () => {
         if (localStorage.getItem("username")) {
             return true;
@@ -77,7 +98,7 @@ const Navbar = () => {
 
     const [user, setUser] = useState([]);
     useEffect(() => {
-        loggedIn;
+        loggedIn();
         if (localStorage.getItem("username")) {
             setUser(localStorage.getItem("username"));
         }
@@ -125,7 +146,11 @@ const Navbar = () => {
                             </a>
                         </li>
                     </ul>
-                    {loggedIn() ? <User username={user} /> : <Guest />}
+                    {loggedIn() ? (
+                        <User username={user} onClick={signOut} />
+                    ) : (
+                        <Guest />
+                    )}
                 </div>
             </div>
         </nav>

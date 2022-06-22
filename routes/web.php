@@ -11,6 +11,7 @@ use App\Http\Controllers\Dashboard\CategoriesController;
 use App\Http\Controllers\Dashboard\FlowsController;
 
 use App\Http\Controllers\auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\auth\RegisterClientController;
 
 use App\Http\Controllers\InfoUserController;
