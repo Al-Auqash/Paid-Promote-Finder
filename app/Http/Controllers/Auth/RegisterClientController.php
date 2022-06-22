@@ -23,16 +23,16 @@ class RegisterClientController extends Controller
     public function __invoke(Request $request)
     {
         //set validation
-        $validator = Validator::make($request->all(), [
-            'username'  => 'required',
-            'email'     => 'required|email|unique:users',
-            'password'  => 'required|min:8|confirmed'
-        ]);
+        // $validator = Validator::make($request->all(), [
+        //     'username'  => 'required',
+        //     'email'     => 'required|email|unique:users',
+        //     'password'  => 'required|min:8|confirmed'
+        // ]);
 
         //if validation fails
-        if ($validator->fails()) {
-            return response()->json($validator->errors(), 422);
-        }
+        // if ($validator->fails()) {
+        //     return response()->json($validator->errors(), 422);
+        // }
 
         //create user
         $user = Client::create([

@@ -36,8 +36,8 @@ const signIn = () => {
             .then((response) => {
                 //set token on localStorage
                 localStorage.setItem("token", response.data.token);
-
-                //redirect to dashboard
+                localStorage.setItem("user_id", response.data.user.id);
+                localStorage.setItem("username", response.data.user.username);
                 navigate("/");
             })
             .catch((error) => {
