@@ -38,6 +38,7 @@ const signIn = () => {
                 localStorage.setItem("token", response.data.token);
                 localStorage.setItem("username", response.data.user.username);
                 localStorage.setItem("user_id", response.data.user.id);
+                // localStorage.setItem("X-CSRF-TOKEN", response.data.csrf);
             })
             .then(() => {
                 navigate("/");

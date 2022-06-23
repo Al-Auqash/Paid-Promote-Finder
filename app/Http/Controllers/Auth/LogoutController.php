@@ -22,13 +22,15 @@ class LogoutController extends Controller
     {
         //remove token
         $removeToken = JWTAuth::invalidate(JWTAuth::getToken());
+        // $forever = true;
+        // JWTAuth::parseToken()->invalidate($forever);
 
         if ($removeToken) {
-            //return response JSON
+            // return response JSON
             return response()->json([
                 'success' => true,
                 'message' => 'Logout Berhasil!',
-            ]);
+            ], 200);
         }
     }
 }

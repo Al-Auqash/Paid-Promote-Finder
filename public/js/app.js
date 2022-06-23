@@ -5620,7 +5620,7 @@ var signIn = function signIn() {
                 //set token on localStorage
                 localStorage.setItem("token", response.data.token);
                 localStorage.setItem("username", response.data.user.username);
-                localStorage.setItem("user_id", response.data.user.id);
+                localStorage.setItem("user_id", response.data.user.id); // localStorage.setItem("X-CSRF-TOKEN", response.data.csrf);
               }).then(function () {
                 navigate("/");
               })["catch"](function (error) {
@@ -6781,30 +6781,35 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var Guest = function Guest() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("ul", {
-    className: "navbar-nav ms-auto",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
-      className: "nav-item",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
-        className: "btn btn-outline-warning px-4 mx-2 btnNav",
-        href: "/authentication/signIn",
-        children: "Sign In"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
-      className: "nav-item",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
-        className: "btn btn-warning px-4 mx-2 btnNav",
-        href: "/authentication/signUp",
-        children: "Sign Up"
-      })
-    })]
-  });
+  return (
+    /*#__PURE__*/
+    // <ul className="navbar-nav ms-auto">
+    (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+        className: "nav-item",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+          className: "btn btn-outline-warning px-4 mx-2 btnNav",
+          href: "/authentication/signIn",
+          children: "Sign In"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+        className: "nav-item",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+          className: "btn btn-warning px-4 mx-2 btnNav",
+          href: "/authentication/signUp",
+          children: "Sign Up"
+        })
+      })]
+    }) // </ul>
+
+  );
 };
 
 var User = function User(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("ul", {
-    className: "navbar-nav ms-auto",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+  return (
+    /*#__PURE__*/
+    // <ul className="navbar-nav ms-auto">
+    (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
       className: "nav-item dropdown",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
         id: "navbarDropdown",
@@ -6816,37 +6821,32 @@ var User = function User(props) {
         "aria-expanded": "false" // v-pre
         ,
         children: props.username
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "dropdown-menu dropdown-menu-end",
         "aria-labelledby": "navbarDropdown",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
-          className: "dropdown-item",
-          href: "/authentication/signOut",
-          onClick: props.onClick,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+          className: "dropdown-item btnNav" // href="/authentication/signOut"
+          ,
+          onClick: props.signOut // type="submit"
+          ,
           children: "LogOut"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("form", {
-          id: "logout-form",
-          action: "/authentication/signOut",
-          method: "POST",
-          className: "d-none"
-        })]
+        })
       })]
-    })
-  });
+    }) // </ul>
+
+  );
 };
 
 var Navbar = function Navbar() {
-  // const navigate = useNavigate();
-  var signOut = function signOut(event) {
-    event.preventDefault();
-    document.getElementById("logout-form").submit();
-    axios__WEBPACK_IMPORTED_MODULE_0___default().post("/authentication/signOut").then(function (response) {
-      console.log(response); // navigate("/");
+  var signOut = function signOut() {
+    var token = localStorage.getItem("token");
+    (axios__WEBPACK_IMPORTED_MODULE_0___default().defaults.headers.common.Authorization) = "Bearer ".concat(token);
+    axios__WEBPACK_IMPORTED_MODULE_0___default().post("/authentication/signOut").then(function () {
+      localStorage.removeItem("token");
+      localStorage.clear();
+      window.location.href = "/"; // console.log(response);
     })["catch"](function (error) {
-      //assign error to state "validation"
       console.log(error.response.data);
-      console.log(email);
-      console.log(password);
     });
   };
 
@@ -6871,7 +6871,7 @@ var Navbar = function Navbar() {
     }
 
     console.log(loggedIn());
-  }, [user]);
+  });
   console.log(user);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("nav", {
     className: "navbar sticky-top navbar-expand-md navbar-dark bg-base-background shadow-sm",
@@ -6892,10 +6892,10 @@ var Navbar = function Navbar() {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
           className: "navbar-toggler-icon"
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "collapse navbar-collapse",
         id: "navbarSupportedContent",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("ul", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("ul", {
           className: "navbar-nav ms-auto",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
             className: "nav-item",
@@ -6918,11 +6918,11 @@ var Navbar = function Navbar() {
               href: "/about",
               children: "About"
             })
-          })]
-        }), loggedIn() ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(User, {
-          username: user,
-          onClick: signOut
-        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Guest, {})]
+          }), loggedIn() ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(User, {
+            username: user,
+            signOut: signOut
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Guest, {})]
+        })
       })]
     })
   });

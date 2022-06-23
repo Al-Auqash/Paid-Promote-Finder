@@ -42,11 +42,14 @@ class LoginController extends Controller
             ], 401);
         }
 
+        // $csrf = csrf_token();
+
         //if auth success
         return response()->json([
             'success' => true,
             'user'    => auth()->user(),
-            'token'   => $token
+            'token'   => $token,
+            // 'csrf'   => $csrf
         ], 200);
     }
     /*

@@ -22,6 +22,9 @@ use App\Http\Controllers\SessionsController;
 Route::get('/', function () {
     return view('/layouts/app2');
 });
+Route::get('/token', function () {
+    return csrf_token();
+});
 
 Route::prefix('browse')->group(function () {
     Route::get('/', [AdsController::class, 'client']);
@@ -42,7 +45,7 @@ Route::prefix('authentication')->group(function () {
     });
     Route::post('/signIn', [LoginController::class, '__invoke']);
     Route::post('/signUp', [RegisterClientController::class, '__invoke']);
-    Route::post('/signOut', [LogoutController::class]);
+    Route::post('/signOut', [LogoutController::class, '__invoke']);
 });
 
 

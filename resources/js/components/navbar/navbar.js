@@ -1,11 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
-import { useNavigate } from "react-router-dom";
 
 const Guest = () => {
     return (
-        <ul className="navbar-nav ms-auto">
+        // <ul className="navbar-nav ms-auto">
+        <>
             <li className="nav-item">
                 <a
                     className="btn btn-outline-warning px-4 mx-2 btnNav"
@@ -22,69 +22,67 @@ const Guest = () => {
                     Sign Up
                 </a>
             </li>
-        </ul>
+        </>
+        // </ul>
     );
 };
 
 const User = (props) => {
     return (
-        <ul className="navbar-nav ms-auto">
-            <li className="nav-item dropdown">
+        // <ul className="navbar-nav ms-auto">
+        <li className="nav-item dropdown">
+            <a
+                id="navbarDropdown"
+                className="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                // v-pre
+            >
+                {props.username}
+            </a>
+
+            <div
+                className="dropdown-menu dropdown-menu-end"
+                aria-labelledby="navbarDropdown"
+            >
                 <a
-                    id="navbarDropdown"
-                    className="nav-link dropdown-toggle"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    // v-pre
+                    className="dropdown-item btnNav"
+                    // href="/authentication/signOut"
+                    onClick={props.signOut}
+                    // type="submit"
                 >
-                    {props.username}
+                    LogOut
                 </a>
-
-                <div
-                    className="dropdown-menu dropdown-menu-end"
-                    aria-labelledby="navbarDropdown"
-                >
-                    <a
-                        className="dropdown-item"
-                        href="/authentication/signOut"
-                        onClick={props.onClick}
-                    >
-                        LogOut
-                    </a>
-
-                    <form
+                {/* <form
                         id="logout-form"
                         action="/authentication/signOut"
                         method="POST"
                         className="d-none"
-                    ></form>
-                </div>
-            </li>
-        </ul>
+                    ></form> */}
+            </div>
+        </li>
+        // </ul>
     );
 };
 
 const Navbar = () => {
-    // const navigate = useNavigate();
-
-    const signOut = (event) => {
-        event.preventDefault();
-        document.getElementById("logout-form").submit();
+    const signOut = () => {
+        const token = localStorage.getItem("token");
+        axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
         axios
             .post("/authentication/signOut")
-            .then((response) => {
-                console.log(response);
-                // navigate("/");
+            .then(() => {
+                localStorage.removeItem("token");
+                localStorage.clear();
+                window.location.href = "/";
+                // console.log(response);
             })
             .catch((error) => {
-                //assign error to state "validation"
                 console.log(error.response.data);
-                console.log(email);
-                console.log(password);
             });
     };
 
@@ -103,7 +101,7 @@ const Navbar = () => {
             setUser(localStorage.getItem("username"));
         }
         console.log(loggedIn());
-    }, [user]);
+    });
 
     console.log(user);
 
@@ -145,12 +143,12 @@ const Navbar = () => {
                                 About
                             </a>
                         </li>
+                        {loggedIn() ? (
+                            <User username={user} signOut={signOut} />
+                        ) : (
+                            <Guest />
+                        )}
                     </ul>
-                    {loggedIn() ? (
-                        <User username={user} onClick={signOut} />
-                    ) : (
-                        <Guest />
-                    )}
                 </div>
             </div>
         </nav>
