@@ -24,6 +24,13 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app2.css') }}" rel="stylesheet">
+    <link href="{{ asset('manifest.json') }}" rel="manifest">
+    <link rel="icon" type="image/png" href="{{ asset('images/ppf-logo.png') }}" />
+    
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Paid Promote Finder based PWA" />
+    <link rel="apple-touch-icon" href="{{ asset('images/ppf-logo.png') }}" />
+
     <style>
         body {
             margin: 0;
@@ -143,6 +150,16 @@
             <div id="foot"></div>
         </footer> -->
     </div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/serviceworker.js')
+                    .then((reg) => console.log('Success: ', reg.scope))
+                    .catch((err) => console.log('Failure: ', err));
+            })
+        }
+    </script>
 </body>
 
 </html>

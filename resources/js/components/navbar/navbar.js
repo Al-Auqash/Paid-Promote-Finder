@@ -69,9 +69,12 @@ const User = (props) => {
 };
 
 const Navbar = () => {
+
     const signOut = () => {
         const token = localStorage.getItem("token");
         axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+        // const csrf = localStorage.getItem("X-CSRF-TOKEN");
+        // axios.defaults.headers.common["X-CSRF-TOKEN"] = `${csrf}`;
 
         axios
             .post("/authentication/signOut")
@@ -103,7 +106,7 @@ const Navbar = () => {
         console.log(loggedIn());
     });
 
-    console.log(user);
+    // console.log(user);
 
     return (
         <nav className="navbar sticky-top navbar-expand-md navbar-dark bg-base-background shadow-sm">

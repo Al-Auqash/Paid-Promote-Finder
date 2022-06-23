@@ -14,5 +14,6 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         'http://localhost:8000/authentication/signIn',
         'http://localhost:8000/authentication/signUp',
+        'http://localhost:8000/authentication/signOut',
     ];
 }

@@ -6840,7 +6840,9 @@ var User = function User(props) {
 var Navbar = function Navbar() {
   var signOut = function signOut() {
     var token = localStorage.getItem("token");
-    (axios__WEBPACK_IMPORTED_MODULE_0___default().defaults.headers.common.Authorization) = "Bearer ".concat(token);
+    (axios__WEBPACK_IMPORTED_MODULE_0___default().defaults.headers.common.Authorization) = "Bearer ".concat(token); // const csrf = localStorage.getItem("X-CSRF-TOKEN");
+    // axios.defaults.headers.common["X-CSRF-TOKEN"] = `${csrf}`;
+
     axios__WEBPACK_IMPORTED_MODULE_0___default().post("/authentication/signOut").then(function () {
       localStorage.removeItem("token");
       localStorage.clear();
@@ -6871,8 +6873,8 @@ var Navbar = function Navbar() {
     }
 
     console.log(loggedIn());
-  });
-  console.log(user);
+  }); // console.log(user);
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("nav", {
     className: "navbar sticky-top navbar-expand-md navbar-dark bg-base-background shadow-sm",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
