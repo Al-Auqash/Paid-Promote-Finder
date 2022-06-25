@@ -39,6 +39,20 @@ class AdsController extends Controller
         return $ads->toJson();
     }
 
+    public function result(Request $request)
+    {
+        $id = $request->id;
+
+        $ads = DB::table('ads')
+            ->join('regions', 'ads.region_id', '=', 'regions.id')
+            ->join('categories', 'ads.category_id', '=', 'categories.id')
+            ->select('ads.*', 'categories.category_name', 'regions.region_name')
+            ->where('ads.id', '=', $id)
+            ->get();
+
+        return $ads->toJson();
+    }
+
     public function create()
     {
         // $ads = DB::table('ads')

@@ -31,7 +31,7 @@ Route::prefix('browse')->group(function () {
     Route::get('/', function () {
         return view('/layouts/app2');
     });
-    Route::get('/result', function () {
+    Route::get('/result/{id}', function () {
         return view('/layouts/app2');
     });
 });

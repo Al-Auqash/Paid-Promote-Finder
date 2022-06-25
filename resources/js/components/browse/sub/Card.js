@@ -3,12 +3,13 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const card = ({ state }) => {
-
     return (
         <div className="grid-wrapper">
             {state.map((ads) => (
                 <Link
-                    to="/browse/result"
+                    to={{
+                        pathname: `/browse/result/${ads.id}`,
+                    }}
                     className="my-3 card-search-text"
                     key={ads.id}
                 >

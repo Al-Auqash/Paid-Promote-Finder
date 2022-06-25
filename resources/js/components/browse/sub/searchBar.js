@@ -184,7 +184,10 @@ const searchBar = () => {
                                     path="/"
                                     element={<Card state={ads} />}
                                 />
-                                <Route path="/result" element={<Result />} />
+                                <Route
+                                    path="/result/:id"
+                                    element={<Result state={ads} />}
+                                />
                             </Routes>
                         </div>
                     </div>
