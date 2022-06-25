@@ -59,6 +59,12 @@ const result = () => {
                                             : {ads.created_by}
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td className="w-20">Description</td>
+                                        <td className="w-80">
+                                            : {ads.description}
+                                        </td>
+                                    </tr>
                                 </tbody>
                             ))}
                         </table>
@@ -73,9 +79,9 @@ const result = () => {
                     />
                 </div>
             </div>
-            <div className="row">
-                <div className="col">Description...</div>
-            </div>
+            {/* <div className="row">
+                <div className="col">{ads.description}</div>
+            </div> */}
         </div>
     );
 };
