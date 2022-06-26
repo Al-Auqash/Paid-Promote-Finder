@@ -56,7 +56,7 @@ const User = (props) => {
                     onClick={props.signOut}
                     // type="submit"
                 >
-                    LogOut
+                    Sign Out
                 </a>
                 {/* <form
                         id="logout-form"

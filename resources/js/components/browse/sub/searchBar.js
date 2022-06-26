@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, Routes, Route } from "react-router-dom";
+import { Link, Routes, Route, useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
 
 import "./Style.css";
@@ -7,6 +7,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 import Result from "./Result";
 import Card from "./Card";
+import YourAds from "./YourAds";
 import axios from "axios";
 import loggedIn from "../../authentication/LoggedIn";
 
@@ -22,14 +23,14 @@ const searchBar = () => {
         },
     ]);
 
+    const navigate = useNavigate();
+
     const handleChange = (e) => {
         setSearch({
             [e.target.name]: e.target.value,
         });
         // e.preventDefault();
     };
-
-    // const handleSubmit = (e) => {};
 
     const getAds = async () => {
         await axios
@@ -40,9 +41,7 @@ const searchBar = () => {
             .catch((error) => {
                 console.log(error);
             });
-    };
 
-    const getRegion = async () => {
         await axios
             .get("/api/browse/region")
             .then((response) => {
@@ -74,10 +73,16 @@ const searchBar = () => {
         // window.history.replaceState({}, document.title)
     };
 
+    const toYourAds = () => {
+        navigate("your-ads");
+    };
+
+    const toCreateYourAds = () => {
+        navigate("create-your-ads");
+    };
+
     useEffect(() => {
-        loggedIn();
         getAds();
-        getRegion();
     }, []);
 
     return (
@@ -88,9 +93,12 @@ const searchBar = () => {
                     {loggedIn && (
                         <div className="row mb-3 panel">
                             <div className="col pane pb-4">
-                                <p  className="mt-2">Panel</p>
+                                <p className="mt-2">Panel</p>
                                 <div className="form-group subFilterTitle">
-                                    <button className="btn btn-warning w-100">
+                                    <button
+                                        className="btn btn-warning w-100"
+                                        onClick={toCreateYourAds}
+                                    >
                                         {/* <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="19.2"
@@ -106,7 +114,10 @@ const searchBar = () => {
                                     </button>
                                 </div>
                                 <div className="form-group subFilterTitle">
-                                    <button className="btn btn-warning w-100">
+                                    <button
+                                        className="btn btn-warning w-100"
+                                        onClick={toYourAds}
+                                    >
                                         {/* <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="19.2"
@@ -197,6 +208,10 @@ const searchBar = () => {
                                 <Route
                                     path="/result/:id"
                                     element={<Result state={ads} />}
+                                />
+                                <Route
+                                    path="/your-ads/"
+                                    element={<YourAds state={ads} />}
                                 />
                             </Routes>
                         </div>

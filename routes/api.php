@@ -25,6 +25,7 @@ use App\Http\Controllers\auth\RegisterClientController;
 Route::get('/browse', [AdsController::class, 'client']);
 Route::get('/browse/region', [RegionsController::class, 'client']);
 Route::get('/browse/result', [AdsController::class, 'result']);
+Route::get('/browse/your-ads', [AdsController::class, 'yourAds']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

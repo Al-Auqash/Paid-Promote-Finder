@@ -77,6 +77,11 @@
     vertical-align: top;
 }
 
+.yourAdsImage {
+    width: 12rem;
+    background-size: cover;
+}
+
 @media (max-width: 768px) {
     .formSearch {
         display: flex;
@@ -84,7 +89,7 @@
         margin-bottom: 24px;
     }
 
-    .formContent{
+    .formContent {
         width: 100%;
     }
 
@@ -94,7 +99,7 @@
 
     .filter {
         /* width: 100vw; */
-        margin-bottom: 24px
+        margin-bottom: 24px;
     }
 
     .pane {
