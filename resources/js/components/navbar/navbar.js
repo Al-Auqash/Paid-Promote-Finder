@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
+import LoggedIn from "../authentication/LoggedIn";
+
 const Guest = () => {
     return (
         // <ul className="navbar-nav ms-auto">
@@ -33,7 +35,7 @@ const User = (props) => {
         <li className="nav-item dropdown">
             <a
                 id="navbarDropdown"
-                className="nav-link dropdown-toggle"
+                className="nav-link dropdown-toggle px-4 mx-2"
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -89,28 +91,28 @@ const Navbar = () => {
             });
     };
 
-    const loggedIn = () => {
-        if (localStorage.getItem("username")) {
-            return true;
-        } else {
-            return false;
-        }
-    };
+    // const LoggedIn = () => {
+    //     if (localStorage.getItem("username")) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // };
 
     const [user, setUser] = useState([]);
     useEffect(() => {
-        loggedIn();
+        LoggedIn();
         if (localStorage.getItem("username")) {
             setUser(localStorage.getItem("username"));
         }
-        console.log(loggedIn());
+        // console.log(LoggedIn());
     });
 
     // console.log(user);
 
     return (
         <nav className="navbar sticky-top navbar-expand-md navbar-dark bg-base-background shadow-sm">
-            <div className="container">
+            <div className="container-fluid d-flex flex-row justify-content-space-between m-0">
                 <a className="navbar-brand" href="{{ url('/') }}">
                     Paid Promote Finder
                 </a>
@@ -127,7 +129,7 @@ const Navbar = () => {
                 </button>
 
                 <div
-                    className="collapse navbar-collapse"
+                    className="collapse navbar-collapse w-100"
                     id="navbarSupportedContent"
                 >
                     <ul className="navbar-nav ms-auto">
@@ -146,7 +148,7 @@ const Navbar = () => {
                                 About
                             </a>
                         </li>
-                        {loggedIn() ? (
+                        {LoggedIn() ? (
                             <User username={user} signOut={signOut} />
                         ) : (
                             <Guest />

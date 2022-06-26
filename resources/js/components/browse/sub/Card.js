@@ -15,13 +15,13 @@ const card = ({ state }) => {
                 >
                     <div className="card background-orange h-100">
                         <img
-                            src="images/daph_cat.jpg"
+                            src={ads.image ? ads.image : "images/daph_cat.jpg"}
                             className="card-img-top"
                             alt="..."
                         />
                         <div className="card-body">
                             <p className="card-title fw-bold"> {ads.title}</p>
-                            <p className="card-text"> {ads.description}</p>
+                            <p className="card-text text-truncate"> {ads.description}</p>
                         </div>
                     </div>
                 </Link>
