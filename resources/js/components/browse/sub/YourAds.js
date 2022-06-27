@@ -34,41 +34,61 @@ const yourAds = () => {
 
     return (
         <>
-            {ads.map((ads) => (
-                <div className="card mb-3 background-dark-orange">
-                    <div className="row g-0">
-                        <div className="col-md-2">
-                            <img
-                                src={
-                                    ads.image
-                                        ? ads.image
-                                        : "../images/daph_cat.jpg"
-                                }
-                                className="card-img-right yourAdsImage"
-                                alt="..."
-                            />
-                        </div>
-                        <div className="col-md-8">
-                            <div className="card-body">
-                                <p className="card-title fw-bold">
-                                    {" "}
-                                    {ads.title}
-                                </p>
-                                <p className="card-text text-truncate">
-                                    {" "}
-                                    {ads.description}
-                                </p>
+            {ads?.length ? (
+                ads.map((ads) => (
+                    <div className="card mb-3 background-grey">
+                        <div className="row g-0">
+                            <div className="col-md-2">
+                                <img
+                                    src={
+                                        ads.image
+                                            ? ads.image
+                                            : "../images/daph_cat.jpg"
+                                    }
+                                    className="card-img-right yourAdsImage"
+                                    alt="..."
+                                />
                             </div>
-                        </div>
-                        <div className="col-md-2">
-                            <div className="card-body">
-                                <a href="/edit" className="btn border border-white text-white background-orange w-100 mb-3">Edit</a>
-                                <a href="/delete" className="btn border border-white text-white background-orange w-100">Delete</a>
+                            <div className="col-md-8">
+                                <div className="card-body">
+                                    <p className="card-title fw-bold">
+                                        {" "}
+                                        {ads.title}
+                                    </p>
+                                    <p className="card-text text-truncate">
+                                        {" "}
+                                        {ads.description}
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="col-md-2">
+                                <div className="card-body">
+                                    <a
+                                        href="/review"
+                                        className="btn text-white background-dark-orange w-100 mb-3"
+                                    >
+                                        Review
+                                    </a>
+                                    <a
+                                        href="/edit"
+                                        className="btn text-white background-dark-orange w-100 mb-3"
+                                    >
+                                        Edit
+                                    </a>
+                                    <a
+                                        href="/delete"
+                                        className="btn text-white background-dark-orange w-100"
+                                    >
+                                        Delete
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            ))}
+                ))
+            ) : (
+                <p>No Ads Found</p>
+            )}
         </>
     );
 };

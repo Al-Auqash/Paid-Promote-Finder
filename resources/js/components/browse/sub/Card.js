@@ -13,7 +13,7 @@ const card = ({ state }) => {
                     className="my-3 card-search-text"
                     key={ads.id}
                 >
-                    <div className="card background-orange h-100">
+                    <div className="card background-grey h-100">
                         <img
                             src={ads.image ? ads.image : "images/daph_cat.jpg"}
                             className="card-img-top"

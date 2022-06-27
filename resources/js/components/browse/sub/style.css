@@ -32,8 +32,9 @@
 }
 
 .pane {
-    border: 2px solid var(--base-orange);
-    border-radius: 2%;
+    /* border: 2px solid var(--base-orange); */
+    /* border-radius: 3%; */
+    background-color: var(--base-grey);
 }
 
 .subFilterTitle {
