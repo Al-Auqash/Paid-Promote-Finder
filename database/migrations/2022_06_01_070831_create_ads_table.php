@@ -20,10 +20,11 @@ class CreateAdsTable extends Migration
             $table->foreign("category_id")->references("id")->on("categories");
             $table->unsignedBigInteger("region_id");
             $table->foreign("region_id")->references("id")->on("regions");
-            $table->string("time");
+            $table->unsignedBigInteger("status_id");
+            $table->foreign("status_id")->references("id")->on("statuses");
+            // $table->string("time");
+            $table->date('time')->format('m/Y');
             $table->text("description");
-            $table->string("status");
-            $table->string("contact");
             $table->string("image_path");
             $table->string("created_by");
             $table->string("created_date");
