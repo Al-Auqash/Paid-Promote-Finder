@@ -8,6 +8,7 @@ use App\Http\Controllers\Dashboard\AdsController;
 use App\Http\Controllers\Dashboard\RegionsController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterClientController;
+use App\Http\Controllers\Dashboard\CategoriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +25,10 @@ use App\Http\Controllers\auth\RegisterClientController;
 // Route::get('/browse', [AdsController::class, 'client']);
 Route::get('/browse', [AdsController::class, 'client']);
 Route::get('/browse/region', [RegionsController::class, 'client']);
+Route::get('/browse/category', [CategoriesController::class, 'client']);
 Route::get('/browse/result', [AdsController::class, 'result']);
 Route::get('/browse/your-ads', [AdsController::class, 'yourAds']);
+Route::post('/browse/create-ads', [AdsController::class, 'createAds']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

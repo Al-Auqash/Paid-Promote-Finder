@@ -7,9 +7,6 @@ import "./Style.css";
 
 const result = () => {
     const params = useParams();
-    // console.log(params.id);
-
-    // const query = new URLSearchParams([['id', 42]]);
 
     const [result, setResult] = useState([]);
 
@@ -27,6 +24,8 @@ const result = () => {
     const redirectToLogin = () => {
         window.location.href = "/authentication/signIn";
     };
+
+    console.log(result);
 
     useEffect(() => {
         getResult();
@@ -106,9 +105,6 @@ const result = () => {
                     />
                 </div>
             </div>
-            {/* <div className="row">
-                <div className="col">{ads.description}</div>
-            </div> */}
         </>
     );
 };

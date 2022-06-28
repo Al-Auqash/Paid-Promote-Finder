@@ -17,6 +17,12 @@ class CategoriesController extends Controller
         ]);
     }
 
+    public function client()
+    {
+        $category = Category::select('*')->get();
+        return $category->toJson();
+    }
+
     public function create()
     {
         return view('category.create');

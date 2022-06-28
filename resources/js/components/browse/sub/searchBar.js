@@ -10,6 +10,7 @@ import axios from "axios";
 import loggedIn from "../../authentication/LoggedIn";
 import { Pane } from "./Pane";
 import Filter from "./Filter";
+import JoinNow from "./JoinNow";
 
 const searchBar = () => {
     const [ads, setAds] = useState([]);
@@ -28,7 +29,6 @@ const searchBar = () => {
         setSearch({
             [e.target.name]: e.target.value,
         });
-        console.log(search);
     };
 
     const getAds = async () => {
@@ -74,13 +74,10 @@ const searchBar = () => {
     }, []);
 
     return (
-        <section className="px-4">
+        <section>
             {/* <p>Find All you need</p> */}
             <form onSubmit={getSearch} className="row formSearch">
-                <div className="col-2 formContent">
-                    {loggedIn() && <Pane />}
-                </div>
-                <div className="col-10 formContent">
+                <div className="col formContent">
                     <div className="row m-0">
                         <div className="col p-0-10 mb-3 p-0">
                             <div className="form-group">
@@ -103,7 +100,9 @@ const searchBar = () => {
                             </div>
                         </div>
                     </div>
+
                     <Filter handleChange={handleChange} region={region} />
+
                     <div className="row m-0">
                         <div className="col p-0">
                             <Routes>
@@ -113,12 +112,12 @@ const searchBar = () => {
                                 />
                                 <Route
                                     path="/result/:id"
-                                    element={<Result state={ads} />}
+                                    element={<Result />}
                                 />
-                                <Route
+                                {/* <Route
                                     path="/your-ads/"
                                     element={<YourAds state={ads} />}
-                                />
+                                /> */}
                             </Routes>
                         </div>
                     </div>

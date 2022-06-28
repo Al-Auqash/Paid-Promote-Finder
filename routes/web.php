@@ -37,6 +37,9 @@ Route::prefix('browse')->group(function () {
     Route::get('/your-ads', function () {
         return view('/layouts/app2');
     });
+    Route::get('/create-your-ads', function () {
+        return view('/layouts/app2');
+    });
 });
 
 Route::prefix('authentication')->group(function () {

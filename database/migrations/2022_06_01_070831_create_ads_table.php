@@ -22,6 +22,9 @@ class CreateAdsTable extends Migration
             $table->foreign("region_id")->references("id")->on("regions");
             $table->string("time");
             $table->text("description");
+            $table->string("status");
+            $table->string("contact");
+            $table->string("image_path");
             $table->string("created_by");
             $table->string("created_date");
             $table->timestamps();

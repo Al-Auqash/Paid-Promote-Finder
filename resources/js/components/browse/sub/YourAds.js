@@ -45,7 +45,7 @@ const yourAds = () => {
                                             ? ads.image
                                             : "../images/daph_cat.jpg"
                                     }
-                                    className="card-img-right yourAdsImage"
+                                    className="card-img-right rounded yourAdsImage"
                                     alt="..."
                                 />
                             </div>

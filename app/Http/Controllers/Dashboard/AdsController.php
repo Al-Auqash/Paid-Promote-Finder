@@ -67,6 +67,27 @@ class AdsController extends Controller
         return $ads->toJson();
     }
 
+    public function createAds(Request $request)
+    {
+        $ads = Ads::create([
+            // 'category_id' => $category_id,
+            'title' => $request->title,
+            'category_id' => $request->category_id,
+            'region_id' => $request->region_id,
+            // 'time' => $request->time,
+            'time' => "test",
+            'created_by' => Auth::id(),
+            'description' => $request->description,
+            'created_by' => $request->user_id,
+        ]);
+
+        if ($ads) {
+            return response()->json([
+                'success' => true,
+            ], 201);
+        }
+    }
+
     public function create()
     {
         // $ads = DB::table('ads')

@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-export const Pane = (props) => {
+export const Pane = () => {
     const navigate = useNavigate();
     const toYourAds = () => {
         navigate("your-ads");
@@ -10,6 +10,10 @@ export const Pane = (props) => {
     const toCreateYourAds = () => {
         navigate("create-your-ads");
     };
+
+    const toBrowse = () => {
+        navigate("/browse");
+    };
     return (
         <div className="row mb-3 panel h-100">
             <div className="col pane pb-4 rounded">
@@ -17,7 +21,15 @@ export const Pane = (props) => {
                 <div className="form-group subFilterTitle">
                     <button
                         className="btn btn-warning w-100"
-                        onClick={props.toCreateYourAds}
+                        onClick={toBrowse}
+                    >
+                        <span className="m-2">Home</span>
+                    </button>
+                </div>
+                <div className="form-group subFilterTitle">
+                    <button
+                        className="btn btn-warning w-100"
+                        onClick={toCreateYourAds}
                     >
                         <span className="m-2">Create Ads</span>
                     </button>
@@ -25,7 +37,7 @@ export const Pane = (props) => {
                 <div className="form-group subFilterTitle">
                     <button
                         className="btn btn-warning w-100"
-                        onClick={props.toYourAds}
+                        onClick={toYourAds}
                     >
                         <span className="m-2">Your Ads</span>
                     </button>
