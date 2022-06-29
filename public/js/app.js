@@ -6148,10 +6148,18 @@ var createAds = function createAds() {
       startDate = _dateRange[0],
       endDate = _dateRange[1];
 
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)([]),
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)({
+    start: "",
+    end: ""
+  }),
       _useState10 = _slicedToArray(_useState9, 2),
-      file = _useState10[0],
-      setFile = _useState10[1];
+      stringDate = _useState10[0],
+      setStringDate = _useState10[1];
+
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)([]),
+      _useState12 = _slicedToArray(_useState11, 2),
+      file = _useState12[0],
+      setFile = _useState12[1];
 
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useNavigate)();
   var user_id = localStorage.getItem("user_id");
@@ -6163,25 +6171,49 @@ var createAds = function createAds() {
   };
 
   var onFileChange = function onFileChange(event) {
-    // Update the state
     setFile({
       file: event.target.files[0].name
     });
-  };
+  }; // const handleDateChange = (update) => {
+  //     setDateRange(update);
+  //     const formattedDate =
+  //         dateRange[0].getFullYear() +
+  //         "" +
+  //         +"" +
+  //         (dateRange[0].getMonth() + 1) +
+  //         "" +
+  //         dateRange[0].getDate();
+  //     console.log("start : " + formattedDate);
+  //     const formattedDatee =
+  //         dateRange[1].getFullYear() +
+  //         "" +
+  //         +"" +
+  //         (dateRange[1].getMonth() + 1) +
+  //         "" +
+  //         dateRange[1].getDate();
+  //     console.log("end : " + formattedDatee);
+  // };
+  // const MyStartDateString = "";
+  // const MyEndDateString = "";
 
-  var handleDateChange = function handleDateChange(update) {
-    setDateRange(update); // }
 
-    var formattedDate = dateRange[0].getFullYear() + "" + +"" + (dateRange[0].getMonth() + 1) + "" + dateRange[0].getDate();
-    console.log(formattedDate);
-  }; // const time = ((startDate.getMonth() + 1).toString() + "/" + startDate.getFullYear().toString());
+  if (startDate) {
+    stringDate.start = startDate.getFullYear() + "/" + ("0" + (startDate.getMonth() + 1)).slice(-2) + "/" + ("0" + startDate.getDate()).slice(-2);
+  }
 
+  if (endDate) {
+    stringDate.end = endDate.getFullYear() + "/" + ("0" + (endDate.getMonth() + 1)).slice(-2) + "/" + ("0" + endDate.getDate()).slice(-2);
+  }
+
+  console.log(stringDate); // console.log(MyEndDateString);
 
   var formData = new FormData();
   formData.append("user_id", user_id);
   formData.append("title", ads.title);
   formData.append("category_id", ads.category_id);
   formData.append("region_id", ads.region_id);
+  formData.append("start_date", stringDate.start);
+  formData.append("finish_date", stringDate.end);
   formData.append("description", ads.description);
   formData.append("image_path", file.file);
 
@@ -6229,7 +6261,6 @@ var createAds = function createAds() {
     };
   }();
 
-  console.log(file.file);
   (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(function () {
     getData();
   }, []);
@@ -6238,7 +6269,7 @@ var createAds = function createAds() {
       method: "post",
       className: "form-group p-4 w-50",
       onSubmit: submitCreateAds,
-      enctype: "multipart/form-data",
+      encType: "multipart/form-data",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
         name: "user_id",
         value: user_id,
@@ -6307,24 +6338,16 @@ var createAds = function createAds() {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)((react_datepicker__WEBPACK_IMPORTED_MODULE_7___default()), {
             selectsRange: true,
             startDate: startDate,
-            endDate: endDate,
-            onChange: handleDateChange // onChange={(update) => {
-            //     setDateRange(update);
-            // }}
+            endDate: endDate // onChange={handleDateChange}
             ,
+            onChange: function onChange(update) {
+              setDateRange(update);
+            },
             isClearable: true,
             className: "btn btn-warning dropdown-toggle w-100",
             calendarClassName: "calendar",
-            dateFormat: "yyyy/MM/dd"
+            dateFormat: "dd/MM/yyyy"
           })
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        className: "form-group py-2",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
-          className: "form-check-label",
-          children: "Finish Date"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          className: "form-group"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "form-group py-2",
@@ -7199,7 +7222,7 @@ var yourAds = function yourAds() {
             })
           })]
         })
-      });
+      }, ads.id);
     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
       children: "No Ads Found"
     })

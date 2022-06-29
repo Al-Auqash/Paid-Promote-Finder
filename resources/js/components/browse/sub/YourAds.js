@@ -36,7 +36,7 @@ const yourAds = () => {
         <>
             {ads?.length ? (
                 ads.map((ads) => (
-                    <div className="card mb-3 background-grey">
+                    <div className="card mb-3 background-grey" key={ads.id}>
                         <div className="row g-0">
                             <div className="col-md-2">
                                 <img

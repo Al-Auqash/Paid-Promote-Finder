@@ -16,6 +16,7 @@ const createAds = () => {
 
     const [dateRange, setDateRange] = useState([null, null]);
     const [startDate, endDate] = dateRange;
+    const [stringDate, setStringDate] = useState({ start: "", end: "" });
 
     const [file, setFile] = useState([]);
 
@@ -31,25 +32,53 @@ const createAds = () => {
     };
 
     const onFileChange = (event) => {
-        // Update the state
         setFile({ file: event.target.files[0].name });
     };
 
-    const handleDateChange = (update) => {
-        setDateRange(update);
-        // }
+    // const handleDateChange = (update) => {
+    //     setDateRange(update);
 
-        const formattedDate =
-            dateRange[0].getFullYear() +
-            "" +
-            +"" +
-            (dateRange[0].getMonth() + 1) +
-            "" +
-            dateRange[0].getDate();
-        console.log(formattedDate);
-    };
+    //     const formattedDate =
+    //         dateRange[0].getFullYear() +
+    //         "" +
+    //         +"" +
+    //         (dateRange[0].getMonth() + 1) +
+    //         "" +
+    //         dateRange[0].getDate();
+    //     console.log("start : " + formattedDate);
 
-    // const time = ((startDate.getMonth() + 1).toString() + "/" + startDate.getFullYear().toString());
+    //     const formattedDatee =
+    //         dateRange[1].getFullYear() +
+    //         "" +
+    //         +"" +
+    //         (dateRange[1].getMonth() + 1) +
+    //         "" +
+    //         dateRange[1].getDate();
+    //     console.log("end : " + formattedDatee);
+    // };
+
+    // const MyStartDateString = "";
+    // const MyEndDateString = "";
+
+    if (startDate) {
+        stringDate.start =
+            startDate.getFullYear() +
+            "/" +
+            ("0" + (startDate.getMonth() + 1)).slice(-2) +
+            "/" +
+            ("0" + startDate.getDate()).slice(-2);
+    }
+
+    if (endDate) {
+        stringDate.end =
+            endDate.getFullYear() +
+            "/" +
+            ("0" + (endDate.getMonth() + 1)).slice(-2) +
+            "/" +
+            ("0" + endDate.getDate()).slice(-2);
+    }
+    console.log(stringDate);
+    // console.log(MyEndDateString);
 
     const formData = new FormData();
 
@@ -57,6 +86,8 @@ const createAds = () => {
     formData.append("title", ads.title);
     formData.append("category_id", ads.category_id);
     formData.append("region_id", ads.region_id);
+    formData.append("start_date", stringDate.start);
+    formData.append("finish_date", stringDate.end);
     formData.append("description", ads.description);
     formData.append("image_path", file.file);
 
@@ -93,8 +124,6 @@ const createAds = () => {
             });
     };
 
-    console.log(file.file);
-
     useEffect(() => {
         getData();
     }, []);
@@ -105,7 +134,7 @@ const createAds = () => {
                 method="post"
                 className="form-group p-4 w-50"
                 onSubmit={submitCreateAds}
-                enctype="multipart/form-data"
+                encType="multipart/form-data"
             >
                 <input name="user_id" value={user_id} hidden></input>
                 <div className="form-group py-2">
@@ -173,21 +202,21 @@ const createAds = () => {
                             selectsRange={true}
                             startDate={startDate}
                             endDate={endDate}
-                            onChange={handleDateChange}
-                            // onChange={(update) => {
-                            //     setDateRange(update);
-                            // }}
+                            // onChange={handleDateChange}
+                            onChange={(update) => {
+                                setDateRange(update);
+                            }}
                             isClearable={true}
                             className="btn btn-warning dropdown-toggle w-100"
                             calendarClassName="calendar"
-                            dateFormat="yyyy/MM/dd"
+                            dateFormat="dd/MM/yyyy"
                         />
                     </div>
                 </div>
-                <div className="form-group py-2">
+                {/* <div className="form-group py-2">
                     <label className="form-check-label">Finish Date</label>
                     <div className="form-group">
-                        {/* <DatePicker
+                        <DatePicker
                             selected={finishDate}
                             onChange={(date) => setFinishDate(date)}
                             // onChange={handleDateChange}
@@ -199,9 +228,9 @@ const createAds = () => {
                             className="btn btn-warning dropdown-toggle w-100"
                             calendarClassName="calendar"
                             name="finish_date"
-                        /> */}
+                        />
                     </div>
-                </div>
+                </div> */}
                 <div className="form-group py-2">
                     <label className="form-check-label">Description</label>
                     <input

@@ -69,10 +69,10 @@ class AdsController extends Controller
 
     public function createAds(Request $request)
     {
-        $start_date = strtotime(20220615);
-        $new_start_date = date('Y-m-d', $start_date);
-        $finish_date = strtotime(20220615);
-        $new_finish_date = date('Y-m-d', $finish_date);
+        // $start_date = strtotime(20220615);
+        // $new_start_date = date('Y-m-d', $start_date);
+        // $finish_date = strtotime(20220615);
+        // $new_finish_date = date('Y-m-d', $finish_date);
 
         // $datee = 20220605;
         $ads = Ads::create([
@@ -81,8 +81,8 @@ class AdsController extends Controller
             'category_id' => $request->category_id,
             'region_id' => $request->region_id,
             'status_id' => 1,
-            'start_date' => $new_start_date,
-            'finish_date' => $new_finish_date,
+            'start_date' => $request->start_date,
+            'finish_date' => $request->finish_date,
             'description' => $request->description,
             'image_path' => $request->image_path,
             'created_by' => $request->user_id,
