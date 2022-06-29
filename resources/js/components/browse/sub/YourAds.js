@@ -25,12 +25,12 @@ const yourAds = () => {
     };
 
     useEffect(() => {
-        if (loggedIn) {
+        if (loggedIn()) {
             getYourAds();
         } else {
             navigate("/");
         }
-    });
+    }, []);
 
     return (
         <>
@@ -41,8 +41,8 @@ const yourAds = () => {
                             <div className="col-md-2">
                                 <img
                                     src={
-                                        ads.image
-                                            ? ads.image
+                                        ads.image_path?.length
+                                            ? "../images/" + ads.image_path
                                             : "../images/daph_cat.jpg"
                                     }
                                     className="card-img-right rounded yourAdsImage"

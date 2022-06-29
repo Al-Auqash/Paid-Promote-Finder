@@ -38,7 +38,8 @@ class RegisterClientController extends Controller
         $user = Client::create([
             'username'  => $request->username,
             'email'     => $request->email,
-            'password'  => bcrypt($request->password)
+            'password'  => bcrypt($request->password),
+            'contact'   => $request->contact
         ]);
 
         //return response JSON user is created

@@ -11,6 +11,7 @@ const signUp = () => {
         email: "",
         password: "",
         password_confirmation: "",
+        contact: "",
     });
 
     const handleFieldChange = (e) => {
@@ -44,10 +45,11 @@ const signUp = () => {
                 email: input.email,
                 password: input.password,
                 password_confirmation: input.password_confirmation,
+                contact: input.contact,
             })
             .then((response) => {
                 console.log(response);
-                window.location.href = "/";
+                window.location.href = "/authentication/signIn";
             })
             .catch((error) => {
                 console.log(error);
@@ -83,6 +85,16 @@ const signUp = () => {
                         type="text"
                         name="email"
                         id="email"
+                        onChange={handleFieldChange}
+                    />
+                </div>
+                <div className="form-group py-2">
+                    <label className="form-check-label">Contact</label>
+                    <input
+                        className="form-control"
+                        type="text"
+                        name="contact"
+                        id="contact"
                         onChange={handleFieldChange}
                     />
                 </div>

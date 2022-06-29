@@ -5610,7 +5610,12 @@ var signIn = function signIn() {
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState4 = _slicedToArray(_useState3, 2),
       password = _useState4[0],
-      setPassword = _useState4[1]; //define state validation
+      setPassword = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
+      _useState6 = _slicedToArray(_useState5, 2),
+      notification = _useState6[0],
+      setNotification = _useState6[1]; //define state validation
   // const [validation, setValidation] = useState([]);
   //define history
 
@@ -5644,8 +5649,7 @@ var signIn = function signIn() {
               })["catch"](function (error) {
                 //assign error to state "validation"
                 console.log(error.response.data);
-                console.log(email);
-                console.log(password);
+                setNotification(error.response.data.message);
               });
 
             case 6:
@@ -5667,7 +5671,9 @@ var signIn = function signIn() {
       method: "post",
       className: "form-group p-4 w-75",
       onSubmit: signIn,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      children: [notification && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        children: notification
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "form-group py-2",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
           className: "form-check-label",
@@ -5783,7 +5789,8 @@ var signUp = function signUp() {
     username: "",
     email: "",
     password: "",
-    password_confirmation: ""
+    password_confirmation: "",
+    contact: ""
   }),
       _useState2 = _slicedToArray(_useState, 2),
       input = _useState2[0],
@@ -5815,10 +5822,11 @@ var signUp = function signUp() {
       username: input.username,
       email: input.email,
       password: input.password,
-      password_confirmation: input.password_confirmation
+      password_confirmation: input.password_confirmation,
+      contact: input.contact
     }).then(function (response) {
       console.log(response);
-      window.location.href = "/";
+      window.location.href = "/authentication/signIn";
     })["catch"](function (error) {
       console.log(error);
       console.log(input.username);
@@ -5856,6 +5864,18 @@ var signUp = function signUp() {
           type: "text",
           name: "email",
           id: "email",
+          onChange: handleFieldChange
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "form-group py-2",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+          className: "form-check-label",
+          children: "Contact"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+          className: "form-control",
+          type: "text",
+          name: "contact",
+          id: "contact",
           onChange: handleFieldChange
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
@@ -6012,7 +6032,7 @@ var card = function card(_ref) {
   var state = _ref.state;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     className: "grid-wrapper",
-    children: state.map(function (ads) {
+    children: state !== null && state !== void 0 && state.length ? state.map(function (ads) {
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
         to: {
           pathname: "/browse/result/".concat(ads.id)
@@ -6036,6 +6056,8 @@ var card = function card(_ref) {
           })]
         })
       }, ads.id);
+    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+      children: "No data found"
     })
   });
 };
@@ -6113,12 +6135,23 @@ var createAds = function createAds() {
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)([]),
       _useState6 = _slicedToArray(_useState5, 2),
       category = _useState6[0],
-      setCategory = _useState6[1];
+      setCategory = _useState6[1]; // const [startDate, setStartDate] = useState(new Date());
+  // const [finishDate, setFinishDate] = useState(new Date());
 
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(new Date()),
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)([null, null]),
       _useState8 = _slicedToArray(_useState7, 2),
-      startDate = _useState8[0],
-      setStartDate = _useState8[1];
+      dateRange = _useState8[0],
+      setDateRange = _useState8[1];
+
+  var _dateRange = _slicedToArray(dateRange, 2),
+      startDate = _dateRange[0],
+      endDate = _dateRange[1];
+
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)([]),
+      _useState10 = _slicedToArray(_useState9, 2),
+      file = _useState10[0],
+      setFile = _useState10[1];
 
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useNavigate)();
   var user_id = localStorage.getItem("user_id");
@@ -6129,18 +6162,32 @@ var createAds = function createAds() {
     });
   };
 
-  console.log(ads);
+  var onFileChange = function onFileChange(event) {
+    // Update the state
+    setFile({
+      file: event.target.files[0].name
+    });
+  };
+
+  var handleDateChange = function handleDateChange(update) {
+    setDateRange(update); // }
+
+    var formattedDate = dateRange[0].getFullYear() + "" + +"" + (dateRange[0].getMonth() + 1) + "" + dateRange[0].getDate();
+    console.log(formattedDate);
+  }; // const time = ((startDate.getMonth() + 1).toString() + "/" + startDate.getFullYear().toString());
+
+
+  var formData = new FormData();
+  formData.append("user_id", user_id);
+  formData.append("title", ads.title);
+  formData.append("category_id", ads.category_id);
+  formData.append("region_id", ads.region_id);
+  formData.append("description", ads.description);
+  formData.append("image_path", file.file);
 
   var submitCreateAds = function submitCreateAds(event) {
     event.preventDefault();
-    axios__WEBPACK_IMPORTED_MODULE_1___default().post("/api/browse/create-ads", {
-      user_id: user_id,
-      title: ads.title,
-      category_id: ads.category_id,
-      region_id: ads.region_id,
-      // region_id: ads.region_id,
-      description: ads.description
-    }).then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_1___default().post("/api/browse/create-ads", formData).then(function (response) {
       console.log(response);
       navigate("./../your-ads");
     })["catch"](function (error) {
@@ -6182,6 +6229,7 @@ var createAds = function createAds() {
     };
   }();
 
+  console.log(file.file);
   (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(function () {
     getData();
   }, []);
@@ -6190,7 +6238,12 @@ var createAds = function createAds() {
       method: "post",
       className: "form-group p-4 w-50",
       onSubmit: submitCreateAds,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      enctype: "multipart/form-data",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+        name: "user_id",
+        value: user_id,
+        hidden: true
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "form-group py-2",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
           className: "form-check-label",
@@ -6248,20 +6301,30 @@ var createAds = function createAds() {
         className: "form-group py-2",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
           className: "form-check-label",
-          children: "Time"
+          children: "Start Date"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "form-group",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)((react_datepicker__WEBPACK_IMPORTED_MODULE_7___default()), {
-            selected: startDate,
-            onChange: function onChange(date) {
-              return setStartDate(date);
-            },
-            dateFormat: "MM/yyyy",
-            showMonthYearPicker: true,
-            showFullMonthYearPicker: true,
+            selectsRange: true,
+            startDate: startDate,
+            endDate: endDate,
+            onChange: handleDateChange // onChange={(update) => {
+            //     setDateRange(update);
+            // }}
+            ,
+            isClearable: true,
             className: "btn btn-warning dropdown-toggle w-100",
-            calendarClassName: "calendar"
+            calendarClassName: "calendar",
+            dateFormat: "yyyy/MM/dd"
           })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: "form-group py-2",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+          className: "form-check-label",
+          children: "Finish Date"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          className: "form-group"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "form-group py-2",
@@ -6274,6 +6337,16 @@ var createAds = function createAds() {
           name: "description",
           id: "description",
           onChange: handleChange
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: "form-group py-2",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+          className: "form-check-label",
+          children: "Picture"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+          type: "file",
+          name: "image",
+          onChange: onFileChange
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
         className: "form-group py-2",
@@ -7073,14 +7146,16 @@ var yourAds = function yourAds() {
   }();
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    if ((_authentication_LoggedIn__WEBPACK_IMPORTED_MODULE_2___default())) {
+    if (_authentication_LoggedIn__WEBPACK_IMPORTED_MODULE_2___default()()) {
       getYourAds();
     } else {
       navigate("/");
     }
-  });
+  }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
     children: ads !== null && ads !== void 0 && ads.length ? ads.map(function (ads) {
+      var _ads$image_path;
+
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "card mb-3 background-grey",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
@@ -7088,7 +7163,7 @@ var yourAds = function yourAds() {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
             className: "col-md-2",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-              src: ads.image ? ads.image : "../images/daph_cat.jpg",
+              src: (_ads$image_path = ads.image_path) !== null && _ads$image_path !== void 0 && _ads$image_path.length ? "../images/" + ads.image_path : "../images/daph_cat.jpg",
               className: "card-img-right rounded yourAdsImage",
               alt: "..."
             })

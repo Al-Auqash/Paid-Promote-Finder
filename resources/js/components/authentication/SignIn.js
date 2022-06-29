@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { useState } from "react";
@@ -9,6 +9,7 @@ import "./../App.css";
 const signIn = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [notification, setNotification] = useState([]);
 
     //define state validation
     // const [validation, setValidation] = useState([]);
@@ -46,8 +47,7 @@ const signIn = () => {
             .catch((error) => {
                 //assign error to state "validation"
                 console.log(error.response.data);
-                console.log(email);
-                console.log(password);
+                setNotification(error.response.data.message);
             });
     };
 
@@ -61,6 +61,7 @@ const signIn = () => {
                 className="form-group p-4 w-75"
                 onSubmit={signIn}
             >
+                {notification && <div>{notification}</div>}
                 <div className="form-group py-2">
                     <label className="form-check-label">Email</label>
                     <input

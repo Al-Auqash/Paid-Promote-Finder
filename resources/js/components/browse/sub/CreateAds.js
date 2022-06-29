@@ -11,7 +11,13 @@ const createAds = () => {
     const [ads, setAds] = useState([]);
     const [region, setRegion] = useState([]);
     const [category, setCategory] = useState([]);
-    const [startDate, setStartDate] = useState(new Date());
+    // const [startDate, setStartDate] = useState(new Date());
+    // const [finishDate, setFinishDate] = useState(new Date());
+
+    const [dateRange, setDateRange] = useState([null, null]);
+    const [startDate, endDate] = dateRange;
+
+    const [file, setFile] = useState([]);
 
     const navigate = useNavigate();
 
@@ -23,19 +29,41 @@ const createAds = () => {
             [e.target.name]: e.target.value,
         }));
     };
-    console.log(ads);
+
+    const onFileChange = (event) => {
+        // Update the state
+        setFile({ file: event.target.files[0].name });
+    };
+
+    const handleDateChange = (update) => {
+        setDateRange(update);
+        // }
+
+        const formattedDate =
+            dateRange[0].getFullYear() +
+            "" +
+            +"" +
+            (dateRange[0].getMonth() + 1) +
+            "" +
+            dateRange[0].getDate();
+        console.log(formattedDate);
+    };
+
+    // const time = ((startDate.getMonth() + 1).toString() + "/" + startDate.getFullYear().toString());
+
+    const formData = new FormData();
+
+    formData.append("user_id", user_id);
+    formData.append("title", ads.title);
+    formData.append("category_id", ads.category_id);
+    formData.append("region_id", ads.region_id);
+    formData.append("description", ads.description);
+    formData.append("image_path", file.file);
 
     const submitCreateAds = (event) => {
         event.preventDefault();
         axios
-            .post("/api/browse/create-ads", {
-                user_id: user_id,
-                title: ads.title,
-                category_id: ads.category_id,
-                region_id: ads.region_id,
-                // region_id: ads.region_id,
-                description: ads.description,
-            })
+            .post("/api/browse/create-ads", formData)
             .then((response) => {
                 console.log(response);
                 navigate("./../your-ads");
@@ -65,6 +93,8 @@ const createAds = () => {
             });
     };
 
+    console.log(file.file);
+
     useEffect(() => {
         getData();
     }, []);
@@ -75,8 +105,9 @@ const createAds = () => {
                 method="post"
                 className="form-group p-4 w-50"
                 onSubmit={submitCreateAds}
+                enctype="multipart/form-data"
             >
-                {/* <input name="user_id" value={user_id} hidden></input> */}
+                <input name="user_id" value={user_id} hidden></input>
                 <div className="form-group py-2">
                     <label className="form-check-label">Title</label>
                     <input
@@ -124,17 +155,51 @@ const createAds = () => {
                     </select>
                 </div>
                 <div className="form-group py-2">
-                    <label className="form-check-label">Time</label>
+                    <label className="form-check-label">Start Date</label>
                     <div className="form-group">
-                        <DatePicker
+                        {/* <DatePicker
                             selected={startDate}
                             onChange={(date) => setStartDate(date)}
-                            dateFormat="MM/yyyy"
-                            showMonthYearPicker
-                            showFullMonthYearPicker
+                            // onChange={handleDateChange}
+                            // dateFormat="yyyy/MM/dd"
+                            selectsStart
+                            startDate={startDate}
+                            endDate={finishDate}
                             className="btn btn-warning dropdown-toggle w-100"
                             calendarClassName="calendar"
+                            name="start_date"
+                        /> */}
+                        <DatePicker
+                            selectsRange={true}
+                            startDate={startDate}
+                            endDate={endDate}
+                            onChange={handleDateChange}
+                            // onChange={(update) => {
+                            //     setDateRange(update);
+                            // }}
+                            isClearable={true}
+                            className="btn btn-warning dropdown-toggle w-100"
+                            calendarClassName="calendar"
+                            dateFormat="yyyy/MM/dd"
                         />
+                    </div>
+                </div>
+                <div className="form-group py-2">
+                    <label className="form-check-label">Finish Date</label>
+                    <div className="form-group">
+                        {/* <DatePicker
+                            selected={finishDate}
+                            onChange={(date) => setFinishDate(date)}
+                            // onChange={handleDateChange}
+                            // dateFormat="yyyy/MM/dd"
+                            selectsEnd
+                            startDate={startDate}
+                            endDate={finishDate}
+                            minDate={startDate}
+                            className="btn btn-warning dropdown-toggle w-100"
+                            calendarClassName="calendar"
+                            name="finish_date"
+                        /> */}
                     </div>
                 </div>
                 <div className="form-group py-2">
@@ -146,6 +211,10 @@ const createAds = () => {
                         id="description"
                         onChange={handleChange}
                     />
+                </div>
+                <div className="form-group py-2">
+                    <label className="form-check-label">Picture</label>
+                    <input type="file" name="image" onChange={onFileChange} />
                 </div>
                 <div className="form-group py-2">
                     <button

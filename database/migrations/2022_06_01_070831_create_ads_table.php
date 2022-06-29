@@ -23,11 +23,11 @@ class CreateAdsTable extends Migration
             $table->unsignedBigInteger("status_id");
             $table->foreign("status_id")->references("id")->on("statuses");
             // $table->string("time");
-            $table->date('time')->format('m/Y');
+            $table->date('start_date');
+            $table->date('finish_date');
             $table->text("description");
             $table->string("image_path");
             $table->string("created_by");
-            $table->string("created_date");
             $table->timestamps();
         });
     }
