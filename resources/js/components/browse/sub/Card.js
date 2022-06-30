@@ -17,9 +17,9 @@ const card = ({ state }) => {
                         <div className="card background-grey h-100">
                             <img
                                 src={
-                                    ads.image
-                                        ? ads.image
-                                        : "images/daph_cat.jpg"
+                                    ads.image_path?.length
+                                        ? "../images/" + ads.image_path
+                                        : "../images/daph_cat.jpg"
                                 }
                                 className="card-img-top"
                                 alt="..."

@@ -32,21 +32,6 @@ class RegionsController extends Controller
 
     public function store(Request $request)
     {
-        // $previous_id = Region::select('category_id')
-        //     ->orderByRaw('category_id DESC')
-        //     ->limit(1)
-        //     ->first();
-
-        // dd($previous_id);
-
-        // foreach ($previous_id as $item) {
-        //     if ($item > 0) {
-        //         $category_id = $item + 1;
-        //     } else {
-        //         $category_id = 1;
-        //     }
-        // }
-
         $region = Region::create([
             // 'category_id' => $category_id,
             'code_name' => $request->code_name,
@@ -56,18 +41,6 @@ class RegionsController extends Controller
         if ($region) {
             return redirect()->route('region.index');
         }
-
-        // if ($region) {
-        //     return response()->json([
-        //         'success' => true,
-        //         'region_name'    => $region,
-        //     ], 201);
-        // }
-
-        //return JSON process insert failed 
-        // return response()->json([
-        //     'success' => false,
-        // ], 409);
     }
 
     public function edit(Region $region)

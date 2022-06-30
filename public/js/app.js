@@ -6033,6 +6033,8 @@ var card = function card(_ref) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     className: "grid-wrapper",
     children: state !== null && state !== void 0 && state.length ? state.map(function (ads) {
+      var _ads$image_path;
+
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
         to: {
           pathname: "/browse/result/".concat(ads.id)
@@ -6041,7 +6043,7 @@ var card = function card(_ref) {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "card background-grey h-100",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-            src: ads.image ? ads.image : "images/daph_cat.jpg",
+            src: (_ads$image_path = ads.image_path) !== null && _ads$image_path !== void 0 && _ads$image_path.length ? "../images/" + ads.image_path : "../images/daph_cat.jpg",
             className: "card-img-top",
             alt: "..."
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
@@ -6174,28 +6176,7 @@ var createAds = function createAds() {
     setFile({
       file: event.target.files[0].name
     });
-  }; // const handleDateChange = (update) => {
-  //     setDateRange(update);
-  //     const formattedDate =
-  //         dateRange[0].getFullYear() +
-  //         "" +
-  //         +"" +
-  //         (dateRange[0].getMonth() + 1) +
-  //         "" +
-  //         dateRange[0].getDate();
-  //     console.log("start : " + formattedDate);
-  //     const formattedDatee =
-  //         dateRange[1].getFullYear() +
-  //         "" +
-  //         +"" +
-  //         (dateRange[1].getMonth() + 1) +
-  //         "" +
-  //         dateRange[1].getDate();
-  //     console.log("end : " + formattedDatee);
-  // };
-  // const MyStartDateString = "";
-  // const MyEndDateString = "";
-
+  };
 
   if (startDate) {
     stringDate.start = startDate.getFullYear() + "/" + ("0" + (startDate.getMonth() + 1)).slice(-2) + "/" + ("0" + startDate.getDate()).slice(-2);
@@ -6204,8 +6185,6 @@ var createAds = function createAds() {
   if (endDate) {
     stringDate.end = endDate.getFullYear() + "/" + ("0" + (endDate.getMonth() + 1)).slice(-2) + "/" + ("0" + endDate.getDate()).slice(-2);
   }
-
-  console.log(stringDate); // console.log(MyEndDateString);
 
   var formData = new FormData();
   formData.append("user_id", user_id);
@@ -6292,7 +6271,7 @@ var createAds = function createAds() {
           className: "form-check-label",
           children: "Category"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("select", {
-          className: "form-select w-100 btn btn-warning",
+          className: "form-select form-select-lg w-100 btn btn-warning",
           id: "category",
           name: "category_id",
           onChange: handleChange,
@@ -6313,7 +6292,7 @@ var createAds = function createAds() {
           className: "form-check-label",
           children: "Region"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("select", {
-          className: "form-select w-100 btn btn-warning",
+          className: "form-select form-select-lg w-100 btn btn-warning",
           id: "region",
           name: "region_id",
           onChange: handleChange,
@@ -6332,7 +6311,7 @@ var createAds = function createAds() {
         className: "form-group py-2",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
           className: "form-check-label",
-          children: "Start Date"
+          children: "Start Date - Finish Date"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "form-group",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)((react_datepicker__WEBPACK_IMPORTED_MODULE_7___default()), {
@@ -6346,7 +6325,8 @@ var createAds = function createAds() {
             isClearable: true,
             className: "btn btn-warning dropdown-toggle w-100",
             calendarClassName: "calendar",
-            dateFormat: "dd/MM/yyyy"
+            dateFormat: "dd/MM/yyyy",
+            placeholder: "Time"
           })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
@@ -6367,6 +6347,7 @@ var createAds = function createAds() {
           className: "form-check-label",
           children: "Picture"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+          className: "form-control w-100 btn btn-warning",
           type: "file",
           name: "image",
           onChange: onFileChange

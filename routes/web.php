@@ -7,6 +7,7 @@ use App\Http\Controllers\Dashboard\UsersController;
 use App\Http\Controllers\Dashboard\ClientsController;
 use App\Http\Controllers\Dashboard\AdsController;
 use App\Http\Controllers\Dashboard\RegionsController;
+use App\Http\Controllers\Dashboard\StatusesController;
 use App\Http\Controllers\Dashboard\CategoriesController;
 use App\Http\Controllers\Dashboard\FlowsController;
 
@@ -84,6 +85,9 @@ Route::prefix('dashboard')
         Route::resource('region', RegionsController::class);
         Route::post('region/store', [RegionsController::class, 'store'])->name('region-store');
 
+        Route::resource('status', StatusesController::class);
+        Route::post('status/store', [StatusesController::class, 'store'])->name('status-store');
+
         Route::resource('flow', FlowsController::class);
         Route::post('flow/store', [FlowsController::class, 'store'])->name('flow-store');
 
@@ -107,7 +111,7 @@ Route::prefix('dashboard')
         })->name('sign-up');
 
         Route::get('/logout', [SessionsController::class, 'destroy']);
-        Route::get('/user-profile', [InfoUserController::class, 'create']);
+        Route::get('/user-profile', [InfoUserController::class, 'create'])->name('user-profile');
         Route::post('/user-profile', [InfoUserController::class, 'store']);
         Route::get('/login', function () {
             return view('dashboard');

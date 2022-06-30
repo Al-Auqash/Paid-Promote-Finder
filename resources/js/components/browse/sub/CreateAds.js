@@ -35,31 +35,6 @@ const createAds = () => {
         setFile({ file: event.target.files[0].name });
     };
 
-    // const handleDateChange = (update) => {
-    //     setDateRange(update);
-
-    //     const formattedDate =
-    //         dateRange[0].getFullYear() +
-    //         "" +
-    //         +"" +
-    //         (dateRange[0].getMonth() + 1) +
-    //         "" +
-    //         dateRange[0].getDate();
-    //     console.log("start : " + formattedDate);
-
-    //     const formattedDatee =
-    //         dateRange[1].getFullYear() +
-    //         "" +
-    //         +"" +
-    //         (dateRange[1].getMonth() + 1) +
-    //         "" +
-    //         dateRange[1].getDate();
-    //     console.log("end : " + formattedDatee);
-    // };
-
-    // const MyStartDateString = "";
-    // const MyEndDateString = "";
-
     if (startDate) {
         stringDate.start =
             startDate.getFullYear() +
@@ -77,8 +52,6 @@ const createAds = () => {
             "/" +
             ("0" + endDate.getDate()).slice(-2);
     }
-    console.log(stringDate);
-    // console.log(MyEndDateString);
 
     const formData = new FormData();
 
@@ -150,7 +123,7 @@ const createAds = () => {
                 <div className="form-group py-2">
                     <label className="form-check-label">Category</label>
                     <select
-                        className="form-select w-100 btn btn-warning"
+                        className="form-select form-select-lg w-100 btn btn-warning"
                         id="category"
                         name="category_id"
                         onChange={handleChange}
@@ -168,7 +141,7 @@ const createAds = () => {
                 <div className="form-group py-2">
                     <label className="form-check-label">Region</label>
                     <select
-                        className="form-select w-100 btn btn-warning"
+                        className="form-select form-select-lg w-100 btn btn-warning"
                         id="region"
                         name="region_id"
                         onChange={handleChange}
@@ -184,7 +157,9 @@ const createAds = () => {
                     </select>
                 </div>
                 <div className="form-group py-2">
-                    <label className="form-check-label">Start Date</label>
+                    <label className="form-check-label">
+                        Start Date - Finish Date
+                    </label>
                     <div className="form-group">
                         {/* <DatePicker
                             selected={startDate}
@@ -210,6 +185,7 @@ const createAds = () => {
                             className="btn btn-warning dropdown-toggle w-100"
                             calendarClassName="calendar"
                             dateFormat="dd/MM/yyyy"
+                            placeholder="Time"
                         />
                     </div>
                 </div>
@@ -243,7 +219,12 @@ const createAds = () => {
                 </div>
                 <div className="form-group py-2">
                     <label className="form-check-label">Picture</label>
-                    <input type="file" name="image" onChange={onFileChange} />
+                    <input
+                        className="form-control w-100 btn btn-warning"
+                        type="file"
+                        name="image"
+                        onChange={onFileChange}
+                    />
                 </div>
                 <div className="form-group py-2">
                     <button
