@@ -92,7 +92,7 @@
     </div>
   </div> --}}
     <div class="row mt-4">
-        <div class="col-lg-7 mb-lg-0 mb-4">
+        <div class="col-lg-12 mb-lg-0 mb-4">
             <div class="card">
                 <div class="card-body p-3">
                     <div class="row">
@@ -115,7 +115,7 @@
                                     class="position-absolute h-100 w-50 top-0 d-lg-block d-none" alt="waves">
                                 <div class="position-relative d-flex align-items-center justify-content-center h-100">
                                     <img class="w-100 position-relative z-index-2 pt-4"
-                                        src="../assets/img/illustrations/rocket-white.png" alt="rocket">
+                                        src="{{asset("images/ppf-logo.png")}}" alt="rocket">
                                 </div>
                             </div>
                         </div>
@@ -123,7 +123,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-5">
+        {{-- <div class="col-lg-5">
             <div class="card h-100 p-3">
                 <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100"
                     style="background-image: url('../assets/img/ivancik.jpg');">
@@ -139,7 +139,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
     {{-- <div class="row mt-4">
     <div class="col-lg-5 mb-lg-0 mb-4">
