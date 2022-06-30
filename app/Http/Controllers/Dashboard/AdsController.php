@@ -6,6 +6,7 @@ use App\Models\Ads;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Region;
+use App\Models\Status;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -17,7 +18,9 @@ class AdsController extends Controller
         $ads = DB::table('ads')
             ->join('regions', 'ads.region_id', '=', 'regions.id')
             ->join('categories', 'ads.category_id', '=', 'categories.id')
-            ->select('ads.*', 'categories.category_name', 'regions.region_name')
+            ->join('statuses', 'ads.status_id', '=', 'statuses.id')
+            ->join('clients', 'ads.created_by', '=', 'clients.id')
+            ->select('ads.*', 'categories.category_name', 'regions.region_name',  'statuses.status_name', 'clients.username')
             ->get();
 
         return view('ads.index', [
@@ -131,10 +134,17 @@ class AdsController extends Controller
         }
     }
 
-    public function edit(Ads $ads)
+    public function edit(Ads $ad)
     {
+        $categories = Category::select('*')->paginate(10);
+        $regions = Region::select('*')->paginate(10);
+        $statuses = Status::select('*')->paginate(10);
+
         return view('ads.edit', [
-            'ads' => $ads
+            'ads' => $ad,
+            'categories' => $categories,
+            'regions' => $regions,
+            'statuses' => $statuses,
         ]);
     }
 

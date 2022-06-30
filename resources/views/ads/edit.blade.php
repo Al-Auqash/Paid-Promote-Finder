@@ -4,7 +4,7 @@
     <div class="container-fluid py-4">
         <div class="card">
             <div class="card-header pb-0 px-3">
-                <h6 class="mb-0">{{ __('Create Category') }}</h6>
+                <h6 class="mb-0">{{ __('Create Ads') }}</h6>
             </div>
             <div class="card-body pt-4 p-3">
                 <form action="{{ route('ad.update', $ads->id) }}" method="POST" role="form text-left" enctype="multipart/form-data">
@@ -71,6 +71,26 @@
                                         <option selected disabled hidden>Region</option>
                                         @forelse($regions as $item)
                                             <option value="{{ $item->id }}">{{ $item->region_name }}</option>
+                                        @empty
+                                            <option value="">No Data Found</option>
+                                        @endforelse
+                                    </select>
+                                    @error('name')
+                                        <p class="text-danger text-xs mt-2">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="user-name" class="form-control-label">{{ __('Status') }}</label>
+                                <div class="@error('user.name') border border-danger rounded-3 @enderror">
+                                    <select name="region_id" class="form-select" aria-label="region" aria-placeholder="Status">
+                                        <option selected disabled hidden>Status</option>
+                                        @forelse($statuses as $item)
+                                            <option value="{{ $item->id }}">{{ $item->status_name }}</option>
                                         @empty
                                             <option value="">No Data Found</option>
                                         @endforelse
