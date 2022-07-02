@@ -5525,7 +5525,10 @@ var index = function index() {
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
       className: "col d-flex flex-column justify-content-center align-items-center",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
+        src: "/images/ppf-logo.png",
+        width: "200"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
         children: "PAID PROMOTE FINDER"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
         children: "Find event or sponsor the best for you"
@@ -5829,10 +5832,6 @@ var signUp = function signUp() {
       window.location.href = "/authentication/signIn";
     })["catch"](function (error) {
       console.log(error);
-      console.log(input.username);
-      console.log(input.email);
-      console.log(input.password);
-      console.log(input.password_confirmation);
     });
   };
 
@@ -7919,7 +7918,7 @@ var ThirdContent = function ThirdContent() {
     className: "m-5 vh-100",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
       className: "w-100 text-center",
-      children: "OUR CLIENTS"
+      children: "OUR PARTNERS"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "d-flex justify-content-evenly flex-wrap h-100 p-0 my-4 secondContent",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {

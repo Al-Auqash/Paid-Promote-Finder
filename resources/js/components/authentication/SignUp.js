@@ -53,10 +53,6 @@ const signUp = () => {
             })
             .catch((error) => {
                 console.log(error);
-                console.log(input.username);
-                console.log(input.email);
-                console.log(input.password);
-                console.log(input.password_confirmation);
             });
 
     };
