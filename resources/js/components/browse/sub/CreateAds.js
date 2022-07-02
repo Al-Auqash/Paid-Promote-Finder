@@ -161,18 +161,6 @@ const createAds = () => {
                         Start Date - Finish Date
                     </label>
                     <div className="form-group">
-                        {/* <DatePicker
-                            selected={startDate}
-                            onChange={(date) => setStartDate(date)}
-                            // onChange={handleDateChange}
-                            // dateFormat="yyyy/MM/dd"
-                            selectsStart
-                            startDate={startDate}
-                            endDate={finishDate}
-                            className="btn btn-warning dropdown-toggle w-100"
-                            calendarClassName="calendar"
-                            name="start_date"
-                        /> */}
                         <DatePicker
                             selectsRange={true}
                             startDate={startDate}
@@ -189,24 +177,6 @@ const createAds = () => {
                         />
                     </div>
                 </div>
-                {/* <div className="form-group py-2">
-                    <label className="form-check-label">Finish Date</label>
-                    <div className="form-group">
-                        <DatePicker
-                            selected={finishDate}
-                            onChange={(date) => setFinishDate(date)}
-                            // onChange={handleDateChange}
-                            // dateFormat="yyyy/MM/dd"
-                            selectsEnd
-                            startDate={startDate}
-                            endDate={finishDate}
-                            minDate={startDate}
-                            className="btn btn-warning dropdown-toggle w-100"
-                            calendarClassName="calendar"
-                            name="finish_date"
-                        />
-                    </div>
-                </div> */}
                 <div className="form-group py-2">
                     <label className="form-check-label">Description</label>
                     <input

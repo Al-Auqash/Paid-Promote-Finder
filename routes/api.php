@@ -29,6 +29,8 @@ Route::get('/browse/category', [CategoriesController::class, 'client']);
 Route::get('/browse/result', [AdsController::class, 'result']);
 Route::get('/browse/your-ads', [AdsController::class, 'yourAds']);
 Route::post('/browse/create-ads', [AdsController::class, 'createAds']);
+Route::get('/browse/edit-your-ads', [AdsController::class, 'editAds']);
+Route::post('/browse/delete-your-ads', [AdsController::class, 'deleteAds']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

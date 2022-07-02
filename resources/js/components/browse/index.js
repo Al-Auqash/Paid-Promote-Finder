@@ -9,6 +9,7 @@ import { Pane } from "./sub/Pane";
 import JoinNow from "./sub/JoinNow";
 import YourAds from "./sub/YourAds";
 import CreateAds from "./sub/CreateAds";
+import EditAds from "./sub/EditAds";
 import Result from "./sub/Result";
 
 const index = () => {
@@ -26,6 +27,10 @@ const index = () => {
                     <Route
                         path="create-your-ads"
                         element={<CreateAds />}
+                    ></Route>
+                    <Route
+                        path="edit-your-ads/:id"
+                        element={<EditAds />}
                     ></Route>
                 </Routes>
             </div>

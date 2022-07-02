@@ -26,8 +26,7 @@ const card = ({ state }) => {
                             />
                             <div className="card-body">
                                 <p className="card-title fw-bold">
-                                    {" "}
-                                    {ads.title}
+                                    {"(" + ads.category_name + ")"} {ads.title}
                                 </p>
                                 <p className="card-text text-truncate">
                                     {" "}

@@ -16,5 +16,8 @@ class VerifyCsrfToken extends Middleware
         'http://localhost:8000/authentication/signUp',
         'http://localhost:8000/authentication/signOut',
         'http://localhost:8000/api/browse/create-ads',
+        'http://localhost:8000/api/browse/edit-your-ads',
+        'http://localhost:8000/api/browse/delete-your-ads',
+        'http://localhost:8000/api/browse/delete-your-ads?{id}',
     ];
 }

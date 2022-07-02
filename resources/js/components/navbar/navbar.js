@@ -6,7 +6,6 @@ import LoggedIn from "../authentication/LoggedIn";
 
 const Guest = () => {
     return (
-        // <ul className="navbar-nav ms-auto">
         <>
             <li className="nav-item">
                 <a
@@ -25,13 +24,11 @@ const Guest = () => {
                 </a>
             </li>
         </>
-        // </ul>
     );
 };
 
 const User = (props) => {
     return (
-        // <ul className="navbar-nav ms-auto">
         <li className="nav-item dropdown">
             <a
                 id="navbarDropdown"
@@ -41,7 +38,6 @@ const User = (props) => {
                 data-bs-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
-                // v-pre
             >
                 {props.username}
             </a>
@@ -50,20 +46,9 @@ const User = (props) => {
                 className="dropdown-menu dropdown-menu-end"
                 aria-labelledby="navbarDropdown"
             >
-                <a
-                    className="dropdown-item btnNav"
-                    // href="/authentication/signOut"
-                    onClick={props.signOut}
-                    // type="submit"
-                >
+                <a className="dropdown-item btnNav" onClick={props.signOut}>
                     Sign Out
                 </a>
-                {/* <form
-                        id="logout-form"
-                        action="/authentication/signOut"
-                        method="POST"
-                        className="d-none"
-                    ></form> */}
             </div>
         </li>
         // </ul>
@@ -71,7 +56,6 @@ const User = (props) => {
 };
 
 const Navbar = () => {
-
     const signOut = () => {
         const token = localStorage.getItem("token");
         axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
@@ -84,20 +68,11 @@ const Navbar = () => {
                 localStorage.removeItem("token");
                 localStorage.clear();
                 window.location.href = "/";
-                // console.log(response);
             })
             .catch((error) => {
                 console.log(error.response.data);
             });
     };
-
-    // const LoggedIn = () => {
-    //     if (localStorage.getItem("username")) {
-    //         return true;
-    //     } else {
-    //         return false;
-    //     }
-    // };
 
     const [user, setUser] = useState([]);
     useEffect(() => {
@@ -105,14 +80,14 @@ const Navbar = () => {
         if (localStorage.getItem("username")) {
             setUser(localStorage.getItem("username"));
         }
-        // console.log(LoggedIn());
     });
-
-    // console.log(user);
 
     return (
         <nav className="navbar sticky-top navbar-expand-md navbar-dark bg-base-background shadow-sm">
             <div className="container-fluid d-flex flex-row justify-content-space-between m-0">
+                <a className="navbar-brand" href="{{ url('/') }}">
+                    <img src="/images/ppf-logo.png" width="50" />
+                </a>
                 <a className="navbar-brand" href="{{ url('/') }}">
                     Paid Promote Finder
                 </a>

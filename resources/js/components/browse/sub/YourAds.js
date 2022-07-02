@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import loggedIn from "../../authentication/LoggedIn";
 
@@ -24,13 +25,28 @@ const yourAds = () => {
             });
     };
 
+    // const submitDeleteAds = (event) => {
+    //     event.preventDefault();
+    //     axios
+    //         .post("/api/browse/delete-your-ads", {
+    //             id: ads.id,
+    //         })
+    //         .then((response) => {
+    //             console.log(response);
+    //             navigate("/browse/your-ads");
+    //         })
+    //         .catch((error) => {
+    //             console.log(error);
+    //         });
+    // };
+
     useEffect(() => {
         if (loggedIn()) {
             getYourAds();
         } else {
             navigate("/");
         }
-    }, []);
+    }, [ads]);
 
     return (
         <>
@@ -52,7 +68,7 @@ const yourAds = () => {
                             <div className="col-md-8">
                                 <div className="card-body">
                                     <p className="card-title fw-bold">
-                                        {" "}
+                                        {"(" + ads.category_name + ")"}{" "}
                                         {ads.title}
                                     </p>
                                     <p className="card-text text-truncate">
@@ -63,20 +79,24 @@ const yourAds = () => {
                             </div>
                             <div className="col-md-2">
                                 <div className="card-body">
-                                    <a
-                                        href="/review"
+                                    <Link
+                                        to={{
+                                            pathname: `/browse/result/${ads.id}`,
+                                        }}
                                         className="btn text-white background-dark-orange w-100 mb-3"
                                     >
                                         Review
-                                    </a>
-                                    <a
-                                        href="/edit"
+                                    </Link>
+                                    <Link
+                                        to={{
+                                            pathname: `/browse/edit-your-ads/${ads.id}`,
+                                        }}
                                         className="btn text-white background-dark-orange w-100 mb-3"
                                     >
                                         Edit
-                                    </a>
+                                    </Link>
                                     <a
-                                        href="/delete"
+                                        // onClick={submitDeleteAds}
                                         className="btn text-white background-dark-orange w-100"
                                     >
                                         Delete

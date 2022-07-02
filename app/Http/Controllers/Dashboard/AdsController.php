@@ -34,7 +34,8 @@ class AdsController extends Controller
         $region_id = $request->region_id;
         // $keyword = 'anniversary';
 
-        $ads = Ads::select('*')
+        $ads = Ads::join('categories', 'ads.category_id', '=', 'categories.id')
+            ->select('ads.*', 'categories.category_name')
             ->where('title', 'LIKE', '%' . $keyword . '%')
             ->where('region_id', 'LIKE', '%' . $region_id . '%')
             ->get();
@@ -95,6 +96,38 @@ class AdsController extends Controller
             return response()->json([
                 'success' => true,
             ], 201);
+        }
+    }
+
+    public function editAds(Request $request)
+    {
+        $id = $request->id;
+
+        $ads = DB::table('ads')
+            ->join('regions', 'ads.region_id', '=', 'regions.id')
+            ->join('categories', 'ads.category_id', '=', 'categories.id')
+            ->select('ads.*', 'categories.category_name', 'regions.region_name')
+            ->where('ads.id', '=', $id)
+            ->get();
+
+        return $ads->toJson();
+    }
+
+    public function DeleteAds(Request $request)
+    {
+        $id = $request->id;
+
+        $deleted = Ads::where('id', '=', $id)->delete();
+
+        if ($deleted) {
+            return response()->json([
+                'success' => true,
+            ]);
+        } else {
+            return response()->json([
+                'failed' => true,
+                'id' => $id,
+            ]);
         }
     }
 
