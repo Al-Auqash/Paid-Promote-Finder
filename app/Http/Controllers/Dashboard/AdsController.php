@@ -108,7 +108,7 @@ class AdsController extends Controller
             ->join('categories', 'ads.category_id', '=', 'categories.id')
             ->select('ads.*', 'categories.category_name', 'regions.region_name')
             ->where('ads.id', '=', $id)
-            ->first();
+            ->get();
 
         return $ads->toJson();
     }

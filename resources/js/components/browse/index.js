@@ -14,7 +14,7 @@ import Result from "./sub/Result";
 
 const index = () => {
     return (
-        <div className="container-fluid row m-0 second-font-family">
+        <div className="container-fluid h-100 row m-0 second-font-family">
             <div className="col-2 formContent">
                 {loggedIn() ? <Pane /> : <JoinNow />}
             </div>

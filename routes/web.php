@@ -46,6 +46,12 @@ Route::prefix('browse')->group(function () {
     });
 });
 
+Route::prefix('about')->group(function () {
+    Route::get('/', function () {
+        return view('/layouts/app2');
+    });
+});
+
 Route::prefix('authentication')->group(function () {
     Route::get('/signIn', function () {
         return view('/layouts/app2');

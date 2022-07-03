@@ -108,7 +108,7 @@
                 </a>
             </li>
             <li class="nav-item mt-2">
-                <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Example pages</h6>
+                <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Content</h6>
             </li>
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('category') ? 'active' : '' }}"
@@ -215,7 +215,7 @@
                     <span class="nav-link-text ms-1">Region</span>
                 </a>
             </li> --}}
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link {{ Request::is('tables') ? 'active' : '' }}"
                     href="{{ url('/dashboard/tables') }}">
                     <div
@@ -331,7 +331,7 @@
                     </div>
                     <span class="nav-link-text ms-1">Profile</span>
                 </a>
-            </li>
+            </li> --}}
         </ul>
     </div>
     {{-- <div class="sidenav-footer mx-3 ">

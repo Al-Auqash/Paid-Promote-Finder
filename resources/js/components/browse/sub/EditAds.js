@@ -9,6 +9,7 @@ import "../../App.css";
 
 const editAds = () => {
     const [ads, setAds] = useState([]);
+    // const [newAds, setNewAds] = useState([]);
     const [region, setRegion] = useState([]);
     const [category, setCategory] = useState([]);
 

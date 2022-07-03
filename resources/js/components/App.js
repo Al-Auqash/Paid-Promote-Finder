@@ -12,6 +12,7 @@ import "./App.css";
 import Main from "./main/Index";
 import Browse from "./browse/Index";
 import Authentication from "./authentication/Index";
+import About from "./about/About";
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                     <Route path="/" element={<Main />} />
                     <Route path="/browse/*" element={<Browse />} />
                     <Route path="/authentication/*" element={<Authentication />} />
+                    <Route path="/about/*" element={<About />} />
                 </Routes>
             </Router>
         </div>
