@@ -121,8 +121,9 @@ const editAds = () => {
                     className="form-group p-4 w-50"
                     onSubmit={submitEditAds}
                     encType="multipart/form-data"
+                    key={ads.id}
                 >
-                    <input name="user_id" value={user_id} hidden></input>
+                    <input name="user_id" value={user_id} hidden readOnly></input>
                     <div className="form-group py-2">
                         <label className="form-check-label">Title</label>
                         <input
@@ -142,7 +143,7 @@ const editAds = () => {
                             name="category_id"
                             onChange={handleChange}
                         >
-                            <option selected value={ads.category_id}>
+                            <option value={ads.category_id}>
                                 {ads.category_name}
                             </option>
                             {category.map((category) => (
@@ -160,7 +161,7 @@ const editAds = () => {
                             name="region_id"
                             onChange={handleChange}
                         >
-                            <option selected value={ads.region_id}>
+                            <option value={ads.region_id}>
                                 {ads.region_name}
                             </option>
                             {region.map((region) => (

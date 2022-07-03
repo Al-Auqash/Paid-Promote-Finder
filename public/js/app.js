@@ -6571,7 +6571,8 @@ var editAds = function editAds() {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
           name: "user_id",
           value: user_id,
-          hidden: true
+          hidden: true,
+          readOnly: true
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: "form-group py-2",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
@@ -6596,7 +6597,6 @@ var editAds = function editAds() {
             name: "category_id",
             onChange: handleChange,
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
-              selected: true,
               value: ads.category_id,
               children: ads.category_name
             }), category.map(function (category) {
@@ -6617,7 +6617,6 @@ var editAds = function editAds() {
             name: "region_id",
             onChange: handleChange,
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
-              selected: true,
               value: ads.region_id,
               children: ads.region_name
             }), region.map(function (region) {
@@ -6685,7 +6684,7 @@ var editAds = function editAds() {
             children: "Save"
           })
         })]
-      });
+      }, ads.id);
     })
   });
 };

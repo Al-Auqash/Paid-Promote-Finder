@@ -82,6 +82,9 @@ Route::prefix('dashboard')
         Route::resource('client', ClientsController::class);
         Route::post('client/store', [ClientsController::class, 'store'])->name('client-store');
 
+        // Route::resource('client-data-table', ClientsController::class);
+        // Route::post('client-data-table/store', [ClientsController::class, 'store'])->name('client-store');
+
         Route::resource('category', CategoriesController::class);
         Route::post('category/store', [CategoriesController::class, 'store'])->name('category-store');
 

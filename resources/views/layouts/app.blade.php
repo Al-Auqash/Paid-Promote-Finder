@@ -11,14 +11,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     {{-- @if (env('IS_DEMO'))
-      <x-demo-metas></x-demo-metas>
-  @endif --}}
+            <x-demo-metas></x-demo-metas>
+            @endif --}}
 
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('../assets/img/apple-icon.png') }}">
     <link rel="icon" type="image/png" href="{{ asset('../assets/img/favicon.png') }}">
     <title>
         Paid Promote Finder Dashboard
     </title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <!-- Nucleo Icons -->
@@ -29,6 +31,7 @@
     <link href="{{ asset('../assets/css/nucleo-svg.css" rel="stylesheet') }}" />
     <!-- CSS Files -->
     <link id="pagestyle" href="{{ asset('../assets/css/soft-ui-dashboard.css?v=1.0.3') }}" rel="stylesheet" />
+
 </head>
 
 <body
@@ -69,6 +72,8 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="{{ asset('../assets/js/soft-ui-dashboard.min.js?v=1.0.3') }}"></script>
+
+
 </body>
 
 </html>

@@ -17,6 +17,15 @@ class ClientsController extends Controller
         ]);
     }
 
+    // public function create()
+    // {
+
+    //     $client = Client::select('*')->paginate(10);
+    //     return view('table.index', [
+    //         'client' => $client
+    //     ]);
+    // }
+
     public function create()
     {
         return view('client.create');

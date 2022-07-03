@@ -108,9 +108,21 @@ class AdsController extends Controller
             ->join('categories', 'ads.category_id', '=', 'categories.id')
             ->select('ads.*', 'categories.category_name', 'regions.region_name')
             ->where('ads.id', '=', $id)
-            ->get();
+            ->first();
 
         return $ads->toJson();
+    }
+
+    public function updateAds(Request $request, Ads $ads)
+    {
+        
+        $data = $request->all();
+
+        if ($ads->update($data)) {
+            return response()->json([
+                'success' => true,
+            ]);
+        }
     }
 
     public function DeleteAds(Request $request)
