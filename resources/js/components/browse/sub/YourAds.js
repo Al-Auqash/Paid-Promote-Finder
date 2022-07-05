@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -12,8 +13,8 @@ const yourAds = () => {
     const [ads, setAds] = useState([]);
     const navigate = useNavigate();
 
-    const getYourAds = async () => {
-        await axios
+    const getYourAds = () => {
+        axios
             .get("/api/browse/your-ads", {
                 params: { user_id: params.user_id },
             })
@@ -25,28 +26,25 @@ const yourAds = () => {
             });
     };
 
-    // const submitDeleteAds = (event) => {
-    //     event.preventDefault();
-    //     axios
-    //         .post("/api/browse/delete-your-ads", {
-    //             id: ads.id,
-    //         })
-    //         .then((response) => {
-    //             console.log(response);
-    //             navigate("/browse/your-ads");
-    //         })
-    //         .catch((error) => {
-    //             console.log(error);
-    //         });
-    // };
+    const submitDeleteAds = (event) => {
+        event.preventDefault();
+
+        axios
+            .post("/api/browse/delete-your-ads", {
+                params: { id: ads.id },
+            })
+            .then((response) => {
+                console.log(response);
+                navigate("/browse/your-ads");
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
 
     useEffect(() => {
-        if (loggedIn()) {
-            getYourAds();
-        } else {
-            navigate("/");
-        }
-    }, [ads]);
+        getYourAds();
+    }, []);
 
     return (
         <>
@@ -96,7 +94,7 @@ const yourAds = () => {
                                         Edit
                                     </Link>
                                     <a
-                                        // onClick={submitDeleteAds}
+                                        onClick={submitDeleteAds}
                                         className="btn text-white background-dark-orange w-100"
                                     >
                                         Delete

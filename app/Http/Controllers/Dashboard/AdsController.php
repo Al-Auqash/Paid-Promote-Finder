@@ -6,6 +6,7 @@ use App\Models\Ads;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Region;
+use App\Models\Report;
 use App\Models\Status;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -115,7 +116,7 @@ class AdsController extends Controller
 
     public function updateAds(Request $request, Ads $ads)
     {
-        
+
         $data = $request->all();
 
         if ($ads->update($data)) {
@@ -125,13 +126,36 @@ class AdsController extends Controller
         }
     }
 
-    public function DeleteAds(Request $request)
+    public function deleteAds(Request $request)
     {
         $id = $request->id;
 
         $deleted = Ads::where('id', '=', $id)->delete();
 
         if ($deleted) {
+            return response()->json([
+                'success' => true,
+            ]);
+        } else {
+            return response()->json([
+                'failed' => true,
+                'id' => $id,
+            ]);
+        }
+    }
+
+    public function makeReport(Request $request)
+    {
+        $id = $request->id;
+
+        // $ads = Ads::find($id);
+
+        $report = Report::create([
+            "ads_id" => $request->id,
+            "complaint" => $request->complaint,
+        ]);
+
+        if ($report) {
             return response()->json([
                 'success' => true,
             ]);

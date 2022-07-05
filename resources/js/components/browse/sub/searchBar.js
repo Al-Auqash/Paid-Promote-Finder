@@ -79,7 +79,7 @@ const searchBar = () => {
             <form onSubmit={getSearch} className="row formSearch">
                 <div className="col formContent">
                     <div className="row m-0">
-                        <div className="col p-0-10 mb-3 p-0">
+                        <div className="col p-0 mb-3 p-0">
                             <div className="form-group">
                                 <input
                                     name="keyword"
